@@ -2,10 +2,14 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import styles from './styles';
 
 export const PrevArrow = ({ onClick }: { onClick?: () => void }) => {
+  console.log({ s: window.innerWidth });
+
   return (
     <button
       aria-label='go to prev'
-      className={styles.arrows.prev}
+      className={
+        window.innerWidth > 550 ? styles.arrows.prev : styles.arrows.prevMobile
+      }
       onClick={onClick}
     >
       <IoIosArrowBack
@@ -21,7 +25,9 @@ export const NextArrow = ({ onClick }: { onClick?: () => void }) => {
     <button
       aria-label='go to next'
       onClick={onClick}
-      className={styles.arrows.next}
+      className={
+        window.innerWidth > 550 ? styles.arrows.next : styles.arrows.nextMobile
+      }
     >
       <IoIosArrowForward
         size={25}

@@ -22,16 +22,50 @@ export const VERIFICATION_SLICK_SETTING: Settings = {
       breakpoint: 850,
       settings: {
         slidesToShow: 2.1,
+        dots: false,
       },
     },
     {
       breakpoint: 725,
       settings: {
         slidesToShow: 1.5,
+        dots: false,
       },
     },
     {
       breakpoint: 550,
+      settings: {
+        slidesToShow: 1,
+        dots: false,
+      },
+    },
+  ],
+};
+
+export const STATS_SECTION: Settings = {
+  infinite: true,
+  slidesToShow: 4,
+  autoplay: true,
+  speed: 2000,
+  autoplaySpeed: 1000, //start delay in  milleSecs
+  cssEase: 'linear',
+  pauseOnHover: false,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 450,
       settings: {
         slidesToShow: 1,
       },

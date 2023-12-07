@@ -4,11 +4,11 @@ const styles = {
   accordion: (isFlex?: boolean) => `w-full ${isFlex && 'flex gap-2 flex-wrap'}`,
   accordionInner: (wrapperClass?: string) =>
     clsx(
-      `mb-2 overflow-hidden rounded mx-auto !bg-background hover:shadow`,
+      `mb-3 overflow-hidden rounded mx-auto !bg-background hover:shadow`,
       wrapperClass
     ),
   accordionInnerChild: clsx(
-    'flex h-12 cursor-pointer items-center justify-between px-4 text-dark '
+    'flex cursor-pointer items-center justify-between px-4 py-2 text-dark '
   ),
   accordionInnerPara: (labelClass?: string) =>
     clsx('text-lg font-medium', labelClass),

@@ -13,7 +13,7 @@ const StatsCard = ({
   className: string;
 }) => {
   return (
-    <div className='flex items-center gap-x-3'>
+    <div className='flex items-center gap-x-3 w-max'>
       <div
         className={`h-16 w-16 flex justify-center items-center rounded-full ${className}`}
       >

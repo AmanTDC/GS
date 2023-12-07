@@ -2,12 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-#topnav > li {
+* {
+  scroll-behavior: smooth;
+}
+html {
+  scroll-padding-top: 70px; /* height of your navbar */
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+#topnav > a {
   padding: 20px;
   color: #374151;
   font-weight: 500;
+  min-width: fit-content;
 }
-
+.active-scroll-spy {
+  border-bottom: 2px solid #3b82f6;
+}
 .animate-accordion {
   animation: accordion 0.3s ease;
 }
@@ -48,5 +61,22 @@
   to {
     bottom: 0;
     opacity: 1;
+  }
+}
+
+#nav-item:hover > #dropdown {
+  display: block;
+  animation: fadeIn 0.4s linear forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
