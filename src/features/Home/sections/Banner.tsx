@@ -22,7 +22,7 @@ const Banner = () => {
         <div className='rounded-full w-full bg-white flex items-center relative h-16'>
           <input
             placeholder='Enter Your Email Address'
-            className='text-gray-400 rounded-full font-medium sm:w-2/3 bg-white outline-none h-16 p-5 pl-6'
+            className='text-gray-400 rounded-full font-medium sm:mr-[220px] mr-16 w-full bg-white outline-none h-16 p-5 pl-6'
           />
           <div className='flex items-center cursor-pointer text-white gap-x-3 p-5 absolute bg-[rgba(30,58,138,1)] hover:bg-[rgba(30,58,138,1)]/90 duration-500 h-12 rounded-full right-2'>
             <Img
@@ -32,7 +32,7 @@ const Banner = () => {
               width={24}
               isLocal
             />
-            <h4 className='text-sm font-medium'>Get Free Consultation</h4>
+            <h4 className='text-sm font-medium sm:block hidden'>Get Free Consultation</h4>
           </div>
         </div>
       </div>

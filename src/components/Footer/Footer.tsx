@@ -12,7 +12,7 @@ const Footer = () => {
   ];
   return (
     <div className='bg-[#03060E] px-5 pt-16 text-white'>
-      <div className='max-w-[1120px] mx-auto'>
+      <div className='max-w-[1240px] mx-auto'>
         <Banner />
         <div className='gap-x-5 sm:flex justify-between'>
           <div className='grid grid-cols-12 gap-x-5 gap-y-10'>
@@ -56,7 +56,7 @@ const Footer = () => {
               </div>
             </div>
             <div className='list-none space-y-3 lg:col-span-2 sm:col-span-4 col-span-6'>
-              <div className='text-text-blue-500 text-sm font-semibold mb-5'>
+              <div className='text-blue-500 text-sm font-semibold mb-5'>
                 STUDY DESTINATIONS
               </div>
               <li>United Kingdom</li>
@@ -67,7 +67,7 @@ const Footer = () => {
               <li>Ireland</li>
             </div>
             <div className='list-none space-y-3 lg:col-span-2 sm:col-span-4 col-span-6'>
-              <div className='text-text-blue-500 text-sm font-semibold mb-5'>
+              <div className='text-blue-500 text-sm font-semibold mb-5'>
                 SERVICES
               </div>
               <li>Study Abroad Councelling</li>
@@ -77,7 +77,7 @@ const Footer = () => {
               <li>Student Accomodation</li>
             </div>
             <div className='list-none space-y-3 lg:col-span-2 sm:col-span-4 col-span-6'>
-              <div className='text-text-blue-500 text-sm font-semibold mb-5'>
+              <div className='text-blue-500 text-sm font-semibold mb-5'>
                 COMPANY
               </div>
               <li>About Us</li>
@@ -86,7 +86,7 @@ const Footer = () => {
               <li>Sitemap</li>
             </div>
             <div className='list-none space-y-3 lg:col-span-2 sm:col-span-4 col-span-6'>
-              <div className='text-text-blue-500 text-sm font-semibold mb-5'>
+              <div className='text-blue-500 text-sm font-semibold mb-5'>
                 LEGAL
               </div>
               <li>Terms of Service</li>
@@ -98,7 +98,7 @@ const Footer = () => {
         <div className='h-[1px] bg-[#122353] mt-10'></div>
         <div className='flex sm:flex-row flex-col sm:justify-between items-center gap-y-4 py-7'>
           <div>
-            Copyright © 2023 <span className='text-text-blue-500'>AeriaX</span>{' '}
+            Copyright © 2023 <span className='text-blue-500'>Global Scholar</span>{' '}
             , All Rights Reserved
           </div>
           <div className='flex gap-x-3'>

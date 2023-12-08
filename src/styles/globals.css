@@ -80,3 +80,9 @@ html {
     transform: translateY(0);
   }
 }
+
+.slick-slide > div {
+  display: flex;
+  justify-content: center;
+  margin-inline: 10px;
+}

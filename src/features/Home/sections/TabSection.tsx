@@ -192,7 +192,7 @@ const TabSection = () => {
               </div>
             </div>
             <div className='p-5 rounded-lg bg-gray-50 space-y-6 md:col-span-2 col-span-5 md:max-w-none max-w-[430px] md:mx-0 mx-auto'>
-              <h4 className='text-text-blue-500 text-[28px] font-semibold'>
+              <h4 className='text-blue-500 text-[28px] font-semibold'>
                 Turn your dream of studying abroad to reality!
               </h4>
               <p className='text-secondary'>
@@ -330,7 +330,7 @@ const TabSection = () => {
               ))}
             </Slider>
           </div>
-          <div id='third' className='space-y-3'>
+          <div id='third' className='space-y-3 mt-20 max-[700px]:mt-28'>
             <h4 className='text-[32px] font-semibold'>Intakes in the UK</h4>
             <p className='text-secondary pb-4'>
               UK universities offer multiple admission intakes throughout the

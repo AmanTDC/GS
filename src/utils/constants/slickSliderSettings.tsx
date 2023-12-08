@@ -22,11 +22,10 @@ export const VERIFICATION_SLICK_SETTING: Settings = {
       breakpoint: 850,
       settings: {
         slidesToShow: 2.1,
-        dots: false,
       },
     },
     {
-      breakpoint: 725,
+      breakpoint: 700,
       settings: {
         slidesToShow: 1.5,
         dots: false,

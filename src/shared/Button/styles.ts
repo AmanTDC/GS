@@ -29,12 +29,8 @@ const styles = {
       noHover && 'lg:hover:transition-none'
     ),
   arrows: {
-    nextMobile:
-      'absolute -bottom-16 left-[55%] z-50 bg-sliderArrow p-2 lg:hover:bg-sliderArrow/70 md:left-16',
-    prevMobile:
-      'absolute -bottom-16 left-[35%] z-50 bg-sliderArrow p-2 lg:hover:bg-sliderArrow/70 md:left-4',
-    next: 'absolute -top-32 right-0 w-fit z-50 bg-sliderArrow p-2 lg:hover:bg-sliderArrow/70',
-    prev: 'absolute -top-32 right-14 w-fit z-50 bg-sliderArrow p-2 lg:hover:bg-sliderArrow/70',
+    next: 'absolute -bottom-16 right-[35%] w-fit z-50 bg-sliderArrow p-2 lg:hover:bg-sliderArrow/70 min-[700px]:right-4',
+    prev: 'absolute -bottom-16 right-[55%] w-fit z-50 bg-sliderArrow p-2 lg:hover:bg-sliderArrow/70 min-[700px]:right-16',
   },
 };
 

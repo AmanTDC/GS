@@ -5,11 +5,7 @@ export const PrevArrow = ({ onClick }: { onClick?: () => void }) => {
   return (
     <button
       aria-label='go to prev'
-      className={
-        typeof window !== 'undefined' && window?.innerWidth > 550
-          ? styles.arrows.prev
-          : styles.arrows.prevMobile
-      }
+      className={styles.arrows.prev}
       onClick={onClick}
     >
       <IoIosArrowBack
@@ -25,11 +21,7 @@ export const NextArrow = ({ onClick }: { onClick?: () => void }) => {
     <button
       aria-label='go to next'
       onClick={onClick}
-      className={
-        typeof window !== 'undefined' && window?.innerWidth > 550
-          ? styles.arrows.next
-          : styles.arrows.nextMobile
-      }
+      className={styles.arrows.next}
     >
       <IoIosArrowForward
         size={25}
