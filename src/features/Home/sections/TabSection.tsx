@@ -127,9 +127,9 @@ const TabSection = () => {
     },
   ];
   return (
-    <>
+    <div className='max-w-[1120px] mx-auto px-5'>
       <div
-        className='w-screen overflow-x-scroll text-secondary font-medium list-none flex justify-between top-0 sticky bg-white shadow z-[60] px-5 lg:px-[60px]'
+        className='overflow-x-scroll text-secondary font-medium list-none flex justify-between top-0 sticky bg-white z-[60]'
         id='topnav'
       >
         <Link
@@ -158,7 +158,7 @@ const TabSection = () => {
         <Link href=''>Top Universities</Link>
         <Link href='#fourth'>FAQ</Link>
       </div>
-      <div className='mt-16 mb-[400px] space-y-12 px-5 lg:px-[60px]'>
+      <div className='mt-16 mb-[400px] space-y-12'>
         <ScrollSpy>
           <div className='gap-8 grid grid-cols-5' id='first'>
             <div className='space-y-3 md:col-span-3 col-span-5'>
@@ -408,7 +408,7 @@ const TabSection = () => {
           </Slider>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
