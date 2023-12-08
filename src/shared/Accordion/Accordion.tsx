@@ -1,6 +1,5 @@
 import { ReactNode, useState } from 'react';
 import styles from './styles';
-import useWindowDimensions from '@/utils/hooks/useWindowDimension';
 import {
   AiOutlineMinus,
   AiOutlineMinusCircle,
@@ -33,7 +32,6 @@ const Accordion = ({
   const handleAccordionToggle = (index: number) => {
     setActiveIndex((p) => (p === index ? -1 : index));
   };
-  const { width } = useWindowDimensions();
   return (
     <div
       className={styles.accordion(
@@ -45,9 +43,9 @@ const Accordion = ({
         return (
           <div
             key={acc.title}
-            style={{
-              width: width && width < 768 ? '100%' : `${acc.width}%` || '100%',
-            }}
+            // style={{
+            //   width: width && width < 768 ? '100%' : `${acc.width}%` || '100%',
+            // }}
             className={styles.accordionInner(wrapperClass)}
           >
             <div
