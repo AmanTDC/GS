@@ -3,7 +3,7 @@ import React from 'react';
 
 const Banner = () => {
   return (
-    <div className='rounded-3xl lg:justify-between gap-8 items-center flex lg:flex-row flex-col bg-blue-500 -mt-[270px] lg:px-10 lg:pl-14 mx-10 z-10 mb-16'>
+    <div className='rounded-3xl lg:justify-between gap-8 items-center flex lg:flex-row flex-col bg-blue-500 -mt-[270px] lg:px-10 lg:pl-14 md:mx-10 z-10 mb-16'>
       <Img
         src={'/images/banner.png'}
         height={357}
