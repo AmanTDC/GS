@@ -40,16 +40,23 @@ const Navbar = () => {
           isLocal
         />
         <div className='md:flex items-center lg:gap-x-10 gap-x-5 hidden'>
-          <div className='text-black font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
-            Our Services <IoIosArrowDown />
+          <div className='group' id='nav-item'>
+            <div className='text-black font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
+              Our Services
+              <div className='group-hover:-rotate-180 duration-300'>
+                <IoIosArrowDown />
+              </div>
+            </div>
           </div>
           <div className='group' id='nav-item'>
             <div className='text-black font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
               Destinations
-              <IoIosArrowDown />
+              <div className='group-hover:-rotate-180 duration-300'>
+                <IoIosArrowDown />
+              </div>
             </div>
             <div
-              className='rounded-xl p-4 space-y-4 bg-white shadow-lg group-hover:block duration-500 hidden absolute'
+              className='rounded-xl p-4 space-y-4 bg-white shadow-lg group-hover:block duration-300 hidden absolute'
               id='dropdown'
             >
               <h4 className='text-xs text-gray-400 font-medium'>
@@ -74,7 +81,7 @@ const Navbar = () => {
             Contact Us
           </Button>
         </div>
-      </div>{' '}
+      </div>
     </div>
   );
 };
