@@ -10,7 +10,7 @@ const Banner = () => {
         width={361}
         alt='heroImage'
         isLocal
-        className='-mt-10 max-[1100px]:w-[300px] max-[1100px]:h-[296px]'
+        className='-mt-24 max-[1100px]:w-[300px] max-[1100px]:h-[296px]'
       />
       <div className='space-y-4 max-w-[591px] w-full py-6 md:px-0 px-4'>
         <h4 className='text-[32px] text-[#fafafa] font-semibold max-w-[500px]'>

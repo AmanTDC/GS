@@ -1,9 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@font-face {
+  font-family: JakartaSans;
+  src: url(/font/PlusJakartaSans-VariableFont_wght.ttf);
+}
 * {
   scroll-behavior: smooth;
+  font-family: JakartaSans;
 }
 html {
   scroll-padding-top: 70px; /* height of your navbar */
@@ -85,4 +89,17 @@ html {
   display: flex;
   justify-content: center;
   margin-inline: 10px;
+}
+
+table > thead > tr,
+table > tbody > tr {
+  @apply border-b [&>*:first-child]:font-semibold text-left;
+}
+#costOfStudy > thead > tr,
+#costOfStudy > tbody > tr {
+  @apply [&>*:first-child]:w-[345px];
+}
+table th,
+td {
+  @apply px-2 py-3;
 }
