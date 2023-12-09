@@ -42,7 +42,7 @@ const StudyAbroad = () => {
     },
   ];
   return (
-    <div className='my-16 space-y-7'>
+    <div className='my-16 space-y-7' id='second'>
       <h4 className='text-[32px] font-semibold mb-2'>
         What to Expect from Our FREE Study Abroad Counseling:
       </h4>

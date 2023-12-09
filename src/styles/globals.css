@@ -103,3 +103,19 @@ table th,
 td {
   @apply px-2 py-3;
 }
+
+@keyframes sideNav {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+#sideBar {
+  animation: sideNav 0.4s linear forwards;
+  z-index: 999;
+}

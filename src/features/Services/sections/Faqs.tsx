@@ -40,7 +40,7 @@ const Faqs = () => {
     },
   ];
   return (
-    <div id='seventh' className='my-16'>
+    <div id='fourth' className='my-16'>
       <h4 className='text-[32px] font-semibold mb-4'>
         Frequently Asked Questions
       </h4>

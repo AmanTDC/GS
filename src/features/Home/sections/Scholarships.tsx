@@ -59,26 +59,28 @@ const Scholarships = () => {
           world-class education.
         </p>
       </div>
-      <table className='border w-full' id='scholarship'>
-        <thead>
-          <tr className='bg-yellow-50 text-yellow-700 font-semibold'>
-            <th>Name of Scholarship</th>
-            <th>Description</th>
-            <th>Eligibility</th>
-            <th>Amount in GBP</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data?.map((item, idx) => (
-            <tr key={idx}>
-              <td>{item?.name}</td>
-              <td>{item?.description}</td>
-              <td>{item?.eligibility}</td>
-              <td>{item?.amount}</td>
+      <div className='overflow-x-scroll'>
+        <table className='border w-full' id='scholarship'>
+          <thead>
+            <tr className='bg-yellow-50 text-yellow-700 font-semibold'>
+              <th>Name of Scholarship</th>
+              <th>Description</th>
+              <th>Eligibility</th>
+              <th>Amount in GBP</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {data?.map((item, idx) => (
+              <tr key={idx}>
+                <td>{item?.name}</td>
+                <td>{item?.description}</td>
+                <td>{item?.eligibility}</td>
+                <td>{item?.amount}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <p className='text-secondary pb-3'>
         Please note that these costs are approximate and can vary widely based
         on factors such as your chosen institution, location, lifestyle, and
