@@ -1,60 +1,13 @@
 import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { RxCross2 } from 'react-icons/rx';
-import useScrollHidden from '@/utils/hooks/useScrollHidden';
+import useNavbar from './views/useNavbar';
 const Navbar = () => {
-  const countries = [
-    {
-      icon: '/images/uk.png',
-      name: 'United Kingdom',
-    },
-    {
-      icon: '/images/us.png',
-      name: 'United States',
-    },
-    {
-      icon: '/images/canada.png',
-      name: 'Canada',
-    },
-    {
-      icon: '/images/australia.png',
-      name: 'Australia',
-    },
-    {
-      icon: '/images/ireland.png',
-      name: 'Ireland',
-    },
-    {
-      icon: '/images/australia.png',
-      name: 'Newzealand',
-    },
-  ];
-  const services = [
-    'Free Study Abroad Counselling',
-    'Free Visa Assistance Application',
-    'University Application Process',
-    'University Scholarships Guidance',
-    'Student Accomodation Services',
-  ];
-  const [isActive, setIsActive] = useState(false);
-  useScrollHidden(isActive);
-  const slideNav = () => {
-    var x: any = document.getElementById('navbar');
-    if (window.scrollY >= 100) {
-      if (x.classList == 'active') {
-        x.classList.remove('active');
-      } else {
-        x.classList.add('active');
-      }
-    } else {
-      x.classList.remove('active');
-    }
-  };
-  typeof window !== 'undefined' && window.addEventListener('scroll', slideNav);
+  const { router, setIsActive, services, countries, isActive } = useNavbar();
   return (
     <>
       <div
@@ -130,7 +83,11 @@ const Navbar = () => {
             <div className='text-black font-medium min-w-fit'>
               Course Finder
             </div>
-            <Button type='submit' className='min-w-fit'>
+            <Button
+              type='button'
+              className='min-w-fit'
+              onClick={() => router.push('/contact')}
+            >
               Contact Us
             </Button>
           </div>
@@ -154,28 +111,48 @@ const Navbar = () => {
           id='sideBar'
         >
           <div className='flex items-center justify-between mb-10'>
-            <Img
-              src={'/images/LogoDark.png'}
-              alt='phone'
-              width={150}
-              height={45}
-              isLocal
-              className='cursor-pointer'
-            />
+            <Link href='/'>
+              <Img
+                src={'/images/LogoDark.png'}
+                alt='phone'
+                width={150}
+                height={45}
+                isLocal
+                className='cursor-pointer'
+              />
+            </Link>
             <RxCross2
               size={24}
               onClick={() => setIsActive(false)}
               className='-mr-2'
             />
           </div>
-          <Link href='/services' className='group' id='nav-item'>
+          <div className='group' id='nav-item'>
             <div className='text-black font-medium flex items-center justify-between cursor-pointer min-w-fit'>
               Our Services
               <div className='group-hover:-rotate-180 duration-300'>
                 <IoIosArrowDown />
               </div>
             </div>
-          </Link>
+            <div
+              className='rounded-xl p-4 space-y-4 bg-white shadow-lg group-hover:block duration-300 hidden absolute'
+              id='dropdown'
+            >
+              <h4 className='text-xs text-gray-400 font-medium'>
+                OUR SERVICES
+              </h4>
+              {services?.map((item, idx) => (
+                <div key={idx}>
+                  <Link
+                    href='/services'
+                    className='text-sm text-black navItems'
+                  >
+                    {item}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
           <div className='group' id='nav-item'>
             <div className='text-black font-medium flex items-center justify-between cursor-pointer min-w-fit'>
               Destinations
@@ -199,13 +176,17 @@ const Navbar = () => {
                     height={24}
                     isLocal
                   />
-                  <h4 className='text-sm text-black'>{item?.name}</h4>
+                  <h4 className='text-sm text-black navItems'>{item?.name}</h4>
                 </div>
               ))}
             </div>
           </div>
           <div className='text-black font-medium min-w-fit'>Course Finder</div>
-          <Button type='submit' className='min-w-fit mt-5 flex mx-auto'>
+          <Button
+            type='button'
+            className='min-w-fit mt-5 flex mx-auto'
+            onClick={() => router.push('/contact')}
+          >
             Contact Us
           </Button>
         </div>

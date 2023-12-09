@@ -8,10 +8,26 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const ExploreDestinations = () => {
   const destinations = [
-    '/images/slide1.png',
-    '/images/slide2.png',
-    '/images/slide3.png',
-    '/images/slide4.png',
+    {
+      image: '/images/slide1.png',
+      icon: '/images/us.png',
+      country: 'The United States',
+    },
+    {
+      image: '/images/slide2.png',
+      icon: '/images/uk.png',
+      country: 'The United Kingdom',
+    },
+    {
+      image: '/images/slide3.png',
+      icon: '/images/canada.png',
+      country: 'Canada',
+    },
+    {
+      image: '/images/slide4.png',
+      icon: '/images/australia.png',
+      country: 'Australia',
+    },
   ];
   return (
     <div>
@@ -23,15 +39,32 @@ const ExploreDestinations = () => {
         nextArrow={<NextArrow />}
         prevArrow={<PrevArrow />}
       >
-        {destinations?.map((item) => (
-          <Img
-            src={item}
-            height={240}
-            width={300}
-            alt='heroImage'
-            isLocal
-            className='p-4'
-          />
+        {destinations?.map((item, idx) => (
+          <div key={idx} className='relative max-w-[300px] mb-4'>
+            <Img
+              src={item?.image}
+              height={240}
+              width={300}
+              alt='heroImage'
+              isLocal
+              className='p-1'
+            />
+            <div className='flex items-center gap-x-3 bottom-6 left-7 absolute'>
+              <Img
+                src={item?.icon}
+                height={32}
+                width={32}
+                alt='heroImage'
+                isLocal
+              />
+              <div className=''>
+                <div className='font-medium text-xs text-[#fafafa]'>
+                  Study in
+                </div>
+                <h4 className='text-[#fafafa] font-medium'>{item?.country}</h4>
+              </div>
+            </div>
+          </div>
         ))}
       </Slider>
     </div>

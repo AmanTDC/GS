@@ -8,10 +8,10 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const ExploreServices = () => {
   const destinations = [
-    '/images/services1.png',
-    '/images/services2.png',
-    '/images/services3.png',
-    '/images/services4.png',
+    { image: '/images/services1.png', name: 'Study Abroad Counselling' },
+    { image: '/images/services2.png', name: 'Visa Application Assistance' },
+    { image: '/images/services3.png', name: 'Scholarship Assistance' },
+    { image: '/images/services4.png', name: 'Student Accomodation' },
   ];
   return (
     <div>
@@ -21,15 +21,20 @@ const ExploreServices = () => {
         nextArrow={<NextArrow />}
         prevArrow={<PrevArrow />}
       >
-        {destinations?.map((item) => (
-          <Img
-            src={item}
-            height={240}
-            width={300}
-            alt='heroImage'
-            isLocal
-            className='p-4'
-          />
+        {destinations?.map((item, idx) => (
+          <div key={idx} className='relative'>
+            <Img
+              src={item?.image}
+              height={240}
+              width={300}
+              alt='heroImage'
+              isLocal
+              className='p-4'
+            />
+            <h4 className='text-[#fafafa] bottom-6 left-7 font-medium absolute'>
+              {item?.name}
+            </h4>
+          </div>
         ))}
       </Slider>
     </div>

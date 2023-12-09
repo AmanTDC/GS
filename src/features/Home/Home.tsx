@@ -14,7 +14,6 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-
       <div className='max-w-[1120px] mx-auto px-5 mb-[400px]'>
         <TopNav />
         <div className='mt-16 space-y-12'>
