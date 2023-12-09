@@ -42,6 +42,7 @@ const Navbar = () => {
             width={223}
             height={45}
             isLocal
+            className='cursor-pointer'
           />
         </Link>
         <div className='md:flex items-center lg:gap-x-10 gap-x-5 hidden'>
