@@ -1,3 +1,4 @@
+import StudyCard from '@/shared/Cards/StudyCard';
 import Img from '@/shared/Img';
 import React from 'react';
 
@@ -65,25 +66,11 @@ const UkIntakes = () => {
 
       <div className='grid lg:grid-cols-3 grid-cols-12 gap-5 place-items-center'>
         {intakes?.map((item, idx) => (
-          <div
-            className={`bg-gray-50 p-4 space-y-4 rounded-xl h-full max-w-[320px] mb-4 lg:col-span-1 ${
-              idx === 2 ? 'sm:col-span-12' : 'sm:col-span-6'
-            } col-span-12`}
-          >
-            <div className='flex items-center gap-x-3'>
-              <Img src={item?.icon} alt='pdf' height={48} width={48} isLocal />
-              <h4 className='text-black font-semibold text-lg'>
-                {item?.title}
-              </h4>
-            </div>
-            <div className='h-[1px] bg-gray-200'></div>
-            {item?.content?.map((item2, idx2) => (
-              <div className='space-y-2' key={idx2}>
-                <div className='text-blue-500 text-xs'>{item2?.key}</div>
-                <div className='text-black text-sm'>{item2?.value}</div>
-              </div>
-            ))}
-          </div>
+          <StudyCard
+            key={idx}
+            data={item}
+            onlyThreeItems={intakes?.length === 3 && idx === 2}
+          />
         ))}
       </div>
     </div>

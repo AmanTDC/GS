@@ -4,13 +4,13 @@ import Footer from '../Footer/Footer';
 
 interface IPageWraps {
   wrapperClass?: string;
-  hideNav?: string;
+  isBanner: boolean;
 }
 
 const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
   children,
   wrapperClass,
-  // hideNav,
+  isBanner,
 }) => {
   return (
     <Fragment>
@@ -18,7 +18,7 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
       <div className={`px-5 bg-white lg:px-[60px] ${wrapperClass}`}>
         {children}
       </div>
-      <Footer />
+      <Footer isBanner={isBanner} />
     </Fragment>
   );
 };

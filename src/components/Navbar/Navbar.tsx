@@ -1,7 +1,9 @@
 import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
+import Link from 'next/link';
 import React from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
+
 const Navbar = () => {
   const countries = [
     {
@@ -29,6 +31,7 @@ const Navbar = () => {
       name: 'Ireland',
     },
   ];
+
   return (
     <div className='bg-white px-5 gap-x-5 lg:px-[60px] shadow-2xl'>
       <div className='max-w-[1240px] flex items-center justify-between h-20'>
@@ -40,14 +43,14 @@ const Navbar = () => {
           isLocal
         />
         <div className='md:flex items-center lg:gap-x-10 gap-x-5 hidden'>
-          <div className='group' id='nav-item'>
+          <Link href='/services' className='group' id='nav-item'>
             <div className='text-black font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
               Our Services
               <div className='group-hover:-rotate-180 duration-300'>
                 <IoIosArrowDown />
               </div>
             </div>
-          </div>
+          </Link>
           <div className='group' id='nav-item'>
             <div className='text-black font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
               Destinations

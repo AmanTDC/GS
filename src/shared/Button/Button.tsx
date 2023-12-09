@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from 'react';
-import styles from './styles';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import styles from './styles';
 interface IButton {
   variant?: 'gray' | 'primary' | 'white' | 'transparent' | 'outline';
   className?: string;

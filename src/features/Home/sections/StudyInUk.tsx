@@ -1,3 +1,4 @@
+import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
 import React from 'react';
 
@@ -142,6 +143,16 @@ const StudyInUk = () => {
             <span className='text-red-600'>*</span>
           </p>
         </div>
+        <Button className='bg-blue-900 py-3 hover:!bg-blue-900/80 flex items-center justify-center gap-x-2' fullWidth>
+          Get Free Consultation
+          <Img
+            src={'/icons/Check.png'}
+            height={18}
+            width={18}
+            alt='heroImage'
+            isLocal
+          />
+        </Button>
       </div>
     </div>
   );

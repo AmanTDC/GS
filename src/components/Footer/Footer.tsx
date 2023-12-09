@@ -1,8 +1,9 @@
 import Banner from '@/features/Home/sections/Banner';
+import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
 import React from 'react';
 
-const Footer = () => {
+const Footer = ({ isBanner }: { isBanner?: boolean }) => {
   const socials = [
     '/icons/facebook.png',
     '/icons/insta.png',
@@ -10,10 +11,32 @@ const Footer = () => {
     '/icons/youtube.png',
     '/icons/linkedin.png',
   ];
+  const bannerData = {
+    image: '/images/banner.png',
+    title: 'Ready to Transform Your Career? Take the First Step Today',
+    description:
+      'Achieve Boundless Opportunities and fulfil your Dreams Abroad',
+    btnIcon: '/icons/send.png',
+    btnName: 'Get Free Consultation',
+  };
   return (
     <div className='bg-[#03060E] px-5 pt-16 text-white'>
       <div className='max-w-[1240px] mx-auto'>
-        <Banner />
+        {isBanner ? (
+          <Banner data={bannerData} />
+        ) : (
+          <div className='flex md:flex-row flex-col gap-5 justify-between mb-16 -mt-5'>
+            <div className='space-y-3'>
+              <h4 className='text-[32px] text-[#fafafa] font-semibold max-w-[500px]'>
+                Ready to Transform Your Career? Take the First Steps Today
+              </h4>
+              <p className='text-lg text-[#F9FAFB] pb-2'>
+                Achieve Boundless Opportunities and fulfil your Dreams Abroad
+              </p>
+            </div>
+            <Button className='sm:w-fit w-full md:mx-0 mx-auto'>Get Free Consultation</Button>
+          </div>
+        )}
         <div className='gap-x-5 sm:flex justify-between'>
           <div className='grid grid-cols-12 gap-x-5 gap-y-10'>
             <div className='lg:col-span-4 sm:col-span-8 col-span-12'>
@@ -98,8 +121,9 @@ const Footer = () => {
         <div className='h-[1px] bg-[#122353] mt-10'></div>
         <div className='flex sm:flex-row flex-col sm:justify-between items-center gap-y-4 py-7'>
           <div>
-            Copyright © 2023 <span className='text-blue-500'>Global Scholar</span>{' '}
-            , All Rights Reserved
+            Copyright © 2023{' '}
+            <span className='text-blue-500'>Global Scholar</span> , All Rights
+            Reserved
           </div>
           <div className='flex gap-x-3'>
             {socials?.map((item, idx) => (

@@ -3,7 +3,7 @@ import Home from '@/features/Home/Home';
 
 export default function Index() {
   return (
-    <PageWrapper wrapperClass='!px-0 lg:!px-0'>
+    <PageWrapper isBanner wrapperClass='!px-0 lg:!px-0'>
       <Home />
     </PageWrapper>
   );
