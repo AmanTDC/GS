@@ -4,7 +4,7 @@ import Footer from '../Footer/Footer';
 
 interface IPageWraps {
   wrapperClass?: string;
-  isBanner: boolean;
+  isBanner?: boolean;
 }
 
 const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
