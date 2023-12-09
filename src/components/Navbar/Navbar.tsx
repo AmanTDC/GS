@@ -35,13 +35,15 @@ const Navbar = () => {
   return (
     <div className='bg-white px-5 gap-x-5 lg:px-[60px] shadow-2xl'>
       <div className='max-w-[1240px] flex items-center justify-between h-20'>
-        <Img
-          src={'/images/LogoDark.png'}
-          alt='phone'
-          width={223}
-          height={45}
-          isLocal
-        />
+        <Link href='/'>
+          <Img
+            src={'/images/LogoDark.png'}
+            alt='phone'
+            width={223}
+            height={45}
+            isLocal
+          />
+        </Link>
         <div className='md:flex items-center lg:gap-x-10 gap-x-5 hidden'>
           <Link href='/services' className='group' id='nav-item'>
             <div className='text-black font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>

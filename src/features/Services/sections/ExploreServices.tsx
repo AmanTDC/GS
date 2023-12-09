@@ -9,9 +9,9 @@ import 'slick-carousel/slick/slick-theme.css';
 const ExploreServices = () => {
   const destinations = [
     '/images/services1.png',
-    '/images/services1.png',
     '/images/services2.png',
-    '/images/services2.png',
+    '/images/services3.png',
+    '/images/services4.png',
   ];
   return (
     <div>
