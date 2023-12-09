@@ -1,10 +1,11 @@
 import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { RxCross2 } from 'react-icons/rx';
+import useScrollHidden from '@/utils/hooks/useScrollHidden';
 const Navbar = () => {
   const countries = [
     {
@@ -33,9 +34,26 @@ const Navbar = () => {
     },
   ];
   const [isActive, setIsActive] = useState(false);
+  useScrollHidden(isActive);
+  const slideNav = () => {
+    var x: any = document.getElementById('navbar');
+    if (window.scrollY >= 100) {
+      if (x.classList == 'active') {
+        x.classList.remove('active');
+      } else {
+        x.classList.add('active');
+      }
+    } else {
+      x.classList.remove('active');
+    }
+  };
+  typeof window !== 'undefined' && window.addEventListener('scroll', slideNav);
   return (
     <>
-      <div className='bg-white px-5 gap-x-5 lg:px-[60px] shadow-2xl'>
+      <div
+        className='bg-white z-[999] px-5 gap-x-5 lg:px-[60px] navbar top-0 sticky shadow-[0px_28px_61px_0px_#0000000D,0px_111px_111px_0px_#0000000A,0px_250px_150px_0px_#00000008,0px_444px_178px_0px_#00000003,1px_694px_194px_0px_#00000000]'
+        id='navbar'
+      >
         <div className='max-w-[1240px] flex items-center justify-between h-20'>
           <Link href='/'>
             <Img
@@ -101,14 +119,30 @@ const Navbar = () => {
       </div>
       {isActive && (
         <div
-          className='bg-white h-screen w-[60%] space-y-6 py-5 px-4 absolute top-0 right-0'
+          className='bg-[rgb(0,0,0,0.6)] absolute h-full w-screen top-0 z-[999]'
+          onClick={() => setIsActive(false)}
+        />
+      )}
+      {isActive && (
+        <div
+          className='bg-white h-screen w-[300px] space-y-6 py-5 px-4 fixed top-0'
           id='sideBar'
         >
-          <RxCross2
-            size={24}
-            onClick={() => setIsActive(false)}
-            className='absolute right-2'
-          />
+          <div className='flex items-center justify-between mb-10'>
+            <Img
+              src={'/images/LogoDark.png'}
+              alt='phone'
+              width={150}
+              height={45}
+              isLocal
+              className='cursor-pointer'
+            />
+            <RxCross2
+              size={24}
+              onClick={() => setIsActive(false)}
+              className='-mr-2'
+            />
+          </div>
           <Link href='/services' className='group' id='nav-item'>
             <div className='text-black font-medium flex items-center justify-between cursor-pointer min-w-fit'>
               Our Services
@@ -146,7 +180,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className='text-black font-medium min-w-fit'>Course Finder</div>
-          <Button type='submit' className='min-w-fit mt-5 self-center'>
+          <Button type='submit' className='min-w-fit mt-5 flex mx-auto'>
             Contact Us
           </Button>
         </div>

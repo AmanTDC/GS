@@ -10,7 +10,7 @@
   font-family: JakartaSans;
 }
 html {
-  scroll-padding-top: 70px; /* height of your navbar */
+  scroll-padding-top: 150px; /* height of your navbar */
 }
 ::-webkit-scrollbar {
   width: 0;
@@ -107,7 +107,7 @@ td {
 @keyframes sideNav {
   0% {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
 
   100% {
@@ -118,4 +118,25 @@ td {
 #sideBar {
   animation: sideNav 0.4s linear forwards;
   z-index: 999;
+}
+
+.navbar.active {
+  animation: fadeNav 0.4s linear forwards;
+}
+
+.navbar {
+  transition: all 0.9s;
+  opacity: 1;
+}
+
+@keyframes fadeNav {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

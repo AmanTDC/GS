@@ -4,7 +4,7 @@ import React from 'react';
 const TopNav = () => {
   return (
     <div
-      className='overflow-x-scroll text-secondary font-medium list-none flex justify-between top-0 sticky bg-white z-[60]'
+      className='overflow-x-scroll text-secondary font-medium list-none flex justify-between top-20 sticky bg-white z-[1]'
       id='topnav'
     >
       <Link

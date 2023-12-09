@@ -24,7 +24,7 @@ const Banner = ({
         width={361}
         alt='heroImage'
         isLocal
-        className='-mt-24 max-[1100px]:w-[300px] max-[1100px]:h-[296px]'
+        className='-mt-24 max-[1100px]:w-[300px] max-[1100px]:h-[296px] lg:block hidden'
       />
       <div
         className={`space-y-4 max-w-[591px] w-full py-6 md:px-0 px-4 ${
@@ -36,7 +36,9 @@ const Banner = ({
         >
           {data?.title}
         </h4>
-        <p className={`text-lg text-[#F9FAFB] font-medium pb-2 ${styleDescription}`}>
+        <p
+          className={`text-lg text-[#F9FAFB] font-medium pb-2 ${styleDescription}`}
+        >
           {data?.description}
         </p>
         <div className='rounded-full w-full bg-white flex items-center relative h-16'>
