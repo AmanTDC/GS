@@ -53,7 +53,7 @@ const GetStarted = () => {
       <Banner
         data={bannerData}
         imageRight
-        className='bg-[linear-gradient(0deg,#BADBFB_0%,#FFFFFF_100%)] !mt-16 !mx-0'
+        className='bg-[linear-gradient(0deg,#A8DADC_0%,#F1FAEE_100%)] !mt-16 !mx-0'
         styleTitle='text-black'
         styleDescription='text-black'
       />

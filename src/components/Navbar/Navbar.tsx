@@ -26,12 +26,19 @@ const Navbar = () => {
     },
     {
       icon: '/images/ireland.png',
-      name: 'Newzealand',
-    },
-    {
-      icon: '/images/ireland.png',
       name: 'Ireland',
     },
+    {
+      icon: '/images/australia.png',
+      name: 'Newzealand',
+    },
+  ];
+  const services = [
+    'Free Study Abroad Counselling',
+    'Free Visa Assistance Application',
+    'University Application Process',
+    'University Scholarships Guidance',
+    'Student Accomodation Services',
   ];
   const [isActive, setIsActive] = useState(false);
   useScrollHidden(isActive);
@@ -73,6 +80,19 @@ const Navbar = () => {
                   <IoIosArrowDown />
                 </div>
               </div>
+              <div
+                className='rounded-xl p-4 space-y-4 bg-white shadow-lg group-hover:block duration-300 hidden absolute'
+                id='dropdown'
+              >
+                <h4 className='text-xs text-gray-400 font-medium'>
+                  OUR SERVICES
+                </h4>
+                {services?.map((item, idx) => (
+                  <h4 className='text-sm text-black navItems' key={idx}>
+                    {item}
+                  </h4>
+                ))}
+              </div>
             </Link>
             <div className='group' id='nav-item'>
               <div className='text-black font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
@@ -89,7 +109,10 @@ const Navbar = () => {
                   TOP DESTINATIONS TO STUDY
                 </h4>
                 {countries?.map((item, idx) => (
-                  <div key={idx} className='flex gap-x-3 items-center'>
+                  <div
+                    key={idx}
+                    className='flex gap-x-3 items-center cursor-pointer'
+                  >
                     <Img
                       src={item?.icon}
                       alt='phone'
@@ -97,7 +120,9 @@ const Navbar = () => {
                       height={24}
                       isLocal
                     />
-                    <h4 className='text-sm text-black'>{item?.name}</h4>
+                    <h4 className='text-sm text-black navItems'>
+                      {item?.name}
+                    </h4>
                   </div>
                 ))}
               </div>

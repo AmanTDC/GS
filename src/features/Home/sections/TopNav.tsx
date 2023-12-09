@@ -7,25 +7,13 @@ const TopNav = () => {
       className='overflow-x-scroll text-secondary font-medium list-none flex justify-between top-20 sticky bg-white z-[1]'
       id='topnav'
     >
-      <Link
-        href='#first'
-        data-to-scrollspy-id='first'
-        className='flex items-center'
-      >
+      <Link href='#first' data-to-scrollspy-id='first'>
         Study in the UK
       </Link>
-      <Link
-        href='#second'
-        data-to-scrollspy-id='second'
-        className='flex items-center'
-      >
+      <Link href='#second' data-to-scrollspy-id='second'>
         Admission Requirements
       </Link>
-      <Link
-        href='#third'
-        data-to-scrollspy-id='third'
-        className='flex items-center'
-      >
+      <Link href='#third' data-to-scrollspy-id='third'>
         Intakes
       </Link>
       <Link href='#fourth' data-to-scrollspy-id='fourth'>

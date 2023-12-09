@@ -11,7 +11,7 @@ import ExploreServices from './sections/ExploreServices';
 
 const Services = () => {
   return (
-    <div>
+    <>
       <HeroSection />
       <div className='max-w-[1120px] mx-auto lg:px-0 px-5'>
         <TopNav />
@@ -25,7 +25,7 @@ const Services = () => {
           </ScrollSpy>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

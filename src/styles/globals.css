@@ -25,6 +25,20 @@ html {
 .active-scroll-spy {
   border-bottom: 2px solid #3b82f6;
 }
+.navItems:after {
+  display: block;
+  content: '';
+  border-bottom: solid 3px #3b82f6;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.navItems:hover:after {
+  transform: scaleX(1);
+}
+.navItems:after {
+  transform-origin: 0% 50%;
+}
+
 .animate-accordion {
   animation: accordion 0.3s ease;
 }
