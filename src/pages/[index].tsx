@@ -462,15 +462,220 @@ export default function Index() {
         },
       ],
     },
+    {
+      country: 'CANADA',
+      studyIn: {
+        description:
+          'Embark on a rewarding educational journey in Canada, a country renowned for its welcoming communities, breathtaking landscapes, and world-class education. Immerse yourself in a multicultural environment and enjoy the benefits of quality education and vibrant student life.',
+        data: [
+          {
+            title: 'High-Quality Education:',
+            description:
+              'Canada is home to top-ranking universities and colleges known for their academic excellence and research opportunities.',
+          },
+          {
+            title: 'Diverse Programs:',
+            description:
+              'Choose from a diverse range of programs, including STEM fields, arts, business, and more, tailored to your career goals.',
+          },
+          {
+            title: 'Safe and Inclusive Environment:',
+            description:
+              'Experience a safe and inclusive environment that encourages cultural exchange and personal growth.',
+          },
+          {
+            title: 'Post-Graduation Work Opportunities:',
+            description:
+              'Benefit from post-graduation work permits, allowing you to gain valuable work experience after completing your studies.',
+          },
+        ],
+      },
+      visaRequirements: {
+        description:
+          'Understanding the student visa process is crucial for studying in Canada. The following table provides key details:',
+        data: [
+          {
+            title: 'Study Permit',
+            requirements: [
+              'International Students',
+              'Up to 6 months before the program starts',
+              'Up to 30 days before the program starts',
+              'Letter of acceptance, proof of funds, visa application, valid passport',
+            ],
+          },
+        ],
+      },
+      intakes: {
+        description:
+          'Universities and colleges in Canada typically follow two major intakes:',
+        data: [
+          {
+            intake: 'Fall (September)',
+            admission: 'November-January',
+          },
+          {
+            intake: 'Winter (January)',
+            admission: 'May-July',
+          },
+        ],
+      },
+      costOfStudy: {
+        title: 'Cost of Studying in Canada for International Students',
+        description:
+          'Understanding the cost of studying in Canada is essential. The table below provides an overview:',
+        tableHeading: ['Degree', 'Cost in CAD (Per Year)'],
+        tableBody: [
+          {
+            col1: 'Study Permit',
+            col2: 'Application fee: CAD 150, Biometrics fee: CAD 85',
+          },
+          {
+            col1: "Undergraduate (Bachelor's)",
+            col2: 'CAD 20,000 - CAD 40,000',
+          },
+          {
+            col1: "Postgraduate (Master's)",
+            col2: 'CAD 15,000 - CAD 30,000',
+          },
+          {
+            col1: 'PhD',
+            col2: 'CAD 7,000 - CAD 20,000',
+          },
+        ],
+      },
+      livingExpenses: {
+        title: 'Canada Living Expenses for International Students',
+        description:
+          'Managing living expenses is crucial for a comfortable stay in Canada. The table below breaks down monthly costs:',
+        tableHeading: [
+          'Expenses',
+          'Cost in CAD (Per Month)',
+          'Cost in INR (Per Month)',
+        ],
+        tableBody: [
+          {
+            col1: 'Accommodation',
+            col2: 'CAD 800 - CAD 1,500',
+            col3: '₹47,000 - ₹88,000',
+          },
+          {
+            col1: 'Food',
+            col2: 'CAD 300 - CAD 500',
+            col3: '₹17,600 - ₹29,400',
+          },
+          {
+            col1: 'Transportation',
+            col2: 'CAD 50 - CAD 100',
+            col3: '₹2,900 - ₹5,900',
+          },
+          {
+            col1: 'Health Insurance',
+            col2: 'CAD 50 - CAD 100',
+            col3: '₹2,900 - ₹5,900',
+          },
+          {
+            col1: 'Personal Expenses',
+            col2: 'CAD 100 - CAD 200',
+            col3: '₹5,900 - ₹11,800',
+          },
+        ],
+      },
+      careerOpportunity: {
+        title: 'Career Opportunities in Canada for International Students',
+        description:
+          'Canada offers diverse career opportunities for international students. The table below highlights some job profiles and top employers:',
+        tableHeading: [
+          'Job Profile',
+          'Description & Opportunities',
+          'Top Employers',
+        ],
+        tableBody: [
+          {
+            col1: 'Information Technology',
+            col2: 'Opportunities in software development, data analysis, and cybersecurity.',
+            col3: 'Shopify, CGI, BlackBerry',
+          },
+          {
+            col1: 'Healthcare',
+            col2: 'Roles in nursing, pharmaceuticals, and medical research.',
+            col3: 'Royal Bank of Canada, Toronto-Dominion Bank, Ernst & Young',
+          },
+          {
+            col1: 'Engineering',
+            col2: 'Opportunities in nursing, research, and pharmaceuticals.',
+            col3: 'Mayo Clinic, Cleveland Clinic, Pfizer',
+          },
+          {
+            col1: 'Engineering',
+            col2: 'Roles in civil, mechanical, and software engineering.',
+            col3: 'SNC-Lavalin, Bombardier, Shopify',
+          },
+          {
+            col1: 'Renewable Energy',
+            col2: 'Growth in the sustainable energy sector with opportunities in solar and wind energy.',
+            col3: 'Brookfield Renewable, TransAlta, Innergex Renewable Energy',
+          },
+        ],
+      },
+      scholarships: {
+        title: 'Canada Scholarships for International Students',
+        description:
+          'Canada offers various scholarships to support international students in their academic pursuits. The table below provides details:',
+        tableHeading: [
+          'Name of Scholarship',
+          'Description',
+          'Eligibility',
+          'Amount in CAD',
+        ],
+        tableBody: [
+          {
+            col1: 'Canada Graduate Scholarships',
+            col2: 'Merit-based scholarships for graduate students',
+            col3: 'Academic excellence, research potential',
+            col4: 'Varies based on program',
+          },
+          {
+            col1: 'Vanier Canada Graduate Scholarships',
+            col2: 'Scholarships for doctoral students demonstrating leadership skills',
+            col3: 'Academic excellence, leadership qualities',
+            col4: '$50,000 per year',
+          },
+          {
+            col1: 'Lester B. Pearson International Scholarship',
+            col2: 'Full tuition and living expenses for exceptional students',
+            col3: 'Academic achievement, leadership potential',
+            col4: 'Full tuition, living expenses',
+          },
+        ],
+      },
+      faqs: [
+        {
+          title: 'How much does it cost to study in Canada?',
+          description:
+            'Costs vary based on factors such as the chosen institution, location, and the level of study.',
+        },
+        {
+          title: 'What are the student visa requirements for Canada?',
+          description:
+            'Requirements include a valid passport, letter of acceptance, proof of funds, and a visa application. Refer to the "Student Visa Requirements for Canada" section for a detailed breakdown.',
+        },
+        {
+          title: 'When are the intakes in Canada?',
+          description:
+            'The main intakes are in Fall (September) and Winter (January). Refer to the "Intakes in Canada" section for details.',
+        },
+      ],
+    },
   ];
   const router = useRouter();
   const [pageData, setPageData] = useState<any>();
-  console.log({ router: router });
   useEffect(() => {
     router?.query?.index === 'uk'
       ? setPageData(data[0])
       : router?.query?.index === 'usa'
       ? setPageData(data[1])
+      : router?.query?.index === 'canada'
+      ? setPageData(data[2])
       : null;
   }, [router]);
   return (

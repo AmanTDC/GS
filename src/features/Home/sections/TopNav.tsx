@@ -8,7 +8,7 @@ const TopNav = ({ countryName }: { countryName: string }) => {
       id='topnav'
     >
       <Link href='#1' data-to-scrollspy-id='1'>
-        Study in the {countryName?.toUpperCase()}
+        Study in {countryName?.toUpperCase()}
       </Link>
       <Link href='#2' data-to-scrollspy-id='2'>
         Admission Requirements
