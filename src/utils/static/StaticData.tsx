@@ -1,6 +1,7 @@
 export const StaticData = [
   {
     country: 'The United Kingdom',
+    heroImage:'/images/ukHero.svg',
     studyIn: {
       description:
         'Welcome to the UK - a destination that hosts over 500,000 international students annually. Immerse yourself in pioneering universities, acquire skills sought by top global employers, and experience the culture that shaped the modern world. Join a diverse community of changemakers.',
@@ -250,6 +251,7 @@ export const StaticData = [
   },
   {
     country: 'USA',
+    heroImage:'/images/usHero.svg',
     studyIn: {
       description:
         'Embark on a transformative academic journey in the United States, a global education hub that attracts students from around the world. Immerse yourself in diverse cultures, cutting-edge research, and a dynamic learning environment.',
@@ -458,6 +460,7 @@ export const StaticData = [
   },
   {
     country: 'CANADA',
+    heroImage:'/images/canadaHero.svg',
     studyIn: {
       description:
         'Embark on a rewarding educational journey in Canada, a country renowned for its welcoming communities, breathtaking landscapes, and world-class education. Immerse yourself in a multicultural environment and enjoy the benefits of quality education and vibrant student life.',
@@ -662,6 +665,7 @@ export const StaticData = [
   },
   {
     country: 'AUSTRALIA',
+    heroImage:'/images/australiaHero.svg',
     studyIn: {
       description:
         "Welcome to Australia, a leading destination for international students. Immerse yourself in a world-class education system, vibrant student life, and a rich cultural experience. Whether you're pursuing business, engineering, health sciences, or other fields, Australia offers a diverse and rewarding academic journey.",
@@ -833,6 +837,7 @@ export const StaticData = [
   },
   {
     country: 'IRELAND',
+    heroImage:'/images/irelandHero.svg',
     studyIn: {
       description:
         'Embark on a distinctive academic journey in Ireland, a country known for its rich cultural heritage, warm hospitality, and excellent education system. Immerse yourself in a vibrant academic community and explore the unique experiences Ireland has to offer.',
@@ -1026,6 +1031,7 @@ export const StaticData = [
   },
   {
     country: 'NEW-ZEALAND',
+    heroImage:'/images/australiaHero.svg',
     studyIn: {
       description:
         'Discover the wonders of studying in New Zealand, a country known for its stunning landscapes, friendly communities, and world-class education. Immerse yourself in a unique learning experience that combines academic excellence with adventure.',

@@ -4,7 +4,13 @@ import { STATS_SECTION } from '@/utils/constants/slickSliderSettings';
 import React from 'react';
 import Slider from 'react-slick';
 
-const HeroSection = ({ country }: { country: string }) => {
+const HeroSection = ({
+  country,
+  image,
+}: {
+  country: string;
+  image: string;
+}) => {
   const statsCard = [
     {
       icon: '/icons/partner.png',
@@ -64,7 +70,7 @@ const HeroSection = ({ country }: { country: string }) => {
             </div>
           </div>
           <Img
-            src={'/images/heroImage.svg'}
+            src={image}
             height={456}
             width={366}
             alt='heroImage'
