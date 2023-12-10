@@ -111,7 +111,7 @@ table > tbody > tr {
 }
 #costOfStudy > thead > tr,
 #costOfStudy > tbody > tr {
-  @apply [&>*:first-child]:w-[345px];
+  @apply [&>*:first-child]:md:w-[345px] [&>*:first-child]:w-[200px];
 }
 table th,
 td {

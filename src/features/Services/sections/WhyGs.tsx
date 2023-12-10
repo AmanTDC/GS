@@ -2,7 +2,7 @@ import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
 import React from 'react';
 
-const WhyGs = () => {
+const WhyGs = ({ index }: { index: string }) => {
   const WhyGs = [
     {
       title: 'Excellence in Education Consulting',
@@ -22,7 +22,7 @@ const WhyGs = () => {
   ];
 
   return (
-    <div className='gap-8 grid grid-cols-5' id='first'>
+    <div className='gap-8 grid grid-cols-5' id={index}>
       <div className='space-y-3 md:col-span-3 col-span-5'>
         <h4 className='text-[32px] font-semibold mb-2'>
           Why Choose GlobalScholar?

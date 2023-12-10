@@ -7,40 +7,49 @@ const useNavbar = () => {
     {
       icon: '/images/uk.png',
       name: 'United Kingdom',
-      link:'/uk'
+      link: '/uk',
     },
     {
       icon: '/images/us.png',
       name: 'United States',
-      link:'/usa'
+      link: '/usa',
     },
     {
       icon: '/images/canada.png',
       name: 'Canada',
-      link:'/canada'
+      link: '/canada',
     },
     {
       icon: '/images/australia.png',
       name: 'Australia',
-      link:'/australia'
+      link: '/australia',
     },
     {
       icon: '/images/ireland.png',
       name: 'Ireland',
-      link:'/ireland'
+      link: '/ireland',
     },
     {
       icon: '/images/australia.png',
       name: 'Newzealand',
-      link:'/nz'
+      link: '/nz',
     },
   ];
   const services = [
-    'Free Study Abroad Counselling',
-    'Free Visa Assistance Application',
-    'University Application Process',
-    'University Scholarships Guidance',
-    'Student Accomodation Services',
+    { name: 'Free Study Abroad Counselling', link: '/services/study-abroad' },
+    {
+      name: 'Free Visa Assistance Application',
+      link: '/services/visa',
+    },
+    {
+      name: 'University Application Process',
+      link: '/services/application',
+    },
+    {
+      name: 'University Scholarships Guidance',
+      link: '/services/scholarships',
+    },
+    { name: 'Student Accomodation Services', link: '/services/accomodation' },
   ];
   const [isActive, setIsActive] = useState(false);
   useScrollHidden(isActive);

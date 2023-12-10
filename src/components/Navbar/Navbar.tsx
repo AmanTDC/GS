@@ -26,7 +26,7 @@ const Navbar = () => {
             />
           </Link>
           <div className='md:flex items-center lg:gap-x-10 gap-x-5 hidden'>
-            <Link href='/services' className='group' id='nav-item'>
+            <div className='group' id='nav-item'>
               <div className='text-black font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
                 Our Services
                 <div className='group-hover:-rotate-180 duration-300'>
@@ -41,12 +41,17 @@ const Navbar = () => {
                   OUR SERVICES
                 </h4>
                 {services?.map((item, idx) => (
-                  <h4 className='text-sm text-black navItems' key={idx}>
-                    {item}
-                  </h4>
+                  <div key={idx}>
+                    <Link
+                      href={item?.link}
+                      className='text-sm text-black navItems'
+                    >
+                      {item?.name}
+                    </Link>
+                  </div>
                 ))}
               </div>
-            </Link>
+            </div>
             <div className='group' id='nav-item'>
               <div className='text-black font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
                 Destinations
@@ -145,10 +150,10 @@ const Navbar = () => {
               {services?.map((item, idx) => (
                 <div key={idx}>
                   <Link
-                    href='/services'
+                    href={item?.link}
                     className='text-sm text-black navItems'
                   >
-                    {item}
+                    {item?.name}
                   </Link>
                 </div>
               ))}

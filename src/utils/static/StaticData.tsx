@@ -1,7 +1,7 @@
-export const StaticData = [
+export const CountryData = [
   {
     country: 'The United Kingdom',
-    heroImage:'/images/ukHero.svg',
+    heroImage: '/images/ukHero.svg',
     studyIn: {
       description:
         'Welcome to the UK - a destination that hosts over 500,000 international students annually. Immerse yourself in pioneering universities, acquire skills sought by top global employers, and experience the culture that shaped the modern world. Join a diverse community of changemakers.',
@@ -251,7 +251,7 @@ export const StaticData = [
   },
   {
     country: 'USA',
-    heroImage:'/images/usHero.svg',
+    heroImage: '/images/usHero.svg',
     studyIn: {
       description:
         'Embark on a transformative academic journey in the United States, a global education hub that attracts students from around the world. Immerse yourself in diverse cultures, cutting-edge research, and a dynamic learning environment.',
@@ -460,7 +460,7 @@ export const StaticData = [
   },
   {
     country: 'CANADA',
-    heroImage:'/images/canadaHero.svg',
+    heroImage: '/images/canadaHero.svg',
     studyIn: {
       description:
         'Embark on a rewarding educational journey in Canada, a country renowned for its welcoming communities, breathtaking landscapes, and world-class education. Immerse yourself in a multicultural environment and enjoy the benefits of quality education and vibrant student life.',
@@ -665,7 +665,7 @@ export const StaticData = [
   },
   {
     country: 'AUSTRALIA',
-    heroImage:'/images/australiaHero.svg',
+    heroImage: '/images/australiaHero.svg',
     studyIn: {
       description:
         "Welcome to Australia, a leading destination for international students. Immerse yourself in a world-class education system, vibrant student life, and a rich cultural experience. Whether you're pursuing business, engineering, health sciences, or other fields, Australia offers a diverse and rewarding academic journey.",
@@ -837,7 +837,7 @@ export const StaticData = [
   },
   {
     country: 'IRELAND',
-    heroImage:'/images/irelandHero.svg',
+    heroImage: '/images/irelandHero.svg',
     studyIn: {
       description:
         'Embark on a distinctive academic journey in Ireland, a country known for its rich cultural heritage, warm hospitality, and excellent education system. Immerse yourself in a vibrant academic community and explore the unique experiences Ireland has to offer.',
@@ -1031,7 +1031,7 @@ export const StaticData = [
   },
   {
     country: 'NEW-ZEALAND',
-    heroImage:'/images/australiaHero.svg',
+    heroImage: '/images/australiaHero.svg',
     studyIn: {
       description:
         'Discover the wonders of studying in New Zealand, a country known for its stunning landscapes, friendly communities, and world-class education. Immerse yourself in a unique learning experience that combines academic excellence with adventure.',
@@ -1222,3 +1222,297 @@ export const StaticData = [
     ],
   },
 ];
+
+export const ServicesData = {
+  studyAbroad: {
+    heroSection: {
+      title: [
+        'Free ',
+        'Study Abroad Counseling',
+        ' - Your Path to Global Education',
+      ],
+      description:
+        'At GlobalScholar, our mission is to guide you on a journey that transcends borders and opens doors to a world of opportunities. With our FREE Study Abroad Counseling service, we are your trusted partner in making your dreams of studying abroad a reality.',
+      image: '/images/abroadHero.svg',
+    },
+    whatToExpect: {
+      title: 'What to Expect from Our FREE Study Abroad Counseling:',
+      data: [
+        {
+          icon: '/icons/abroad1.png',
+          title: 'In-Depth Consultations:',
+          description:
+            'Our experienced counselors will engage in in-depth discussions with you, helping you select the perfect destination and institution that matches your aspirations.',
+        },
+        {
+          icon: '/icons/abroad2.png',
+          title: 'Visa Guidance:',
+          description:
+            'Navigating the visa application process can be daunting. We provide step-by-step guidance on visa applications, ensuring a smooth and hassle-free experience.',
+        },
+        {
+          icon: '/icons/abroad3.png',
+          title: 'Document Preparation',
+          description:
+            'We guide you through the documentation required for your university application, ensuring that everything is in order.',
+        },
+        {
+          icon: '/icons/abroad4.png',
+          title: 'English Proficiency Tests',
+          description:
+            "If English isn't your native language, we assist you in preparing for language proficiency exams like IELTS and TOEFL.",
+        },
+        {
+          icon: '/icons/abroad5.png',
+          title: 'Scholarship Assistance',
+          description:
+            'We keep you informed about scholarship opportunities and help you with the application process, making education abroad more affordable.',
+        },
+        {
+          icon: '/icons/abroad6.png',
+          title: 'Post-Departure Support',
+          description:
+            "Our commitment to your success doesn't end with your departure. We offer ongoing support even after you've arrived at your dream university.",
+        },
+      ],
+    },
+    howToApply: {
+      title: 'How to Apply for a Student Visa?',
+      description:
+        'Applying for a student visa involves several steps, which may vary slightly depending on the country you plan to study in. However, the core requirements remain relatively consistent across most cases. On a general level, you will need to provide evidence of the following:',
+      data: [
+        {
+          title: 'Enrollment in a Recognized University:',
+          description:
+            'You must demonstrate that you have secured admission to a recognized university in your chosen study destination.',
+        },
+        {
+          title: 'Financial Capability:',
+          description:
+            'You need to prove that you have the financial means to cover the expenses of your studies, including tuition fees, living expenses, and airfare.',
+        },
+        {
+          title: 'Passport and Photographs:',
+          description:
+            'Ensure you have passport-size photographs and a valid passport with a minimum validity of at least six months beyond your intended period of stay in the country.',
+        },
+        {
+          title: 'Language Proficiency and Health Requirements:',
+          description:
+            'Depending on the country, you may be required to provide evidence of English proficiency, undergo health checkups, and submit a police report.',
+        },
+      ],
+    },
+  },
+  visa: {
+    heroSection: {
+      title: [
+        'Seamlessly Navigate Your Study Abroad Journey-',
+        'Visa Assistance',
+        ' Application',
+      ],
+      description:
+        'At GlobalScholar, our mission is to guide you on a journey that transcends borders and opens doors to a world of opportunities. With our FREE Study Abroad Counseling service, we are your trusted partner in making your dreams of studying abroad a reality.',
+      image: '/images/visaHero.svg',
+    },
+    whatToExpect: {
+      title: 'What to Expect from Our FREE Study Abroad Counseling:',
+      data: [
+        {
+          icon: '/icons/abroad1.png',
+          title: 'In-Depth Visa Assessment:',
+          description:
+            'We begin by conducting a thorough assessment of your eligibility for a student visa. This assessment helps us identify potential challenges and requirements.',
+        },
+        {
+          icon: '/icons/abroad2.png',
+          title: 'Document Checklist',
+          description:
+            'We provide you with a comprehensive checklist of the documents required for your visa application. This ensures that you are well-prepared.',
+        },
+        {
+          icon: '/icons/abroad3.png',
+          title: 'Form Filling Assistance:',
+          description:
+            'Visa application forms can be daunting. We guide you through the entire form-filling process, ensuring that every detail is accurate and complete.',
+        },
+        {
+          icon: '/icons/abroad4.png',
+          title: 'Interview Preparation:',
+          description:
+            'If an interview is required as part of the visa application process, we offer tips and guidance to help you succeed.',
+        },
+        {
+          icon: '/icons/abroad5.png',
+          title: 'Timely Submission:',
+          description:
+            'We help you submit your visa application on time, making sure you meet all deadlines.',
+        },
+        {
+          icon: '/icons/abroad6.png',
+          title: 'Continuous Support:',
+          description:
+            "Our commitment to your success doesn't stop after the application is submitted. We provide ongoing support as you await your visa decision.",
+        },
+      ],
+    },
+    howToApply: {
+      title: 'How to Apply for a Student Visa?',
+      description:
+        'Applying for a student visa involves several steps, which may vary slightly depending on the country you plan to study in. However, the core requirements remain relatively consistent across most cases. On a general level, you will need to provide evidence of the following:',
+      data: [
+        {
+          title: 'Enrollment in a Recognized University:',
+          description:
+            'You must demonstrate that you have secured admission to a recognized university in your chosen study destination.',
+        },
+        {
+          title: 'Financial Capability:',
+          description:
+            'You need to prove that you have the financial means to cover the expenses of your studies, including tuition fees, living expenses, and airfare.',
+        },
+        {
+          title: 'Passport and Photographs:',
+          description:
+            'Ensure you have passport-size photographs and a valid passport with a minimum validity of at least six months beyond your intended period of stay in the country.',
+        },
+        {
+          title: 'Language Proficiency and Health Requirements:',
+          description:
+            'Depending on the country, you may be required to provide evidence of English proficiency, undergo health checkups, and submit a police report.',
+        },
+      ],
+    },
+  },
+  application: {
+    heroSection: {
+      title: [
+        'University Application Process',
+        ' - Your Gateway to World-Class Education',
+      ],
+      description:
+        "At GlobalScholar, we're here to make the university application process seamless, ensuring that you set foot in the institution of your dreams. Our commitment is to guide you through this journey, making your academic aspirations a reality.",
+      image: '/images/applicationHero.svg',
+    },
+    whatToExpect: {
+      title:
+        'What to Expect from Our University Application Process Assistance:',
+      data: [
+        {
+          icon: '/icons/abroad1.png',
+          title: 'Course and University Selection:',
+          description:
+            'We help you choose the right course and university based on your academic background, interests, and career aspirations.',
+        },
+        {
+          icon: '/icons/abroad2.png',
+          title: 'Application Preparation:',
+          description:
+            'We guide you through the application documentation process, ensuring that your application is complete and compelling.',
+        },
+        {
+          icon: '/icons/abroad3.png',
+          title: 'Resume Building:',
+          description:
+            'We assist you in creating a strong resume or curriculum vitae that showcases your achievements and qualifications.',
+        },
+        {
+          icon: '/icons/abroad4.png',
+          title: 'Statement of Purpose (SOP) Assistance:',
+          description:
+            'We offer guidance on writing a compelling SOP that reflects your motivation and goals.',
+        },
+        {
+          icon: '/icons/abroad5.png',
+          title: 'Recommendation Letters (LORs):',
+          description:
+            'Our experts provide advice on securing strong recommendation letters.',
+        },
+        {
+          icon: '/icons/abroad6.png',
+          title: 'Timely Application Submission:',
+          description:
+            'We ensure that your applications are submitted on time, meeting all university deadlines.',
+        },
+        {
+          icon: '/icons/abroad1.png',
+          title: 'Scholarship Opportunities:',
+          description:
+            'We inform you about available scholarships and help you with the application process.',
+        },
+        {
+          icon: '/icons/abroad2.png',
+          title: 'Interview Preparation:',
+          description:
+            'If an interview is part of the application process, we provide interview preparation assistance.',
+        },
+      ],
+    },
+  },
+  scholarships: {
+    heroSection: {
+      title: [
+        'University ',
+        'Scholarships Guidance',
+        ' - Unlock Financial Support for Your Education',
+      ],
+      description:
+        'At GlobalScholar, we offer you invaluable guidance on securing scholarships to help ease the burden of tuition fees. Our University Scholarships Guidance service is your gateway to unlocking financial support for your educational aspirations.',
+      image: '/images/scholarshipHero.svg',
+    },
+    whatToExpect: {
+      title:
+        'What to Expect from Our University Application Process Assistance:',
+      data: [
+        {
+          icon: '/icons/abroad1.png',
+          title: 'Course and University Selection:',
+          description:
+            'We help you choose the right course and university based on your academic background, interests, and career aspirations.',
+        },
+        {
+          icon: '/icons/abroad2.png',
+          title: 'Application Preparation:',
+          description:
+            'We guide you through the application documentation process, ensuring that your application is complete and compelling.',
+        },
+        {
+          icon: '/icons/abroad3.png',
+          title: 'Resume Building:',
+          description:
+            'We assist you in creating a strong resume or curriculum vitae that showcases your achievements and qualifications.',
+        },
+        {
+          icon: '/icons/abroad4.png',
+          title: 'Statement of Purpose (SOP) Assistance:',
+          description:
+            'We offer guidance on writing a compelling SOP that reflects your motivation and goals.',
+        },
+        {
+          icon: '/icons/abroad5.png',
+          title: 'Recommendation Letters (LORs):',
+          description:
+            'Our experts provide advice on securing strong recommendation letters.',
+        },
+        {
+          icon: '/icons/abroad6.png',
+          title: 'Timely Application Submission:',
+          description:
+            'We ensure that your applications are submitted on time, meeting all university deadlines.',
+        },
+        {
+          icon: '/icons/abroad1.png',
+          title: 'Scholarship Opportunities:',
+          description:
+            'We inform you about available scholarships and help you with the application process.',
+        },
+        {
+          icon: '/icons/abroad2.png',
+          title: 'Interview Preparation:',
+          description:
+            'If an interview is part of the application process, we provide interview preparation assistance.',
+        },
+      ],
+    },
+  },
+};

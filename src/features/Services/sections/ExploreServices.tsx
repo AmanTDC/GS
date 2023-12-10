@@ -22,14 +22,14 @@ const ExploreServices = () => {
         prevArrow={<PrevArrow />}
       >
         {destinations?.map((item, idx) => (
-          <div key={idx} className='relative'>
+          <div key={idx} className='relative max-w-[300px]'>
             <Img
               src={item?.image}
               height={240}
               width={300}
               alt='heroImage'
               isLocal
-              className='p-4'
+              className='p-4 w-[300px] h-[240px] rounded-[30px]'
             />
             <h4 className='text-[#fafafa] bottom-6 left-7 font-medium absolute'>
               {item?.name}

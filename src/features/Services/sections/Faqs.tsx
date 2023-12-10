@@ -1,7 +1,7 @@
 import Accordion from '@/shared/Accordion/Accordion';
 import React from 'react';
 
-const Faqs = () => {
+const Faqs = ({ index }: { index: string }) => {
   const FAQs = [
     {
       title: 'How much does it cost to study in the UK?',
@@ -40,7 +40,7 @@ const Faqs = () => {
     },
   ];
   return (
-    <div id='fourth' className='my-16'>
+    <div className='my-16' id={index}>
       <h4 className='text-[32px] font-semibold mb-4'>
         Frequently Asked Questions
       </h4>

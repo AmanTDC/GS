@@ -41,13 +41,7 @@ const Accordion = ({
       {data?.map((acc, index) => {
         const isActive = activeIndex === index;
         return (
-          <div
-            key={acc.title}
-            // style={{
-            //   width: width && width < 768 ? '100%' : `${acc.width}%` || '100%',
-            // }}
-            className={styles.accordionInner(wrapperClass)}
-          >
+          <div key={acc.title} className={styles.accordionInner(wrapperClass)}>
             <div
               className={styles.accordionInnerChild}
               style={{ background: acc.accTitleBg || '#F9FAFB' }}
@@ -60,10 +54,9 @@ const Accordion = ({
                 {acc.title}
               </p>
               {isActive ? (
-                <AiOutlineMinus className={styles.accordionIcon} />
+                <AiOutlineMinus className={styles.accordionIcon} size={24} />
               ) : (
-                // AiOutlinePlusCircle
-                <AiOutlinePlus className={styles.accordionIcon} />
+                <AiOutlinePlus className={styles.accordionIcon} size={24} />
               )}
             </div>
             {isActive && (
