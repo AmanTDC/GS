@@ -169,7 +169,12 @@ const Navbar = () => {
                 TOP DESTINATIONS TO STUDY
               </h4>
               {countries?.map((item, idx) => (
-                <div key={idx} className='flex gap-x-3 items-center'>
+                <Link
+                  key={idx}
+                  href={item?.link}
+                  className='flex gap-x-3 items-center'
+                  onClick={() => setIsActive(false)}
+                >
                   <Img
                     src={item?.icon}
                     alt='phone'
@@ -178,7 +183,7 @@ const Navbar = () => {
                     isLocal
                   />
                   <h4 className='text-sm text-black navItems'>{item?.name}</h4>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
