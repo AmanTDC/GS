@@ -64,7 +64,13 @@ export const STATS_SECTION: Settings = {
       },
     },
     {
-      breakpoint: 450,
+      breakpoint: 640,
+      settings: {
+        slidesToShow: 1.5,
+      },
+    },
+    {
+      breakpoint: 500,
       settings: {
         slidesToShow: 1,
       },

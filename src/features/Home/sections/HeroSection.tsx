@@ -16,21 +16,29 @@ const HeroSection = ({
       icon: '/icons/partner.png',
       title: '280+',
       subTitle: 'Partner Universities',
+      gradient:
+        'bg-[linear-gradient(180deg,rgba(254,226,226,0)_0%,#FEE2E2_100%)]',
     },
     {
       icon: '/icons/money.png',
       title: '£9250 - £63.9K',
       subTitle: 'Annual Tuition Fees',
+      gradient:
+        'bg-[linear-gradient(0deg,#EBF3FE_0.74%,rgba(235,243,254,0)_100.74%)]',
     },
     {
       icon: '/icons/students.png',
       title: '400k+',
       subTitle: 'International Students',
+      gradient:
+        'bg-[linear-gradient(180deg,rgba(220,_252,_231,_0)_0%,#DCFCE7_100%)]',
     },
     {
       icon: '/icons/visas.png',
       title: '2 Years',
       subTitle: 'Post Study Work Visas',
+      gradient:
+        'bg-[linear-gradient(180deg,rgba(254,_249,_195,_0)_0%,#FEF9C3_100%)]',
     },
   ];
   return (
@@ -111,7 +119,7 @@ const HeroSection = ({
               icon={item?.icon}
               title={item?.title}
               subTitle={item?.subTitle}
-              className='bg-[linear-gradient(180deg,rgba(254,_249,_195,_0)_0%,#FEF9C3_100%)]'
+              className={item?.gradient}
             />
           ))}
         </Slider>
