@@ -62,7 +62,8 @@ const Navbar = () => {
                   TOP DESTINATIONS TO STUDY
                 </h4>
                 {countries?.map((item, idx) => (
-                  <div
+                  <Link
+                    href={item?.link}
                     key={idx}
                     className='flex gap-x-3 items-center cursor-pointer'
                   >
@@ -76,7 +77,7 @@ const Navbar = () => {
                     <h4 className='text-sm text-black navItems'>
                       {item?.name}
                     </h4>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

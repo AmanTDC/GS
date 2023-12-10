@@ -1,31 +1,34 @@
 import Link from 'next/link';
 import React from 'react';
 
-const TopNav = () => {
+const TopNav = ({ countryName }: { countryName: string }) => {
   return (
     <div
       className='overflow-x-scroll text-secondary font-medium list-none flex justify-between top-20 sticky bg-white z-[1]'
       id='topnav'
     >
-      <Link href='#first' data-to-scrollspy-id='first'>
-        Study in the UK
+      <Link href='#1' data-to-scrollspy-id='1'>
+        Study in the {countryName?.toUpperCase()}
       </Link>
-      <Link href='#second' data-to-scrollspy-id='second'>
+      <Link href='#2' data-to-scrollspy-id='2'>
         Admission Requirements
       </Link>
-      <Link href='#third' data-to-scrollspy-id='third'>
-        Intakes
-      </Link>
-      <Link href='#fourth' data-to-scrollspy-id='fourth'>
-        Cost of Studying
-      </Link>
-      <Link href='#fifth' data-to-scrollspy-id='fifth'>
+      <Link href='#3' data-to-scrollspy-id='3'>
         Scholarships
       </Link>
-      <Link href='#sixth' data-to-scrollspy-id='sixth'>
-        Top Universities
+      <Link href='#4' data-to-scrollspy-id='4'>
+        Intakes
       </Link>
-      <Link href='#seventh' data-to-scrollspy-id='seventh'>
+      <Link href='#5' data-to-scrollspy-id='5'>
+        Cost of Studying
+      </Link>
+      <Link href='#6' data-to-scrollspy-id='6'>
+        Living Expenses
+      </Link>
+      <Link href='#7' data-to-scrollspy-id='7'>
+        Career Opportunities
+      </Link>
+      <Link href='#8' data-to-scrollspy-id='8'>
         FAQ
       </Link>
     </div>

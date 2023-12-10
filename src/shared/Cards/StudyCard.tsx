@@ -29,12 +29,15 @@ const StudyCard = ({
         )}
       </div>
 
-      {data?.content?.map((item2: any, idx2: number) => (
-        <div className='space-y-2' key={idx2}>
-          <div className='text-blue-500 text-xs'>{item2?.key}</div>
-          <div className='text-black text-sm'>{item2?.value}</div>
-        </div>
-      ))}
+      <div className='space-y-2'>
+        <div className='text-blue-500 text-xs'>INTAKE</div>
+        <div className='text-black text-sm'>{data?.intake}</div>
+      </div>
+
+      <div className='space-y-2'>
+        <div className='text-blue-500 text-xs'>ADMISIIONS</div>
+        <div className='text-black text-sm'>{data?.admission}</div>
+      </div>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { STATS_SECTION } from '@/utils/constants/slickSliderSettings';
 import React from 'react';
 import Slider from 'react-slick';
 
-const HeroSection = () => {
+const HeroSection = ({ country }: { country: string }) => {
   const statsCard = [
     {
       icon: '/icons/partner.png',
@@ -33,7 +33,7 @@ const HeroSection = () => {
         <div className='md:flex items-center gap-x-10 md:space-y-0 space-y-16 md:justify-between justify-center'>
           <div className='max-w-2xl space-y-6'>
             <h1 className='text-5xl font-semibold text-black leading-[67px]'>
-              Study in <span className='text-blue-500'>The United Kingdom</span>
+              Study in <span className='text-blue-500'>{country}</span>
             </h1>
             <p className='font-medium text-[32px] text-secondary leading-[44px]'>
               Explore Top universities, Courses, Scholarships, Student VISA

@@ -3,58 +3,58 @@ import { VERIFICATION_SLICK_SETTING } from '@/utils/constants/slickSliderSetting
 import React from 'react';
 import Slider from 'react-slick';
 
-const VisaRequirements = () => {
+const VisaRequirements = ({ data, index }: { data: any; index: string }) => {
   return (
-    <div id='second' className='space-y-3 my-16'>
+    <div id={index} className='space-y-3 my-16'>
       <h4 className='text-[32px] font-semibold'>Student Visa Requirements</h4>
-      <p className='text-secondary pb-3'>
-        Welcome to the UK - home to over 500,000 international students each
-        year. Study at pioneering universities and gain skills that top global
-        employers seek. Experience the culture that shaped the modern world.
-        Join a diverse community of changemakers.
-      </p>
-      <Slider
-        {...VERIFICATION_SLICK_SETTING}
-        nextArrow={<NextArrow />}
-        prevArrow={<PrevArrow />}
-      >
-        {[1, 1, 1, 1]?.map((item) => (
-          <div className='bg-gray-50 border border-gray-200 p-4 space-y-4 rounded-lg max-w-[320px] mb-4'>
-            <h4 className='text-black font-semibold text-lg'>
-              1. Short-Term Study
-            </h4>
-            <div className='h-[1px] bg-gray-200'></div>
-            <div className='space-y-2'>
-              <div className='text-blue-500 text-xs'>WHO’S IT FOR</div>
-              <div className='text-black text-sm'>Short-term students</div>
+      <p className='text-secondary pb-3'>{data?.description}</p>
+      {data?.data?.length > 3 ? (
+        <Slider
+          {...VERIFICATION_SLICK_SETTING}
+          nextArrow={<NextArrow />}
+          prevArrow={<PrevArrow />}
+        >
+          {data?.data?.map((item: any, idx: number) => (
+            <div
+              className='bg-gray-50 border border-gray-200 p-4 space-y-4 rounded-lg max-w-[320px] mb-4'
+              key={idx}
+            >
+              <h4 className='text-black font-semibold text-lg'>
+                {idx + 1}. {item?.title}
+              </h4>
+              <div className='h-[1px] bg-gray-200'></div>
+              {item?.requirements?.map((e: string) => (
+                <div className='space-y-2' key={e}>
+                  <div className='text-blue-500 text-xs'>WHO’S IT FOR</div>
+                  <div className='text-black text-sm'>{e}</div>
+                </div>
+              ))}
             </div>
-            <div className='space-y-2'>
-              <div className='text-blue-500 text-xs'>COST</div>
-              <div className='text-black text-sm'>
-                £186 for an 11 month visa, £97 for a 6 month visa
-              </div>
+          ))}
+        </Slider>
+      ) : (
+        <div className='grid grid-cols-12 gap-8 place-items-center'>
+          {data?.data?.map((item: any, idx: number) => (
+            <div
+              className={`bg-gray-50 lg:col-span-4 h-full border border-gray-200 p-4 space-y-4 rounded-lg max-w-[320px] mb-4 ${
+                idx === 2 ? 'col-span-12' : 'sm:col-span-6 col-span-12'
+              }`}
+              key={idx}
+            >
+              <h4 className='text-black font-semibold text-lg'>
+                {idx + 1}. {item?.title}
+              </h4>
+              <div className='h-[1px] bg-gray-200'></div>
+              {item?.requirements?.map((e: string) => (
+                <div className='space-y-2' key={e}>
+                  <div className='text-blue-500 text-xs'>WHO’S IT FOR</div>
+                  <div className='text-black text-sm'>{e}</div>
+                </div>
+              ))}
             </div>
-            <div className='space-y-2'>
-              <div className='text-blue-500 text-xs'>WHEN TO APPLY </div>
-              <div className='text-black text-sm'>
-                Up to 3 months prior to course start
-              </div>
-            </div>
-            <div className='space-y-2'>
-              <div className='text-blue-500 text-xs'>ARRIVAL IN THE UK</div>
-              <div className='text-black text-sm'>
-                Up to 7 days before course start
-              </div>
-            </div>
-            <div className='space-y-2'>
-              <div className='text-blue-500 text-xs'>REQUIREMENTS</div>
-              <div className='text-black text-sm'>
-                Enrollment proof, sufficient funds, valid passport
-              </div>
-            </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

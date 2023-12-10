@@ -35,10 +35,10 @@ const Accordion = ({
   return (
     <div
       className={styles.accordion(
-        data.some((acc) => acc.width && acc.width !== null)
+        data?.some((acc) => acc?.width && acc?.width !== null)
       )}
     >
-      {data.map((acc, index) => {
+      {data?.map((acc, index) => {
         const isActive = activeIndex === index;
         return (
           <div

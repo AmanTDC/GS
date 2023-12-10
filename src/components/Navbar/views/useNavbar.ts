@@ -7,26 +7,32 @@ const useNavbar = () => {
     {
       icon: '/images/uk.png',
       name: 'United Kingdom',
+      link:'/uk'
     },
     {
       icon: '/images/us.png',
       name: 'United States',
+      link:'/usa'
     },
     {
       icon: '/images/canada.png',
       name: 'Canada',
+      link:'/canada'
     },
     {
       icon: '/images/australia.png',
       name: 'Australia',
+      link:'/australia'
     },
     {
       icon: '/images/ireland.png',
       name: 'Ireland',
+      link:'/ireland'
     },
     {
       icon: '/images/australia.png',
       name: 'Newzealand',
+      link:'/nz'
     },
   ];
   const services = [

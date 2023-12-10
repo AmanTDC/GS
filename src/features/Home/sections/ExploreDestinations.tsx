@@ -49,7 +49,7 @@ const ExploreDestinations = () => {
               isLocal
               className='p-1'
             />
-            <div className='flex items-center gap-x-3 bottom-6 left-7 absolute'>
+            <div className='flex items-center gap-x-3 bottom-3 left-4 absolute'>
               <Img
                 src={item?.icon}
                 height={32}
