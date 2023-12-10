@@ -23,7 +23,7 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
   };
   typeof window !== 'undefined' && window.addEventListener('scroll', slideNav);
   return (
-    <Fragment>
+    <div className='animate-bottom'>
       <Navbar />
       <div className={`px-5 bg-white lg:px-[60px] ${wrapperClass}`}>
         {children}
@@ -37,7 +37,7 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
         </div>
       )}
       <Footer isBanner={isBanner} />
-    </Fragment>
+    </div>
   );
 };
 
