@@ -31,7 +31,7 @@ const ExploreDestinations = () => {
   ];
   return (
     <div>
-      <h4 className='text-[32px] font-semibold mb-4'>
+      <h4 className='md:text-[32px] text-[28px] font-semibold mb-4'>
         Explore Other Study Destinations
       </h4>
       <Slider

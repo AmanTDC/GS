@@ -25,7 +25,7 @@ const Services = ({ data }: { data: any }) => {
             {data?.howToApply && (
               <HowToApply data={data?.howToApply} index='4' />
             )}
-            <Faqs index='5' />
+            <Faqs index='5' data={data?.faqs} />
           </ScrollSpy>
           <ExploreServices />
         </div>

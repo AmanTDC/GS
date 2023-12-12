@@ -87,6 +87,10 @@ html {
   animation: fadeIn 0.4s linear forwards;
 }
 
+#dropdown {
+  animation: sideNav 0.3s linear forwards;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -157,7 +161,7 @@ td {
 
 #spinner {
   border: 3px solid #f3f3f3;
-  border-top: 3px solid #3B82F6;
+  border-top: 3px solid #3b82f6;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }

@@ -52,6 +52,7 @@ const useNavbar = () => {
     { name: 'Student Accomodation Services', link: '/services/accomodation' },
   ];
   const [isActive, setIsActive] = useState(false);
+  const [dropdownActive, setDropdownActive] = useState(-1);
   useScrollHidden(isActive);
   const slideNav = () => {
     var x: any = document.getElementById('navbar');
@@ -68,7 +69,15 @@ const useNavbar = () => {
   typeof window !== 'undefined' && window.addEventListener('scroll', slideNav);
   const router = useRouter();
 
-  return { router, setIsActive, services, countries, isActive };
+  return {
+    router,
+    setIsActive,
+    services,
+    countries,
+    isActive,
+    dropdownActive,
+    setDropdownActive,
+  };
 };
 
 export default useNavbar;

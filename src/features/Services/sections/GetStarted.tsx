@@ -40,7 +40,7 @@ const GetStarted = ({ index }: { index: string }) => {
 
   return (
     <div className='space-y-7' id={index}>
-      <h4 className='text-[32px] font-semibold mb-2'>How to Get Started</h4>
+      <h4 className='md:text-[32px] text-[28px] font-semibold mb-2'>How to Get Started</h4>
       {data?.map((item, idx) => (
         <GetStartedCard data={item} key={idx} />
       ))}

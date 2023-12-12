@@ -3,7 +3,7 @@ import React from 'react';
 const LivingExpenses = ({ data, index }: { data: any; index: string }) => {
   return (
     <div id={index} className='space-y-3 my-16'>
-      <h4 className='text-[32px] font-semibold'>{data?.title}</h4>
+      <h4 className='md:text-[32px] text-[28px] font-semibold'>{data?.title}</h4>
       <p className='text-secondary pb-3'>{data?.description}</p>
 
       <div className='overflow-x-scroll'>

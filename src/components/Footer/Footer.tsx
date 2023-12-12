@@ -27,7 +27,7 @@ const Footer = ({ isBanner }: { isBanner?: boolean }) => {
         ) : (
           <div className='flex md:flex-row flex-col gap-5 justify-between mb-16 -mt-5'>
             <div className='space-y-3'>
-              <h4 className='text-[32px] text-[#fafafa] font-semibold max-w-[500px]'>
+              <h4 className='md:text-[32px] text-[28px] text-[#fafafa] font-semibold max-w-[500px]'>
                 Ready to Transform Your Career? Take the First Steps Today
               </h4>
               <p className='text-lg text-[#F9FAFB] pb-2'>

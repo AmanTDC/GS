@@ -135,7 +135,7 @@ const Queries = () => {
         <div className='space-y-4'>
           <h1 className='font-bold text-2xl'>Customer Ratings</h1>
           <div className='flex items-center gap-x-5'>
-            <h1 className='font-semibold text-[32px] text-secondary'>
+            <h1 className='font-semibold md:text-[32px] text-[28px] text-secondary'>
               4.8 / 5.0
             </h1>
             {[1, 1, 1, 1, 1]?.map((item, idx) => (

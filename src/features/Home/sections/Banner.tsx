@@ -32,7 +32,7 @@ const Banner = ({
         }`}
       >
         <h4
-          className={`text-[32px] text-[#fafafa] font-semibold max-w-[500px] ${styleTitle}`}
+          className={`md:text-[32px] text-[28px] text-[#fafafa] font-semibold max-w-[500px] ${styleTitle}`}
         >
           {data?.title}
         </h4>

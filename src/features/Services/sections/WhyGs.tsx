@@ -24,7 +24,7 @@ const WhyGs = ({ index }: { index: string }) => {
   return (
     <div className='gap-8 grid grid-cols-5' id={index}>
       <div className='space-y-3 md:col-span-3 col-span-5'>
-        <h4 className='text-[32px] font-semibold mb-2'>
+        <h4 className='md:text-[32px] text-[28px] font-semibold mb-2'>
           Why Choose GlobalScholar?
         </h4>
 

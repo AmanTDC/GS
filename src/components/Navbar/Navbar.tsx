@@ -7,14 +7,23 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { RxCross2 } from 'react-icons/rx';
 import useNavbar from './views/useNavbar';
 const Navbar = () => {
-  const { router, setIsActive, services, countries, isActive } = useNavbar();
+  const {
+    router,
+    setIsActive,
+    services,
+    countries,
+    isActive,
+    dropdownActive,
+    setDropdownActive,
+  } = useNavbar();
+
   return (
     <>
       <div
         className='bg-white z-[999] px-5 gap-x-5 lg:px-[60px] navbar top-0 sticky shadow-[0px_28px_61px_0px_#0000000D,0px_111px_111px_0px_#0000000A,0px_250px_150px_0px_#00000008,0px_444px_178px_0px_#00000003,1px_694px_194px_0px_#00000000]'
         id='navbar'
       >
-        <div className='max-w-[1240px] flex items-center justify-between h-20'>
+        <div className='max-w-[1240px] mx-auto flex items-center justify-between h-20'>
           <Link href='/'>
             <Img
               src={'/images/LogoDark.png'}
@@ -133,20 +142,26 @@ const Navbar = () => {
               className='-mr-2'
             />
           </div>
-          <div className='group' id='nav-item'>
-            <div className='text-black font-medium flex items-center justify-between cursor-pointer min-w-fit'>
+          <div>
+            <div
+              className='text-black font-medium flex items-center justify-between cursor-pointer min-w-fit'
+              onClick={() => setDropdownActive(0)}
+            >
               Our Services
-              <div className='group-hover:-rotate-180 duration-300'>
+              <div
+                className={`${
+                  dropdownActive === 0 ? '-rotate-180' : ''
+                } duration-300`}
+              >
                 <IoIosArrowDown />
               </div>
             </div>
             <div
-              className='rounded-xl p-4 space-y-4 bg-white shadow-lg group-hover:block duration-300 hidden absolute'
+              className={`space-y-4 bg-white duration-300 hidden mt-4 ml-3 ${
+                dropdownActive === 0 && '!block'
+              }`}
               id='dropdown'
             >
-              <h4 className='text-xs text-gray-400 font-medium'>
-                OUR SERVICES
-              </h4>
               {services?.map((item, idx) => (
                 <div key={idx}>
                   <Link
@@ -159,20 +174,22 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-          <div className='group' id='nav-item'>
-            <div className='text-black font-medium flex items-center justify-between cursor-pointer min-w-fit'>
+          <div>
+            <div
+              className='text-black font-medium flex items-center justify-between cursor-pointer min-w-fit'
+              onClick={() => setDropdownActive(1)}
+            >
               Destinations
               <div className='group-hover:-rotate-180 duration-300'>
                 <IoIosArrowDown />
               </div>
             </div>
             <div
-              className='rounded-xl p-4 space-y-4 bg-white shadow-lg group-hover:block duration-300 hidden absolute'
+              className={`space-y-4 bg-white duration-300 hidden mt-4 ml-3 ${
+                dropdownActive === 1 && '!block'
+              }`}
               id='dropdown'
             >
-              <h4 className='text-xs text-gray-400 font-medium'>
-                TOP DESTINATIONS TO STUDY
-              </h4>
               {countries?.map((item, idx) => (
                 <Link
                   key={idx}

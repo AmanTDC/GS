@@ -60,7 +60,7 @@ const Intakes = ({
   // ];
   return (
     <div id={index} className='space-y-3 mt-20 max-[700px]:mt-28'>
-      <h4 className='text-[32px] font-semibold'>
+      <h4 className='md:text-[32px] text-[28px] font-semibold'>
         Intakes in the {countryName?.toUpperCase()}
       </h4>
       <p className='text-secondary pb-4'>{data?.description}</p>

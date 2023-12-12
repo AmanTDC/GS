@@ -46,10 +46,10 @@ const HeroSection = ({
       <div className='max-w-[1120px] space-y-10 mx-auto'>
         <div className='md:flex items-center gap-x-10 md:space-y-0 space-y-16 md:justify-between justify-center'>
           <div className='max-w-2xl space-y-6'>
-            <h1 className='text-5xl font-semibold text-black leading-[67px]'>
+            <h1 className='md:text-5xl text-[40px] font-semibold text-black leading-[67px]'>
               Study in <span className='text-blue-500'>{country}</span>
             </h1>
-            <p className='font-medium text-[32px] text-secondary leading-[44px]'>
+            <p className='font-medium md:text-[32px] text-[28px] text-secondary leading-[44px]'>
               Explore Top universities, Courses, Scholarships, Student VISA
               Requirements and Cost for Indian Students in 2024
             </p>

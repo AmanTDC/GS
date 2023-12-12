@@ -15,7 +15,7 @@ const ExploreServices = () => {
   ];
   return (
     <div>
-      <h4 className='text-[32px] font-semibold mb-4'>Explore Other Services</h4>
+      <h4 className='md:text-[32px] text-[28px] font-semibold mb-4'>Explore Other Services</h4>
       <Slider
         {...VERIFICATION_SLICK_SETTING}
         nextArrow={<NextArrow />}

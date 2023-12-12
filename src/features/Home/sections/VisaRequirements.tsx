@@ -6,7 +6,7 @@ import Slider from 'react-slick';
 const VisaRequirements = ({ data, index }: { data: any; index: string }) => {
   return (
     <div id={index} className='space-y-3 my-16'>
-      <h4 className='text-[32px] font-semibold'>Student Visa Requirements</h4>
+      <h4 className='md:text-[32px] text-[28px] font-semibold'>Student Visa Requirements</h4>
       <p className='text-secondary pb-3'>{data?.description}</p>
       {data?.data?.length > 3 ? (
         <Slider

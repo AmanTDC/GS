@@ -1303,6 +1303,36 @@ export const ServicesData = {
         },
       ],
     },
+    faqs: [
+      {
+        title:
+          'Is this counseling service available for undergraduate and postgraduate students?',
+        description:
+          'Yes, our free counseling services are available for both undergraduate and postgraduate students.',
+      },
+      {
+        title: 'How long does a typical counseling session last?',
+        description:
+          'A counseling session can vary in duration, but it typically lasts between 30 minutes to an hour to ensure thorough guidance.',
+      },
+      {
+        title:
+          'Do I need to have a specific country or university in mind before scheduling a counseling session?',
+        description:
+          'No, we can help you explore your options and narrow down your choices during the counseling session.',
+      },
+      {
+        title:
+          'Are counseling sessions available online for international students?',
+        description:
+          'Yes, we offer online counseling sessions to assist students from around the world.',
+      },
+      {
+        title: 'What qualifications do your counselors hold?',
+        description:
+          'Our counselors are experienced professionals with expertise in overseas education and are well-qualified to guide you in your study abroad journey.',
+      },
+    ],
   },
   visa: {
     heroSection: {
@@ -1383,6 +1413,37 @@ export const ServicesData = {
         },
       ],
     },
+    faqs: [
+      {
+        title:
+          'What types of visas can you assist with, apart from student visas?',
+        description:
+          'In addition to student visas, we can provide guidance on other types of visas, such as tourist visas, work visas, and dependent visas, based on your needs.',
+      },
+      {
+        title: 'Can you help me prepare for the visa interview?',
+        description:
+          'Yes, we offer interview preparation support to help you confidently tackle the visa interview.',
+      },
+      {
+        title:
+          'Is your visa assistance limited to a specific list of countries?',
+        description:
+          'We provide visa assistance for a range of countries beyond the USA, Canada, and the UK. Feel free to inquire about your specific destination.',
+      },
+      {
+        title:
+          'How soon should I start the visa application process before my intended start date?',
+        description:
+          'We recommend starting the visa application process at least 3-4 months before your intended program start date.',
+      },
+      {
+        title:
+          'What is the success rate of visa approvals with your assistance?',
+        description:
+          'Visa approval rates can vary based on individual circumstances and the country of application. We work diligently to maximize your chances of success.',
+      },
+    ],
   },
   application: {
     heroSection: {
@@ -1448,6 +1509,34 @@ export const ServicesData = {
         },
       ],
     },
+    faqs: [
+      {
+        title: 'Can you help me apply to multiple universities at once?',
+        description:
+          'Yes, we can assist you in applying to multiple universities simultaneously, increasing your chances of acceptance.',
+      },
+      {
+        title: 'Do you offer guidance on selecting a major or field of study?',
+        description:
+          'Absolutely, we can provide advice on choosing the right major based on your interests and career goals.',
+      },
+      {
+        title: 'Is there an application fee for university applications?',
+        description:
+          'Most universities charge an application fee. We will inform you about these fees during the application process.',
+      },
+      {
+        title: 'What is the typical timeline for university applications?',
+        description:
+          'University application timelines vary, but generally, applications should be submitted about 6-12 months in advance.',
+      },
+      {
+        title:
+          'Do you provide support for scholarship applications as part of the university application process?',
+        description:
+          'Yes, we can guide you through scholarship applications to help secure financial aid for your studies.',
+      },
+    ],
   },
   scholarships: {
     heroSection: {
@@ -1514,5 +1603,34 @@ export const ServicesData = {
         },
       ],
     },
+    faqs: [
+      {
+        title:
+          'What types of scholarships are available for international students?',
+        description:
+          'Scholarships can include merit-based, need-based, and subject-specific scholarships, among others.',
+      },
+      {
+        title: 'How can I find and apply for scholarships?',
+        description:
+          'We assist in researching scholarship opportunities and provide guidance on the application process.',
+      },
+      {
+        title: 'What are the common eligibility criteria for scholarships?',
+        description:
+          'Eligibility criteria vary but often include academic excellence, leadership, and community involvement.',
+      },
+      {
+        title:
+          'Are scholarships available for students at all levels of education (undergraduate, postgraduate, Ph.D.)?',
+        description:
+          'Scholarships are available at various levels, and we can help you identify those suitable for your educational level.',
+      },
+      {
+        title: 'How can I maximize my chances of securing a scholarship?',
+        description:
+          'We offer tips and strategies for crafting competitive scholarship applications.',
+      },
+    ],
   },
 };

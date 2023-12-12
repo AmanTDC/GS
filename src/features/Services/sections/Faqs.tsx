@@ -1,7 +1,7 @@
 import Accordion from '@/shared/Accordion/Accordion';
 import React from 'react';
 
-const Faqs = ({ index }: { index: string }) => {
+const Faqs = ({ data, index }: { data: any; index: string }) => {
   const FAQs = [
     {
       title: 'How much does it cost to study in the UK?',
@@ -41,11 +41,11 @@ const Faqs = ({ index }: { index: string }) => {
   ];
   return (
     <div className='my-16' id={index}>
-      <h4 className='text-[32px] font-semibold mb-4'>
+      <h4 className='md:text-[32px] text-[28px] font-semibold mb-4'>
         Frequently Asked Questions
       </h4>
       <Accordion
-        data={FAQs?.map((item) => ({
+        data={data?.map((item: any) => ({
           title: item.title,
           description: item?.description,
         }))}
