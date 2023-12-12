@@ -160,10 +160,9 @@ const Navbar = () => {
               className={`space-y-4 bg-white duration-300 hidden mt-4 ml-3 ${
                 dropdownActive === 0 && '!block'
               }`}
-              id='dropdown'
             >
               {services?.map((item, idx) => (
-                <div key={idx}>
+                <div key={idx} className='animate-accordion'>
                   <Link
                     href={item?.link}
                     className='text-sm text-black navItems'
@@ -188,13 +187,12 @@ const Navbar = () => {
               className={`space-y-4 bg-white duration-300 hidden mt-4 ml-3 ${
                 dropdownActive === 1 && '!block'
               }`}
-              id='dropdown'
             >
               {countries?.map((item, idx) => (
                 <Link
                   key={idx}
                   href={item?.link}
-                  className='flex gap-x-3 items-center'
+                  className='flex gap-x-3 items-center animate-accordion'
                   onClick={() => setIsActive(false)}
                 >
                   <Img
