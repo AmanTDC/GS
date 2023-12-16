@@ -6,12 +6,14 @@ import { IoIosArrowUp } from 'react-icons/io';
 interface IPageWraps {
   wrapperClass?: string;
   isBanner?: boolean;
+  isNavbar?: boolean;
 }
 
 const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
   children,
   wrapperClass,
   isBanner,
+  isNavbar
 }) => {
   const [isActive, setIsActive] = useState(false);
   const slideNav = () => {
@@ -24,7 +26,7 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
   typeof window !== 'undefined' && window.addEventListener('scroll', slideNav);
   return (
     <div className='animate-bottom'>
-      <Navbar />
+      {!isNavbar && <Navbar />}
       <div className={`px-5 bg-white lg:px-[60px] ${wrapperClass}`}>
         {children}
       </div>

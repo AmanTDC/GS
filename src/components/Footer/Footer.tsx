@@ -1,4 +1,4 @@
-import Banner from '@/features/Home/sections/Banner';
+import Banner from '@/features/Destinations/sections/Banner';
 import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
 import React from 'react';

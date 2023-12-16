@@ -13,6 +13,9 @@ const config: Config = {
         secondary: 'rgba(55, 65, 81, 1)',
         sliderArrow: '#D9D9D9',
       },
+      boxShadow: {
+        card: '0px 5px 11px 0px rgba(0, 0, 0, 0.02), 0px 19px 19px 0px rgba(0, 0, 0, 0.02), 0px 44px 26px 0px rgba(0, 0, 0, 0.01), 0px 78px 31px 0px rgba(0, 0, 0, 0.00), 0px 122px 34px 0px rgba(0, 0, 0, 0.00);',
+      },
     },
   },
   plugins: [],

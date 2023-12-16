@@ -1,5 +1,5 @@
 import PageWrapper from '@/components/PageWrapper/PageWrapper';
-import Home from '@/features/Home/Home';
+import Destinations from '@/features/Destinations/Destinations';
 import { CountryData } from '@/utils/static/StaticData';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -25,7 +25,7 @@ export default function Index() {
 
   return (
     <PageWrapper isBanner wrapperClass='!px-0 lg:!px-0'>
-      <Home data={pageData} router={router} />
+      <Destinations data={pageData} router={router} />
     </PageWrapper>
   );
 }

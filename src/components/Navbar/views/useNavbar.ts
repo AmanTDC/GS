@@ -51,18 +51,20 @@ const useNavbar = () => {
     },
     { name: 'Student Accomodation Services', link: '/services/accomodation' },
   ];
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(-1);
   const [dropdownActive, setDropdownActive] = useState(-1);
-  useScrollHidden(isActive);
+  useScrollHidden(isActive === 0);
   const slideNav = () => {
     var x: any = document.getElementById('navbar');
     if (window.scrollY >= 100) {
-      if (x.classList == 'active') {
+      setIsActive(1);
+      if (x.classList === 'active') {
         x.classList.remove('active');
       } else {
         x.classList.add('active');
       }
     } else {
+      setIsActive(-1);
       x.classList.remove('active');
     }
   };

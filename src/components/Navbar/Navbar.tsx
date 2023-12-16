@@ -6,7 +6,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { RxCross2 } from 'react-icons/rx';
 import useNavbar from './views/useNavbar';
-const Navbar = () => {
+const Navbar = ({ color }: { color?: string }) => {
   const {
     router,
     setIsActive,
@@ -16,17 +16,25 @@ const Navbar = () => {
     dropdownActive,
     setDropdownActive,
   } = useNavbar();
-
+  const isHomePage = router.pathname === '/';
   return (
     <>
       <div
-        className='bg-white z-[999] px-5 gap-x-5 lg:px-[60px] navbar top-0 sticky shadow-[0px_28px_61px_0px_#0000000D,0px_111px_111px_0px_#0000000A,0px_250px_150px_0px_#00000008,0px_444px_178px_0px_#00000003,1px_694px_194px_0px_#00000000]'
+        className={`${
+          isHomePage ? 'bg-transparent' : 'bg-white'
+        } z-[999] px-5 gap-x-5 lg:px-[60px] navbar top-0 sticky shadow-[0px_28px_61px_0px_#0000000D,0px_111px_111px_0px_#0000000A,0px_250px_150px_0px_#00000008,0px_444px_178px_0px_#00000003,1px_694px_194px_0px_#00000000]`}
         id='navbar'
       >
         <div className='max-w-[1240px] mx-auto flex items-center justify-between h-20'>
           <Link href='/'>
             <Img
-              src={'/images/LogoDark.png'}
+              src={
+                isHomePage
+                  ? isActive === 1
+                    ? '/images/LogoDark.png'
+                    : '/images/LogoWhite.png'
+                  : '/images/LogoDark.png'
+              }
               alt='phone'
               width={223}
               height={45}
@@ -35,8 +43,11 @@ const Navbar = () => {
             />
           </Link>
           <div className='md:flex items-center lg:gap-x-10 gap-x-5 hidden'>
-            <div className='group' id='nav-item'>
-              <div className='text-black font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
+            <div
+              className={`${isHomePage ? 'text-white' : 'text-black'} group`}
+              id='nav-item'
+            >
+              <div className='font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
                 Our Services
                 <div className='group-hover:-rotate-180 duration-300'>
                   <IoIosArrowDown />
@@ -61,8 +72,11 @@ const Navbar = () => {
                 ))}
               </div>
             </div>
-            <div className='group' id='nav-item'>
-              <div className='text-black font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
+            <div
+              className={`${isHomePage ? 'text-white' : 'text-black'} group`}
+              id='nav-item'
+            >
+              <div className='font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
                 Destinations
                 <div className='group-hover:-rotate-180 duration-300'>
                   <IoIosArrowDown />
@@ -95,7 +109,12 @@ const Navbar = () => {
                 ))}
               </div>
             </div>
-            <div className='text-black font-medium min-w-fit'>
+            <div
+              className={`${
+                isHomePage ? 'text-white' : 'text-black'
+              } font-medium min-w-fit`}
+              id='nav-item'
+            >
               Course Finder
             </div>
             <Button
@@ -110,17 +129,17 @@ const Navbar = () => {
           <GiHamburgerMenu
             size={24}
             className='md:hidden block'
-            onClick={() => setIsActive(true)}
+            onClick={() => setIsActive(0)}
           />
         </div>
       </div>
-      {isActive && (
+      {isActive === 0 && (
         <div
           className='bg-[rgb(0,0,0,0.6)] absolute h-full w-screen top-0 z-[999]'
-          onClick={() => setIsActive(false)}
+          onClick={() => setIsActive(-1)}
         />
       )}
-      {isActive && (
+      {isActive === 0 && (
         <div
           className='bg-white h-screen w-[300px] space-y-6 py-5 px-4 fixed top-0'
           id='sideBar'
@@ -138,13 +157,15 @@ const Navbar = () => {
             </Link>
             <RxCross2
               size={24}
-              onClick={() => setIsActive(false)}
+              onClick={() => setIsActive(-1)}
               className='-mr-2'
             />
           </div>
           <div>
             <div
-              className='text-black font-medium flex items-center justify-between cursor-pointer min-w-fit'
+              className={`${
+                isHomePage ? 'text-white' : 'text-black'
+              } font-medium flex items-center justify-between cursor-pointer min-w-fit`}
               onClick={() => setDropdownActive(0)}
             >
               Our Services
@@ -175,7 +196,9 @@ const Navbar = () => {
           </div>
           <div>
             <div
-              className='text-black font-medium flex items-center justify-between cursor-pointer min-w-fit'
+              className={`${
+                isHomePage ? 'text-white' : 'text-black'
+              } font-medium flex items-center justify-between cursor-pointer min-w-fit`}
               onClick={() => setDropdownActive(1)}
             >
               Destinations
@@ -193,7 +216,7 @@ const Navbar = () => {
                   key={idx}
                   href={item?.link}
                   className='flex gap-x-3 items-center animate-accordion'
-                  onClick={() => setIsActive(false)}
+                  onClick={() => setIsActive(-1)}
                 >
                   <Img
                     src={item?.icon}
@@ -207,7 +230,13 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-          <div className='text-black font-medium min-w-fit'>Course Finder</div>
+          <div
+            className={`${
+              color ? 'text-white' : 'text-black'
+            } font-medium min-w-fit`}
+          >
+            Course Finder
+          </div>
           <Button
             type='button'
             className='min-w-fit mt-5 flex mx-auto'
