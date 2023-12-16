@@ -139,8 +139,8 @@ const Home = () => {
   return (
     <div className='mb-[400px]'>
       <Navbar color='text-white' />
-      <div className="bg-[url('/images/homeBg.png')] bg-[length:90%_100%] h-[900px] max-[1024px]:h-screen bg-no-repeat flex items-center">
-        <div className='lg:flex items-center lg:mt-0 mt-12 lg:space-y-0 space-y-16 md:justify-between justify-center space-x-10 max-w-[1240px] mx-auto px-5'>
+      <div className="bg-[url('/images/homeBg.png')] bg-[length:90%_100%] xl:h-[900px] lg:h-screen h-fit w-full bg-no-repeat">
+        <div className='flex lg:flex-row flex-col items-center lg:space-y-0 space-y-16 lg:pt-28 pt-32 lg:justify-between justify-center lg:space-x-10 max-w-[1240px] mx-auto px-5'>
           <div className='text-white max-w-[644px] space-y-4'>
             <div className='text-xl font-medium'>
               Welcome to Global Scholar 👋
