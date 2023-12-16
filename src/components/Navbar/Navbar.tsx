@@ -15,14 +15,15 @@ const Navbar = ({ color }: { color?: string }) => {
     isActive,
     dropdownActive,
     setDropdownActive,
+    isHomePage,
   } = useNavbar();
-  const isHomePage = router.pathname === '/';
+  
   return (
     <>
       <div
         className={`${
-          isHomePage ? 'bg-transparent' : 'bg-white'
-        } z-[999] px-5 gap-x-5 lg:px-[60px] navbar top-0 sticky shadow-[0px_28px_61px_0px_#0000000D,0px_111px_111px_0px_#0000000A,0px_250px_150px_0px_#00000008,0px_444px_178px_0px_#00000003,1px_694px_194px_0px_#00000000]`}
+          isHomePage ? 'bg-transparent absolute w-full' : 'bg-white !sticky'
+        } z-[999] px-5 gap-x-5 lg:px-[60px] navbar top-0 shadow-[0px_28px_61px_0px_#0000000D,0px_111px_111px_0px_#0000000A,0px_250px_150px_0px_#00000008,0px_444px_178px_0px_#00000003,1px_694px_194px_0px_#00000000]`}
         id='navbar'
       >
         <div className='max-w-[1240px] mx-auto flex items-center justify-between h-20'>
@@ -163,9 +164,7 @@ const Navbar = ({ color }: { color?: string }) => {
           </div>
           <div>
             <div
-              className={`${
-                isHomePage ? 'text-white' : 'text-black'
-              } font-medium flex items-center justify-between cursor-pointer min-w-fit`}
+              className='text-black font-medium flex items-center justify-between cursor-pointer min-w-fit'
               onClick={() => setDropdownActive(0)}
             >
               Our Services
@@ -196,9 +195,7 @@ const Navbar = ({ color }: { color?: string }) => {
           </div>
           <div>
             <div
-              className={`${
-                isHomePage ? 'text-white' : 'text-black'
-              } font-medium flex items-center justify-between cursor-pointer min-w-fit`}
+              className='text-black font-medium flex items-center justify-between cursor-pointer min-w-fit'
               onClick={() => setDropdownActive(1)}
             >
               Destinations
@@ -230,13 +227,7 @@ const Navbar = ({ color }: { color?: string }) => {
               ))}
             </div>
           </div>
-          <div
-            className={`${
-              color ? 'text-white' : 'text-black'
-            } font-medium min-w-fit`}
-          >
-            Course Finder
-          </div>
+          <div className='text-black font-medium min-w-fit'>Course Finder</div>
           <Button
             type='button'
             className='min-w-fit mt-5 flex mx-auto'

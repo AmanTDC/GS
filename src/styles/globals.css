@@ -137,6 +137,7 @@ td {
 .navbar.active {
   animation: fadeNav 0.4s linear forwards;
   background-color: white;
+  position: fixed;
 }
 
 .navbar.active #nav-item {

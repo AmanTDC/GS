@@ -51,6 +51,8 @@ const useNavbar = () => {
     },
     { name: 'Student Accomodation Services', link: '/services/accomodation' },
   ];
+  const router = useRouter();
+  const isHomePage = router.pathname === '/';
   const [isActive, setIsActive] = useState(-1);
   const [dropdownActive, setDropdownActive] = useState(-1);
   useScrollHidden(isActive === 0);
@@ -59,19 +61,19 @@ const useNavbar = () => {
     if (window.scrollY >= 100) {
       setIsActive(1);
       if (x.classList === 'active') {
-        x.classList.remove('active');
+        x.classList.remove(isHomePage ? 'active' : 'active');
       } else {
-        x.classList.add('active');
+        x.classList.add(isHomePage ? 'active' : 'active');
       }
     } else {
       setIsActive(-1);
-      x.classList.remove('active');
+      x.classList.remove(isHomePage ? 'active' : 'active');
     }
   };
   typeof window !== 'undefined' && window.addEventListener('scroll', slideNav);
-  const router = useRouter();
 
   return {
+    isHomePage,
     router,
     setIsActive,
     services,

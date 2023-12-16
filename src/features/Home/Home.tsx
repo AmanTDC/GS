@@ -113,9 +113,9 @@ const Home = () => {
   ];
   return (
     <div className='mb-[400px]'>
-      <div className="bg-[url('/images/homeBg.png')] bg-[length:90%_100%] lg:h-screen bg-no-repeat">
-        <Navbar color='text-white' />
-        <div className='lg:flex items-center lg:mt-0 mt-12 lg:space-y-0 space-y-16 md:justify-between justify-center max-w-[1240px] mx-auto px-5'>
+      <Navbar color='text-white' />
+      <div className="bg-[url('/images/homeBg.png')] bg-[length:90%_100%] h-[900px] max-[1024px]:h-screen bg-no-repeat flex items-center">
+        <div className='lg:flex items-center lg:mt-0 mt-12 lg:space-y-0 space-y-16 md:justify-between justify-center space-x-10 max-w-[1240px] mx-auto px-5'>
           <div className='text-white max-w-[644px] space-y-4'>
             <div className='text-xl font-medium'>
               Welcome to Global Scholar 👋
@@ -299,9 +299,7 @@ const Home = () => {
                     />
                   </div>
                   <div className='space-y-3 mt-6 relative z-10'>
-                    <h4 className='text-xl font-semibold'>
-                      {item?.title}
-                    </h4>
+                    <h4 className='text-xl font-semibold'>{item?.title}</h4>
                     <p className='text-secondary'>{item?.description}</p>
                   </div>
                   <div className='absolute h-20 w-20 rounded-2xl group-hover:rounded-2xl group-hover:h-full group-hover:w-full duration-500 bg-blue-50 group-hover:top-0 group-hover:right-0 -top-3 -right-3' />
