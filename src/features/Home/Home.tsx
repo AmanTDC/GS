@@ -262,8 +262,8 @@ const Home = () => {
                     />
                   </div>
                 </div>
-                <div className='absolute h-0 w-0 rounded-2xl z-30 group-hover:h-full group-hover:w-full duration-500 bg-blue-50 md:top-0 md:right-0 top-1/2 right-1/2 group-hover:top-0 group-hover:right-0'>
-                  <div className='hidden group-hover:block mt-20 w-[250px] h-full p-5 animate-card'>
+                <div className='absolute sm:h-0 sm:w-0 rounded-2xl z-30 group-hover:h-full group-hover:w-full duration-500 bg-blue-50 sm:top-0 sm:right-0 group-hover:top-0 -top-20 sm:group-hover:top-0 sm:group-hover:right-0'>
+                  <div className='hidden group-hover:block mt-20 w-[250px] h-full p-5 sm:animate-card'>
                     <div className='font-bold text-lg'>Study Counselling</div>
                     <p>
                       There are many is variations of passage of lorem ipsum
