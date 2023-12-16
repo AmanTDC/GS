@@ -1,11 +1,15 @@
 import Navbar from '@/components/Navbar/Navbar';
 import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
-import { STATS_SECTION } from '@/utils/constants/slickSliderSettings';
+import {
+  STATS_SECTION,
+  VERIFICATION_SLICK_SETTING,
+} from '@/utils/constants/slickSliderSettings';
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { NextArrow, PrevArrow } from '@/shared/Button/NavigationButtons';
 const Home = () => {
   const Universities = [
     '/images/homeSlider1.png',
@@ -41,6 +45,70 @@ const Home = () => {
       title: '1000+ Happy Customers',
       description:
         'There are many is variations of passage of lorem ipsum available but the majority',
+    },
+  ];
+  const destinations = [
+    {
+      icon: '/icons/getStarted1.png',
+      title: 'Schedule A Session',
+      description:
+        'During your first session, we will conduct an initial assessment of your goals and needs.',
+    },
+    {
+      icon: '/icons/getStarted2.png',
+      title: 'Initial Assesment',
+      description:
+        'During your first session, we will conduct an initial assessment of your goals and needs.',
+    },
+    {
+      icon: '/icons/getStarted3.png',
+      title: 'Personalised Guidance',
+      description:
+        'During your first session, we will conduct an initial assessment of your goals and needs.',
+    },
+    {
+      icon: '/icons/getStarted4.png',
+      title: 'Ongoing Support',
+      description:
+        'During your first session, we will conduct an initial assessment of your goals and needs.',
+    },
+  ];
+  const testimonials = [
+    {
+      name: 'Bigyaan',
+      designation: 'BSc Neuroscience UCLan',
+      icon: '/icons/user.png',
+      description:
+        'Grateful to Global Scholars for unwavering support during my BSc in Neuroscience at UCLan. Their expertise and dedication enhanced my experience, playing a pivotal role in my academic achievements. I recommend them wholeheartedly for their commendable professionalism and outstanding contributions to my success.',
+    },
+    {
+      name: 'Saadia',
+      designation: 'LLB, University of Westminster',
+      icon: '/icons/user2.png',
+      description:
+        "I'm grateful to the Global Scholars team for exceptional assistance in guiding me through the study abroad admission process. Their expertise and support were invaluable, securing my spot at this prestigious institution. I wholeheartedly recommend their services for a smooth and successful university admission.",
+    },
+  ];
+  const countries = [
+    {
+      name: 'UK',
+      icon: '/images/uk.png',
+      image: '/images/country1.png',
+    },
+    {
+      name: 'Australia',
+      icon: '/images/australia.png',
+      image: '/images/country2.png',
+    },
+    {
+      name: 'Canada',
+      icon: '/images/canada.png',
+      image: '/images/country3.png',
+    },
+    {
+      name: 'UK',
+      icon: '/images/uk.png',
+      image: '/images/country1.png',
     },
   ];
   return (
@@ -99,7 +167,7 @@ const Home = () => {
           />
         </div>
       </div>
-      <div className='max-w-[1240px] mx-auto px-5 space-y-20 lg:mt-0 mt-20'>
+      <div className='max-w-[1240px] mx-auto px-5 space-y-32 lg:mt-0 mt-20'>
         <div className='font-semibold text-center'>
           <div className='text-blue-500 w-fit mx-auto bg-blue-50 px-4 py-2 mb-2 rounded-lg'>
             5000+ TOP UNIVERSITIES
@@ -175,7 +243,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div>
+      </div>
+      <div className='bg-[#F8FBFF] px-5 my-16 py-16'>
+        <div className='max-w-[1240px] mx-auto'>
           <div className='font-semibold text-center'>
             <div className='text-blue-500 w-fit mx-auto bg-blue-50 px-4 py-2 mb-2 rounded-lg'>
               WHY CHOOSE US
@@ -218,8 +288,8 @@ const Home = () => {
             </div>
             <div className='grid lg:grid-cols-2 gap-6'>
               {standOut?.map((item, idx) => (
-                <div className='bg-white space-y-3 h-full overflow-hidden shadow-card relative p-6 rounded-2xl'>
-                  <div className='h-24 w-24 absolute -right-3 -top-3 rounded-full bg-blue-50 flex justify-center items-center'>
+                <div className='bg-white group h-full overflow-hidden shadow-card relative p-6 rounded-2xl'>
+                  <div className='h-24 w-24 absolute -right-3 -top-3 rounded-full bg-blue-50 z-10 flex justify-center items-center'>
                     <Img
                       src={'/icons/handshake.png'}
                       height={48}
@@ -228,11 +298,173 @@ const Home = () => {
                       isLocal
                     />
                   </div>
-                  <h4 className='text-xl font-semibold !mt-6'>{item?.title}</h4>
-                  <p className='text-secondary'>{item?.description}</p>
+                  <div className='space-y-3 mt-6 relative z-10'>
+                    <h4 className='text-xl font-semibold'>
+                      {item?.title}
+                    </h4>
+                    <p className='text-secondary'>{item?.description}</p>
+                  </div>
+                  <div className='absolute h-20 w-20 rounded-2xl group-hover:rounded-2xl group-hover:h-full group-hover:w-full duration-500 bg-blue-50 group-hover:top-0 group-hover:right-0 -top-3 -right-3' />
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </div>
+      <div className='max-w-[1240px] mx-auto px-5 space-y-32'>
+        <div className='space-y-12'>
+          <div className='font-semibold text-center'>
+            <div className='text-blue-500 w-fit mx-auto bg-blue-50 px-4 py-2 mb-2 rounded-lg'>
+              COUNTRIES
+            </div>
+            <div className='text-[32px] md:text-[40px] max-w-[530px] mx-auto'>
+              Explore & Learn More About Study Destinations
+            </div>
+          </div>
+          <Slider
+            {...VERIFICATION_SLICK_SETTING}
+            nextArrow={<NextArrow />}
+            prevArrow={<PrevArrow />}
+          >
+            {countries?.map((item, idx) => (
+              <div key={idx} className='relative w-[362px] group mb-16'>
+                <Img
+                  src={item?.image}
+                  height={420}
+                  width={362}
+                  alt='heroImage'
+                  isLocal
+                  className='max-h-[420px] rounded-2xl'
+                />
+                <div className='bg-[linear-gradient(180deg,rgba(30,58,138,0.00)_0%,#1E3A8A_91.32%)] h-full w-full rounded-2xl absolute group-hover:top-0 top-[-100%] duration-500'>
+                  <div className='text-white h-full flex justify-center items-center text-[45px] font-semibold'>
+                    {item?.name}
+                  </div>
+                </div>
+                <div className='h-[92px] absolute -bottom-10 left-[37%] w-[92px] rounded-full bg-white flex items-center justify-center'>
+                  <Img
+                    src={item?.icon}
+                    height={86}
+                    width={86}
+                    alt='heroImage'
+                    isLocal
+                  />
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+        <div className='mt-12'>
+          <div className='font-semibold text-center'>
+            <div className='text-blue-500 w-fit mx-auto bg-blue-50 px-4 py-2 mb-2 rounded-lg'>
+              COUNTRIES
+            </div>
+            <div className='text-[32px] md:text-[40px] max-w-[530px] mx-auto'>
+              Explore & Learn More About Study Destinations
+            </div>
+          </div>
+          <div className='grid lg:grid-cols-4 sm:grid-cols-2 place-items-center gap-6 mt-12'>
+            {destinations?.map((item, idx) => (
+              <div className='flex flex-col items-center w-full max-w-[292px] group relative overflow-y-hidden px-4'>
+                <div className='h-[111px] w-[111px] border border-[#E5E7EB] rounded-full flex justify-center items-center'>
+                  <div className='h-[85px] w-[85px] flex justify-center rounded-full items-center bg-[linear-gradient(0deg,_#EBF3FE_0.74%,rgba(235,243,254,0.00)_100.74%)]'>
+                    <Img
+                      src={item?.icon}
+                      height={46}
+                      width={46}
+                      alt='heroImage'
+                      isLocal
+                    />
+                  </div>
+                </div>
+                <div className='h-8 w-8 flex -mt-[13px] text-[10px] font-semibold text-white items-center justify-center rounded-full bg-[#1E3A8A]'>
+                  0{idx + 1}
+                </div>
+                <div className='w-full'>
+                  <Img
+                    src={'/icons/triangle.png'}
+                    height={14}
+                    width={35}
+                    alt='heroImage'
+                    isLocal
+                    className='mx-auto mt-[14px]'
+                  />
+                  <div className='p-6 shadow-card text-center font-semibold rounded-[48px] border border-[#E5E7EB]'>
+                    {item?.title}
+                  </div>
+                </div>
+                <div className='bg-white group-hover:shadow-card border border-[#E5E7EB] h-full w-[260px] rounded-[40px] p-5 flex text-center flex-col justify-center items-center absolute group-hover:top-0 top-[-100%] duration-500'>
+                  <div className='font-semibold'>Initial Assesment</div>
+                  <p>
+                    During your first session, we will conduct an initial
+                    assessment of your goals and needs.
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className='mt-16'>
+          <div className='font-semibold text-center'>
+            <div className='text-blue-500 w-fit mx-auto bg-blue-50 px-4 py-2 mb-2 rounded-lg'>
+              TESTIMONIALS
+            </div>
+            <div className='text-[32px] md:text-[40px] max-w-[530px] mx-auto'>
+              Success Stories from Students Placed
+            </div>
+          </div>
+          <Img
+            src={'/images/testimonials.png'}
+            height={272}
+            width={324}
+            alt='heroImage'
+            isLocal
+            className='absolute lg:block hidden right-0 -mt-52'
+          />
+          <div className='grid lg:grid-cols-2 mt-12 gap-[40px] place-items-center'>
+            {testimonials?.map((item, idx) => (
+              <div
+                className='bg-[#F8FBFF] h-full rounded-2xl p-6 space-y-6 max-w-xl shadow-card'
+                key={idx}
+              >
+                <Img
+                  src={'/icons/quotes.png'}
+                  height={53}
+                  width={60}
+                  alt='heroImage'
+                  isLocal
+                />
+                <p className='text-xl font-medium'>{item?.description}</p>
+                <div className='h-[1px] bg-[#3B82F6]'></div>
+                <div className='flex items-center gap-x-3 flex-wrap'>
+                  <Img
+                    src={item?.icon}
+                    height={80}
+                    width={80}
+                    alt='heroImage'
+                    isLocal
+                  />
+                  <div>
+                    <div className='font-semibold text-2xl'>{item?.name}</div>
+                    <div className='font-semibold text-secondary'>
+                      {item?.designation}
+                    </div>
+                  </div>
+                  <div className='flex gap-x-3 ml-auto'>
+                    {[1, 1, 1, 1, 1]?.map((item, idx) => (
+                      <Img
+                        src={'/icons/starGolden.png'}
+                        height={24}
+                        width={24}
+                        alt='heroImage'
+                        isLocal
+                        key={idx}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
