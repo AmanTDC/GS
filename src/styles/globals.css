@@ -43,6 +43,10 @@ html {
   animation: accordion 0.3s ease;
 }
 
+.animate-card {
+  animation: accordion 0.4s ease;
+}
+
 @keyframes accordion {
   from {
     opacity: 0;

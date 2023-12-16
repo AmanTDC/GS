@@ -19,11 +19,36 @@ const Home = () => {
     '/images/homeSlider5.png',
   ];
   const services = [
-    { image: '/images/homeServices0.png', name: 'Scholarship Guidance' },
-    { image: '/images/homeServices1.png', name: 'Visa Application' },
-    { image: '/images/homeServices2.png', name: 'Study Counselling' },
-    { image: '/images/homeServices3.png', name: 'University Application' },
-    { image: '/images/homeServices4.png', name: 'Student Accomodation' },
+    {
+      icon: '/icons/offer1.png',
+      hoverIcon: '/icons/offerLight1.png',
+      image: '/images/homeServices0.png',
+      name: 'Scholarship Guidance',
+    },
+    {
+      icon: '/icons/offer2.png',
+      hoverIcon: '/icons/offerLight1.png',
+      image: '/images/homeServices1.png',
+      name: 'Visa Application',
+    },
+    {
+      icon: '/icons/offer1.png',
+      hoverIcon: '/icons/offerLight1.png',
+      image: '/images/homeServices2.png',
+      name: 'Study Counselling',
+    },
+    {
+      icon: '/icons/offer3.png',
+      hoverIcon: '/icons/offerLight1.png',
+      image: '/images/homeServices3.png',
+      name: 'University Application',
+    },
+    {
+      icon: '/icons/offer4.png',
+      hoverIcon: '/icons/offerLight1.png',
+      image: '/images/homeServices4.png',
+      name: 'Student Accomodation',
+    },
   ];
   const standOut = [
     {
@@ -207,7 +232,7 @@ const Home = () => {
               key={idx}
               className='relative max-w-[300px] lg:col-span-3 md:col-span-4 sm:col-span-6 col-span-12'
             >
-              <div className='relative'>
+              <div className='relative group'>
                 <div className='z-10 h-[250px] w-[250px] rounded-2xl bg-[linear-gradient(180deg,rgba(0,0,0,0.00)_59.37%,#000_100%)] absolute'></div>
                 <Img
                   src={item?.image}
@@ -215,8 +240,37 @@ const Home = () => {
                   width={250}
                   alt='heroImage'
                   isLocal
-                  className='h-[250px] w-[250px]'
+                  className='h-[250px] w-[250px] rounded-2xl'
                 />
+                <div className='h-[72px] w-[72px] border border-blue-50 absolute top-[10px] rounded-full flex items-center justify-center right-[10px]'>
+                  <div className='group-hover:bg-[#3B82F6] duration-500 bg-blue-50 h-[58px] z-40 w-[58px] rounded-full flex items-center justify-center'>
+                    <Img
+                      src={item?.icon}
+                      height={30}
+                      width={30}
+                      alt='heroImage'
+                      isLocal
+                      className='group-hover:hidden block'
+                    />
+                    <Img
+                      src={item?.hoverIcon}
+                      height={30}
+                      width={30}
+                      alt='heroImage'
+                      isLocal
+                      className='hidden group-hover:block'
+                    />
+                  </div>
+                </div>
+                <div className='absolute h-0 w-0 rounded-2xl z-30 group-hover:h-full group-hover:w-full duration-500 bg-blue-50 top-0 right-0 group-hover:top-0 group-hover:right-0'>
+                  <div className='hidden group-hover:block mt-20 w-[250px] h-full p-5 animate-card'>
+                    <div className='font-bold text-lg'>Study Counselling</div>
+                    <p>
+                      There are many is variations of passage of lorem ipsum
+                      available but the majority
+                    </p>
+                  </div>
+                </div>
               </div>
               <h4 className='text-[#fafafa] bottom-3 z-20 left-4 font-medium absolute'>
                 {item?.name}
@@ -302,7 +356,7 @@ const Home = () => {
                     <h4 className='text-xl font-semibold'>{item?.title}</h4>
                     <p className='text-secondary'>{item?.description}</p>
                   </div>
-                  <div className='absolute h-20 w-20 rounded-2xl group-hover:rounded-2xl group-hover:h-full group-hover:w-full duration-500 bg-blue-50 group-hover:top-0 group-hover:right-0 -top-3 -right-3' />
+                  <div className='absolute h-20 w-20 rounded-2xl group-hover:h-full group-hover:w-full duration-500 bg-blue-50 group-hover:top-0 group-hover:right-0 -top-3 -right-3' />
                 </div>
               ))}
             </div>
