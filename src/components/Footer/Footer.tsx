@@ -1,9 +1,13 @@
 import Banner from '@/features/Destinations/sections/Banner';
 import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
-import React from 'react';
+import Modal from '@/shared/Modal/Modal';
+import useScrollHidden from '@/utils/hooks/useScrollHidden';
+import React, { useState } from 'react';
 
 const Footer = ({ isBanner }: { isBanner?: boolean }) => {
+  const [isActive, setIsActive] = useState(false);
+  useScrollHidden(isActive);
   const socials = [
     '/icons/facebook.png',
     '/icons/insta.png',
@@ -34,7 +38,12 @@ const Footer = ({ isBanner }: { isBanner?: boolean }) => {
                 Achieve Boundless Opportunities and fulfil your Dreams Abroad
               </p>
             </div>
-            <Button className='sm:w-fit w-full md:mx-0 mx-auto'>Get Free Consultation</Button>
+            <Button
+              className='sm:w-fit w-full md:mx-0 mx-auto'
+              onClick={() => setIsActive(true)}
+            >
+              Get Free Consultation
+            </Button>
           </div>
         )}
         <div className='gap-x-5 sm:flex justify-between'>
@@ -143,6 +152,26 @@ const Footer = ({ isBanner }: { isBanner?: boolean }) => {
           </div>
         </div>
       </div>
+      {isActive && (
+        <Modal
+          onClose={() => setIsActive(false)}
+          className='bg-transparent p-0'
+        >
+          <div
+            className='absolute text-6xl cursor-pointer right-3 top-0 md:text-white'
+            onClick={() => setIsActive(false)}
+          >
+            &times;
+          </div>
+          <iframe
+            src='https://outlook.office365.com/owa/calendar/FreeConsultation@Globalscholar.co.uk/bookings/'
+            width='100%'
+            height='100%'
+            scrolling='yes'
+            className='w-[100vw] md:w-[calc(100vw-200px)] max-w-[1120px] md:h-[calc(100vh-100px)] h-[100vh]'
+          ></iframe>
+        </Modal>
+      )}
     </div>
   );
 };

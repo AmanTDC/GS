@@ -15,6 +15,8 @@ const config: Config = {
       },
       boxShadow: {
         card: '0px 5px 11px 0px rgba(0, 0, 0, 0.02), 0px 19px 19px 0px rgba(0, 0, 0, 0.02), 0px 44px 26px 0px rgba(0, 0, 0, 0.01), 0px 78px 31px 0px rgba(0, 0, 0, 0.00), 0px 122px 34px 0px rgba(0, 0, 0, 0.00);',
+        navbar:
+          '0px 28px 61px 0px rgba(0, 0, 0, 0.05), 0px 111px 111px 0px rgba(0, 0, 0, 0.04), 0px 250px 150px 0px rgba(0, 0, 0, 0.03), 0px 444px 178px 0px rgba(0, 0, 0, 0.01), 1px 694px 194px 0px rgba(0, 0, 0, 0.00);',
       },
     },
   },

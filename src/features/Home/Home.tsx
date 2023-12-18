@@ -131,21 +131,31 @@ const Home = () => {
       image: '/images/country3.png',
     },
     {
-      name: 'UK',
-      icon: '/images/uk.png',
-      image: '/images/country1.png',
+      name: 'USA',
+      icon: '/images/us.png',
+      image: '/images/country4.png',
+    },
+    {
+      name: 'Ireland',
+      icon: '/images/ireland.png',
+      image: '/images/country5.png',
+    },
+    {
+      name: 'NewZealand',
+      icon: '/images/nz.png',
+      image: '/images/country6.png',
     },
   ];
   return (
     <div className='mb-[400px]'>
-      <Navbar color='text-white' />
-      <div className="bg-[url('/images/homeBg.png')] bg-[length:90%_100%] xl:h-[900px] lg:h-screen h-fit w-full bg-no-repeat">
-        <div className='flex lg:flex-row flex-col items-center lg:space-y-0 space-y-16 lg:pt-28 pt-32 lg:justify-between justify-center lg:space-x-10 max-w-[1240px] mx-auto px-5'>
-          <div className='text-white max-w-[644px] space-y-4'>
+      <Navbar />
+      <div className="bg-[url('/images/homeBg.png')] lg:bg-[length:90%_100%] sm:bg-[length:110%_100%] bg-[length:120%_100%] xl:h-[900px] lg:h-screen h-[800px]  w-full bg-no-repeat">
+        <div className='flex lg:flex-row lg:space-y-0 space-y-16 lg:pt-28 pt-32 lg:justify-between lg:space-x-10 max-w-[1240px] md:mx-auto px-5'>
+          <div className='text-white md:max-w-[644px] sm:max-w-[calc(100%-80px)] space-y-4'>
             <div className='text-xl font-medium'>
               Welcome to Global Scholar 👋
             </div>
-            <div className='md:text-5xl text-4xl font-semibold !leading-[67px]'>
+            <div className='md:text-5xl text-4xl font-semibold sm:!leading-[67px] leading-[50px]'>
               Study Abroad With Reward: Your Global Future Awaits
             </div>
             <div className='text-xl font-medium mt-2'>
@@ -188,7 +198,7 @@ const Home = () => {
             width={470}
             alt='heroImage'
             isLocal
-            className='mx-auto'
+            className='mx-auto lg:block hidden'
           />
         </div>
       </div>
@@ -416,40 +426,44 @@ const Home = () => {
           </div>
           <div className='grid lg:grid-cols-4 sm:grid-cols-2 place-items-center gap-6 mt-12'>
             {destinations?.map((item, idx) => (
-              <div className='flex flex-col items-center w-full max-w-[292px] group relative overflow-y-hidden px-4'>
-                <div className='h-[111px] w-[111px] border border-[#E5E7EB] rounded-full flex justify-center items-center'>
-                  <div className='h-[85px] w-[85px] flex justify-center rounded-full items-center bg-[linear-gradient(0deg,_#EBF3FE_0.74%,rgba(235,243,254,0.00)_100.74%)]'>
-                    <Img
-                      src={item?.icon}
-                      height={46}
-                      width={46}
-                      alt='heroImage'
-                      isLocal
-                    />
+              <div className='flip-card'>
+                <div className='flip-card-inner'>
+                  <div className='flip-card-front flex flex-col items-center px-4'>
+                    <div className='h-[111px] w-[111px] border border-[#E5E7EB] rounded-full flex justify-center items-center'>
+                      <div className='h-[85px] w-[85px] flex justify-center rounded-full items-center bg-[linear-gradient(0deg,_#EBF3FE_0.74%,rgba(235,243,254,0.00)_100.74%)]'>
+                        <Img
+                          src={item?.icon}
+                          height={46}
+                          width={46}
+                          alt='heroImage'
+                          isLocal
+                        />
+                      </div>
+                    </div>
+                    <div className='h-8 w-8 flex -mt-[13px] text-[10px] font-semibold text-white items-center justify-center rounded-full bg-[#1E3A8A]'>
+                      0{idx + 1}
+                    </div>
+                    <div className='w-full'>
+                      <Img
+                        src={'/icons/triangle.png'}
+                        height={14}
+                        width={35}
+                        alt='heroImage'
+                        isLocal
+                        className='mx-auto mt-[14px]'
+                      />
+                      <div className='p-6 shadow-card text-center font-semibold rounded-[48px] border border-[#E5E7EB]'>
+                        {item?.title}
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className='h-8 w-8 flex -mt-[13px] text-[10px] font-semibold text-white items-center justify-center rounded-full bg-[#1E3A8A]'>
-                  0{idx + 1}
-                </div>
-                <div className='w-full'>
-                  <Img
-                    src={'/icons/triangle.png'}
-                    height={14}
-                    width={35}
-                    alt='heroImage'
-                    isLocal
-                    className='mx-auto mt-[14px]'
-                  />
-                  <div className='p-6 shadow-card text-center font-semibold rounded-[48px] border border-[#E5E7EB]'>
-                    {item?.title}
+                  <div className='flip-card-back bg-white border border-[#E5E7EB] rounded-[40px] p-5 flex text-center flex-col justify-center items-center'>
+                    <div className='font-semibold'>Initial Assesment</div>
+                    <p className='line-clamp-[7]'>
+                      During your first session, we will conduct an initial
+                      assessment of your goals and needs.
+                    </p>
                   </div>
-                </div>
-                <div className='bg-white group-hover:shadow-card border border-[#E5E7EB] h-full w-[260px] rounded-[40px] p-5 flex text-center flex-col justify-center items-center absolute group-hover:top-0 top-[-100%] duration-500'>
-                  <div className='font-semibold'>Initial Assesment</div>
-                  <p>
-                    During your first session, we will conduct an initial
-                    assessment of your goals and needs.
-                  </p>
                 </div>
               </div>
             ))}

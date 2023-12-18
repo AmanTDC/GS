@@ -6,7 +6,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { RxCross2 } from 'react-icons/rx';
 import useNavbar from './views/useNavbar';
-const Navbar = ({ color }: { color?: string }) => {
+const Navbar = () => {
   const {
     router,
     setIsActive,
@@ -17,13 +17,15 @@ const Navbar = ({ color }: { color?: string }) => {
     setDropdownActive,
     isHomePage,
   } = useNavbar();
-  
+
   return (
     <>
       <div
         className={`${
-          isHomePage ? 'bg-transparent absolute w-full' : 'bg-white !sticky'
-        } z-[999] px-5 gap-x-5 lg:px-[60px] navbar top-0 shadow-[0px_28px_61px_0px_#0000000D,0px_111px_111px_0px_#0000000A,0px_250px_150px_0px_#00000008,0px_444px_178px_0px_#00000003,1px_694px_194px_0px_#00000000]`}
+          isHomePage
+            ? 'bg-transparent absolute w-full'
+            : 'bg-white !sticky shadow-navbar'
+        } z-[999] px-5 gap-x-5 lg:px-[60px] navbar top-0`}
         id='navbar'
       >
         <div className='max-w-[1240px] mx-auto flex items-center justify-between h-20'>
@@ -43,7 +45,7 @@ const Navbar = ({ color }: { color?: string }) => {
               className='cursor-pointer'
             />
           </Link>
-          <div className='md:flex items-center lg:gap-x-10 gap-x-5 hidden'>
+          <div className='lg:flex items-center lg:gap-x-10 gap-x-5 hidden'>
             <div
               className={`${isHomePage ? 'text-white' : 'text-black'} group`}
               id='nav-item'
@@ -123,13 +125,14 @@ const Navbar = ({ color }: { color?: string }) => {
               className='min-w-fit'
               onClick={() => router.push('/contact')}
             >
-              Contact Us
+              Book Free Consultation
             </Button>
           </div>
 
           <GiHamburgerMenu
             size={24}
-            className='md:hidden block'
+            className='lg:hidden block'
+            color='white'
             onClick={() => setIsActive(0)}
           />
         </div>

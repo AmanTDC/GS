@@ -30,7 +30,7 @@ const useNavbar = () => {
       link: '/ireland',
     },
     {
-      icon: '/images/australia.png',
+      icon: '/images/nz.png',
       name: 'Newzealand',
       link: '/nz',
     },

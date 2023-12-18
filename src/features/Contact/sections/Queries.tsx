@@ -4,103 +4,19 @@ import React from 'react';
 import { FaStar } from 'react-icons/fa';
 const Queries = () => {
   return (
-    <div className='gap-8 grid grid-cols-12 max-w-[1120px] mx-auto my-14 px-5'>
-      <div className='space-y-6 md:col-span-6 col-span-12 md:max-w-none md:mx-0 mx-auto'>
-        <h4 className='text-blue-500 text-[28px] font-semibold'>
-          Do you have any questions?
-        </h4>
-        <p className='text-secondary'>
-          Take the first step to make your study abroad dream a reality.{' '}
-          <b>Get Free 30 Min complete assistance</b> with university
-          shortlisting, application, scholarship, visa and finance.
-        </p>
-        <div className='space-y-4'>
-          <div>
-            <label className='text-gray-600 text-xs font-medium'>
-              Name <span className='text-red-600'>*</span>
-            </label>
-            <div className='relative mt-1'>
-              <input
-                type='text'
-                placeholder='Enter Your Name'
-                className='h-10 rounded-lg pl-9 w-full outline-none border border-gray-200 text-sm'
-              />
-              <Img
-                src={'/icons/Message.png'}
-                height={16}
-                width={16}
-                alt='heroImage'
-                isLocal
-                className='absolute top-3 left-3'
-              />
-            </div>
-          </div>
-          <div>
-            <label className='text-gray-600 text-xs font-medium'>
-              Email ID <span className='text-red-600'>*</span>
-            </label>
-            <div className='relative mt-1'>
-              <input
-                type='text'
-                placeholder='Enter Your Email ID'
-                className='h-10 rounded-lg pl-9 w-full outline-none border border-gray-200 text-sm'
-              />
-              <Img
-                src={'/icons/Message.png'}
-                height={16}
-                width={16}
-                alt='heroImage'
-                isLocal
-                className='absolute top-3 left-3'
-              />
-            </div>
-          </div>
-          <div>
-            <label className='text-gray-600 text-xs font-medium'>
-              Phone Number <span className='text-red-600'>*</span>
-            </label>
-            <div className='relative mt-1'>
-              <input
-                type='text'
-                placeholder='Enter Your Phone Number'
-                className='h-10 rounded-lg pl-9 w-full outline-none border border-gray-200 text-sm'
-              />
-              <Img
-                src={'/icons/Phone.png'}
-                height={16}
-                width={16}
-                alt='heroImage'
-                isLocal
-                className='absolute top-3 left-3'
-              />
-            </div>
-          </div>
-        </div>
-        <div className='flex items-center gap-x-2'>
-          <input type='checkbox' className='h-5 w-5' />
-          <p className='text-xs text-gray-600'>
-            By clicking you agree to our{' '}
-            <span className='text-[#007DFC]'>Privacy Policy</span> and{' '}
-            <span className='text-[#007DFC]'>Terms & Conditions</span>{' '}
-            <span className='text-red-600'>*</span>
-          </p>
-        </div>
-        <Button
-          className='bg-blue-900 py-3 hover:!bg-blue-900/80 flex items-center justify-center gap-x-2'
-          fullWidth
-        >
-          Get Free Consultation
-          <Img
-            src={'/icons/Check.png'}
-            height={18}
-            width={18}
-            alt='heroImage'
-            isLocal
-          />
-        </Button>
+    <div className='gap-8 grid grid-cols-12 max-w-[1120px] mx-auto my-14 p-6'>
+      <div className='md:col-span-6 col-span-12 md:mx-0 mx-auto'>
+        <Img
+          src='/images/contactImage.png'
+          alt='call'
+          height={600}
+          width={450}
+          isLocal
+          className=''
+        />
       </div>
-      <div className='md:col-span-6 col-span-12 space-y-8 bg-gray-50 h-fit p-6 rounded-3xl'>
-        <h4 className='text-blue-500 text-[28px] font-semibold'>Reach Us At</h4>
+      <div className='md:col-span-6 col-span-12 p-6'>
+        <h4 className='text-[28px] font-semibold mb-8'>Reach Us At</h4>
         <div className='flex gap-x-3'>
           <Img
             src='/icons/calling.png'
@@ -117,7 +33,7 @@ const Queries = () => {
             </div>
           </div>
         </div>
-        <div className='flex gap-x-3'>
+        <div className='flex gap-x-3 mt-12 mb-6'>
           <Img
             src='/icons/sms1.png'
             alt='sms'
@@ -131,7 +47,7 @@ const Queries = () => {
             <div className='text-secondary'>info@globalscholar.co.uk</div>
           </div>
         </div>
-        <div className='h-[1px] border border-secondary' />
+        <div className='h-[1px] my-4 border border-[#E5E7EB]' />
         <div className='space-y-4'>
           <h1 className='font-bold text-2xl'>Customer Ratings</h1>
           <div className='flex items-center gap-x-5'>
@@ -146,6 +62,21 @@ const Queries = () => {
             By 700+ Visa Approved Students
           </p>
         </div>
+        <Button
+          className='!bg-[#1E3A8A] py-3 hover:!bg-[#1E3A8A]/80 flex items-center justify-center gap-x-2 mt-8'
+          fullWidth
+        >
+          Get Free Consultation
+          <div className='h-5 w-5 rounded-full bg-white flex items-center justify-center'>
+            <Img
+              src={'/icons/diagonalArrow.png'}
+              height={16}
+              width={16}
+              alt='heroImage'
+              isLocal
+            />
+          </div>
+        </Button>
       </div>
     </div>
   );
