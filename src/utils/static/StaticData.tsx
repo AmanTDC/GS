@@ -1633,4 +1633,104 @@ export const ServicesData = {
       },
     ],
   },
+  accomodation: {
+    heroSection: {
+      title: [
+        'Making Your Transition Seamless with ',
+        'Student Accommodation ',
+        'Services',
+      ],
+      description:
+        'Embarking on your international education journey involves more than just choosing the right courses and securing a visa. GlobalScholar Student Accommodation Assistance service is designed to guide you through the process of securing a home away from home.',
+      image: '/images/accomodationHero.svg',
+    },
+    whatToExpect: {
+      title:
+        'What to Expect from Our University Application Process Assistance:',
+      data: [
+        {
+          icon: '/icons/abroad1.png',
+          title: 'Course and University Selection:',
+          description:
+            'We help you choose the right course and university based on your academic background, interests, and career aspirations.',
+        },
+        {
+          icon: '/icons/abroad2.png',
+          title: 'Application Preparation:',
+          description:
+            'We guide you through the application documentation process, ensuring that your application is complete and compelling.',
+        },
+        {
+          icon: '/icons/abroad3.png',
+          title: 'Resume Building:',
+          description:
+            'We assist you in creating a strong resume or curriculum vitae that showcases your achievements and qualifications.',
+        },
+        {
+          icon: '/icons/abroad4.png',
+          title: 'Statement of Purpose (SOP) Assistance:',
+          description:
+            'We offer guidance on writing a compelling SOP that reflects your motivation and goals.',
+        },
+        {
+          icon: '/icons/abroad5.png',
+          title: 'Recommendation Letters (LORs):',
+          description:
+            'Our experts provide advice on securing strong recommendation letters.',
+        },
+        {
+          icon: '/icons/abroad6.png',
+          title: 'Timely Application Submission:',
+          description:
+            'We ensure that your applications are submitted on time, meeting all university deadlines.',
+        },
+        {
+          icon: '/icons/abroad1.png',
+          title: 'Scholarship Opportunities:',
+          description:
+            'We inform you about available scholarships and help you with the application process.',
+        },
+        {
+          icon: '/icons/abroad2.png',
+          title: 'Interview Preparation:',
+          description:
+            'If an interview is part of the application process, we provide interview preparation assistance.',
+        },
+      ],
+    },
+    faqs: [
+      {
+        title: 'How does GlobalScholar assist with student accommodation?',
+        description:
+          'GlobalScholar assists by presenting tailored accommodation options, handling the booking process, and providing ongoing support for a seamless transition.',
+      },
+      {
+        title: 'What types of accommodation do you offer assistance with?',
+        description:
+          'We assist with a variety of options, including university dormitories, private apartments, and homestays, tailored to your preferences and budget.',
+      },
+      {
+        title:
+          "Is it mandatory to use GlobalScholar's Accommodation Assistance service?",
+        description:
+          "It's not mandatory, but many students find value in our service for its convenience and expertise in navigating the accommodation process.",
+      },
+      {
+        title:
+          'How can I get in touch with the Accommodation Assistance team at GlobalScholar?',
+        description:
+          "You can contact us through the contact form on our website or by calling our helpline. We're here to address your queries and guide you through the process.",
+      },
+      {
+        title: 'Is there an additional cost for using the Accommodation Assistance service?',
+        description:
+          'No, our Accommodation Assistance service is part of our commitment to supporting students, and there are no additional fees for using this service.',
+      },
+      {
+        title: 'Can I change my accommodation choice after booking?',
+        description:
+          'Changes may be possible, subject to availability and provider policies. Please discuss any changes with our team as early as possible.',
+      },
+    ],
+  },
 };

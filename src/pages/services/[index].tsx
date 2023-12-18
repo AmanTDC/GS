@@ -17,7 +17,7 @@ const Index = () => {
       : router?.query?.index === 'scholarships'
       ? setPageData(ServicesData?.scholarships)
       : router?.query?.index === 'accomodation'
-      ? setPageData(ServicesData?.application)
+      ? setPageData(ServicesData?.accomodation)
       : null;
   }, [router]);
 
