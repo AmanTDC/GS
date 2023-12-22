@@ -4,7 +4,7 @@ import React from 'react';
 
 const Questions = ({ data, index }: { data: any; index: number }) => {
   return (
-    <div className='!mt-16 grid grid-cols-2 gap-20'>
+    <div className='!mt-16 grid md:grid-cols-2 lg:gap-20 md:gap-5 gap-16 md:place-items-start place-items-center'>
       <Img
         src={data?.image}
         height={510}
@@ -17,7 +17,9 @@ const Questions = ({ data, index }: { data: any; index: number }) => {
         <h1 className='text-[28px] font-semibold'>{data?.title}</h1>
         <div
           className={`${
-            index === 3 ? 'flex flex-wrap' : 'grid grid-cols-2'
+            index === 3
+              ? 'flex flex-wrap'
+              : 'grid grid-cols-2 max-[420px]:grid-cols-1'
           } gap-8`}
         >
           {data?.options?.map((item: any, idx: number) => (
@@ -32,6 +34,7 @@ const Questions = ({ data, index }: { data: any; index: number }) => {
                   width={24}
                   alt='heroImage'
                   isLocal
+                  className='h-6 w-6'
                 />
               )}
               <h4 className='font-semibold'>{item?.name || item}</h4>

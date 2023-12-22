@@ -25,7 +25,7 @@ const styles = {
         'p-3 text-lg': size === 'lg',
       },
       className,
-      isDisabled && 'cursor-not-allowed bg-gray-200 text-[#A3A3A3]',
+      isDisabled && 'cursor-not-allowed bg-gray-200 !text-[#A3A3A3]',
       noHover && 'lg:hover:transition-none',
       !isDisabled && 'lg:hover:bg-blue-400'
     ),

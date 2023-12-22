@@ -64,15 +64,15 @@ const CourseFinder = () => {
   return (
     <div>
       <Navbar />
-      <div className='relative pt-40 pb-20 bg-[url("/images/courseBg.png")] bg-[length:100%_467px] bg-no-repeat bg-bottom'>
-        <div className='space-y-8 max-w-[1120px] mx-auto z-10'>
+      <div className='relative pt-32 pb-20 bg-[url("/images/courseBg.png")] bg-[length:100%_467px] bg-no-repeat bg-bottom'>
+        <div className='space-y-8 max-w-[1120px] mx-auto z-10 px-5'>
           <Img
             src='/images/testimonials.png'
             height={272}
             width={324}
             alt='heroImage'
             isLocal
-            className='absolute right-0'
+            className='absolute right-0 lg:block hidden'
           />
           <h1 className='text-[28px] font-semibold text-[#1E3A8A] text-center'>
             Help us find the best course and college for you

@@ -136,7 +136,9 @@ const Navbar = () => {
 
           <GiHamburgerMenu
             size={24}
-            className='lg:hidden block hamburger'
+            className={`lg:hidden block ${
+              router.pathname === '/' ? 'hamburger' : ''
+            }`}
             onClick={() => setIsActive(0)}
           />
         </div>
@@ -234,7 +236,15 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-          <div className='text-black font-medium min-w-fit'>Course Finder</div>
+          <div>
+            <Link
+              href='/courseFinder'
+              className='text-black font-medium min-w-fit'
+              onClick={() => setIsActive(-1)}
+            >
+              Course Finder
+            </Link>
+          </div>
           <Button
             type='button'
             className='min-w-fit mt-5 flex mx-auto'
