@@ -158,6 +158,12 @@ td {
 .navbar.active #nav-item {
   color: black !important;
 }
+.hamburger {
+  color: white;
+}
+.navbar.active .hamburger {
+  color: black;
+}
 
 .navbar {
   transition: all 0.9s;

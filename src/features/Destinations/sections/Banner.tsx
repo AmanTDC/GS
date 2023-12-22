@@ -7,12 +7,14 @@ const Banner = ({
   className,
   styleTitle,
   styleDescription,
+  styleImage,
 }: {
   data: any;
   imageRight?: boolean;
   className?: string;
   styleTitle?: string;
   styleDescription?: string;
+  styleImage?: string;
 }) => {
   return (
     <div className='relative'>
@@ -22,15 +24,17 @@ const Banner = ({
         width={361}
         alt='heroImage'
         isLocal
-        className='absolute -top-20 right-[calc(100%-40%)] h-[357px] w-[361px] lg:block hidden'
+        className={`absolute -top-20 right-[calc(100%-40%)] ${
+          imageRight ? 'hidden' : 'lg:block hidden'
+        } h-[357px] w-[361px] ${styleImage}`}
       />
       <div
-        className={`rounded-3xl bg-blue-500 -mt-[270px] lg:px-10 md:mx-10 z-10 mb-16 ${className}`}
+        className={`rounded-3xl bg-blue-500 lg:px-10 md:mx-10 z-10 mb-16 flex flex-col justify-center ${className}`}
       >
         <div
-          className={`space-y-4 max-w-[591px] lg:ml-auto max-[1024px]:mx-auto w-full py-6 px-5 ${
-            imageRight && 'order-first'
-          }`}
+          className={`space-y-4 max-w-[591px] ${
+            imageRight ? '' : 'lg:ml-auto'
+          } max-[1024px]:mx-auto w-full py-6 px-5`}
         >
           <h4
             className={`md:text-[32px] text-[28px] text-[#fafafa] font-semibold max-w-[500px] ${styleTitle}`}
@@ -62,6 +66,16 @@ const Banner = ({
           </div>
         </div>
       </div>
+      <Img
+        src={data?.image}
+        height={357}
+        width={361}
+        alt='heroImage'
+        isLocal
+        className={`absolute bottom-0 left-[calc(100%-40%)] ${
+          imageRight ? 'lg:block hidden' : 'hidden'
+        } h-[357px] w-[361px] ${styleImage}`}
+      />
     </div>
   );
 };

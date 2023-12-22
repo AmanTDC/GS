@@ -18,15 +18,16 @@ const styles = {
     noHover?: boolean
   ) =>
     clsx(
-      'h-max rounded-md text-white bg-blue-500 lg:hover:bg-blue-400 duration-500 p-2 px-5 text-base',
+      'h-max rounded-md text-white bg-blue-500 duration-500 p-2 px-5 text-base',
       fullWidth && 'w-full',
       {
         'p-1 text-sm': size === 'sm',
         'p-3 text-lg': size === 'lg',
       },
       className,
-      isDisabled && 'cursor-not-allowed opacity-75',
-      noHover && 'lg:hover:transition-none'
+      isDisabled && 'cursor-not-allowed bg-gray-200 text-[#A3A3A3]',
+      noHover && 'lg:hover:transition-none',
+      !isDisabled && 'lg:hover:bg-blue-400'
     ),
   arrows: {
     next: 'absolute -bottom-16 right-[35%] w-fit z-50 bg-sliderArrow p-2 lg:hover:bg-sliderArrow/70 min-[700px]:right-4',

@@ -40,7 +40,9 @@ const GetStarted = ({ index }: { index: string }) => {
 
   return (
     <div className='space-y-7' id={index}>
-      <h4 className='md:text-[32px] text-[28px] font-semibold mb-2'>How to Get Started</h4>
+      <h4 className='md:text-[32px] text-[28px] font-semibold mb-2'>
+        How to Get Started
+      </h4>
       {data?.map((item, idx) => (
         <GetStartedCard data={item} key={idx} />
       ))}
@@ -52,10 +54,11 @@ const GetStarted = ({ index }: { index: string }) => {
       </p>
       <Banner
         data={bannerData}
-        imageRight
-        className='bg-[linear-gradient(0deg,#A8DADC_0%,#F1FAEE_100%)] !mt-16 !mx-0'
-        styleTitle='text-black'
+        className='bg-[linear-gradient(0deg,#A8DADC_0%,#F1FAEE_100%)] mt-16 lg:p-14 p-10 !mx-0 lg:text-start text-center'
+        styleTitle='text-black lg:mx-0 mx-auto'
         styleDescription='text-black'
+        styleImage='h-[434px] w-[366px]'
+        imageRight
       />
     </div>
   );

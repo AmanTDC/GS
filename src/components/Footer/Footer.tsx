@@ -27,7 +27,7 @@ const Footer = ({ isBanner }: { isBanner?: boolean }) => {
     <div className='bg-[#03060E] px-5 pt-16 text-white'>
       <div className='max-w-[1240px] mx-auto'>
         {isBanner ? (
-          <Banner data={bannerData} />
+          <Banner data={bannerData} className='-mt-[270px]'/>
         ) : (
           <div className='flex md:flex-row flex-col gap-5 justify-between mb-16 -mt-5'>
             <div className='space-y-3'>

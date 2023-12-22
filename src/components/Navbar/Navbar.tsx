@@ -15,14 +15,14 @@ const Navbar = () => {
     isActive,
     dropdownActive,
     setDropdownActive,
-    isHomePage,
+    isModifiedNavbar,
   } = useNavbar();
 
   return (
     <>
       <div
         className={`${
-          isHomePage
+          isModifiedNavbar
             ? 'bg-transparent absolute w-full'
             : 'bg-white !sticky shadow-navbar'
         } z-[999] px-5 gap-x-5 lg:px-[60px] navbar top-0`}
@@ -32,7 +32,7 @@ const Navbar = () => {
           <Link href='/'>
             <Img
               src={
-                isHomePage
+                router.pathname === '/'
                   ? isActive === 1
                     ? '/images/LogoDark.png'
                     : '/images/LogoWhite.png'
@@ -47,7 +47,9 @@ const Navbar = () => {
           </Link>
           <div className='lg:flex items-center lg:gap-x-10 gap-x-5 hidden'>
             <div
-              className={`${isHomePage ? 'text-white' : 'text-black'} group`}
+              className={`${
+                router.pathname === '/' ? 'text-white' : 'text-black'
+              } group`}
               id='nav-item'
             >
               <div className='font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
@@ -76,7 +78,9 @@ const Navbar = () => {
               </div>
             </div>
             <div
-              className={`${isHomePage ? 'text-white' : 'text-black'} group`}
+              className={`${
+                router.pathname === '/' ? 'text-white' : 'text-black'
+              } group`}
               id='nav-item'
             >
               <div className='font-medium flex items-center gap-x-2 cursor-pointer min-w-fit'>
@@ -112,14 +116,15 @@ const Navbar = () => {
                 ))}
               </div>
             </div>
-            <div
+            <Link
+              href='/courseFinder'
               className={`${
-                isHomePage ? 'text-white' : 'text-black'
+                router.pathname === '/' ? 'text-white' : 'text-black'
               } font-medium min-w-fit`}
               id='nav-item'
             >
               Course Finder
-            </div>
+            </Link>
             <Button
               type='button'
               className='min-w-fit'
@@ -131,8 +136,7 @@ const Navbar = () => {
 
           <GiHamburgerMenu
             size={24}
-            className='lg:hidden block'
-            color='white'
+            className='lg:hidden block hamburger'
             onClick={() => setIsActive(0)}
           />
         </div>
