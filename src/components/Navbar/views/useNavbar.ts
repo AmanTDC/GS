@@ -53,7 +53,9 @@ const useNavbar = () => {
   ];
   const router = useRouter();
   const isModifiedNavbar =
-    router.pathname === '/' || router.pathname === '/courseFinder';
+    router.pathname === '/' ||
+    router.pathname === '/courseFinder' ||
+    router.pathname === '/courseResult';
   const [isActive, setIsActive] = useState(-1);
   const [dropdownActive, setDropdownActive] = useState(-1);
   useScrollHidden(isActive === 0);

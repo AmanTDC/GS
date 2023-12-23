@@ -3,6 +3,7 @@ import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
 import React, { useEffect, useState } from 'react';
 import Questions from './components/Questions';
+import { useRouter } from 'next/router';
 
 const CourseFinder = () => {
   const questions = [
@@ -47,9 +48,22 @@ const CourseFinder = () => {
         'Agriculture and Forestry',
       ],
     },
+    {
+      title: 'What is your preferred intake?',
+      image: '/images/course5.png',
+      options: [
+        'Jan - Mar 2024',
+        'Apr - Jun 2024',
+        'Jul - Sep 2024',
+        'Oct - Dec 2024',
+        'Jan - Mar 2025',
+        'Not Decided',
+      ],
+    },
   ];
   const [isActive, setIsActive] = useState(0);
   const [data, setData] = useState<any>();
+
   useEffect(() => {
     isActive === 0
       ? setData(questions[0])
@@ -59,10 +73,11 @@ const CourseFinder = () => {
       ? setData(questions[2])
       : isActive === 3
       ? setData(questions[3])
-      : setData({});
+      : setData(questions[4]);
   }, [isActive]);
   return (
-    <div>
+    <div className='relative'>
+      <div className='bubble absolute top-0 right-0' />
       <Navbar />
       <div className='relative pt-32 pb-20 bg-[url("/images/courseBg.png")] bg-[length:100%_467px] bg-no-repeat bg-bottom'>
         <div className='space-y-8 max-w-[1120px] mx-auto z-10 px-5'>
@@ -78,7 +93,7 @@ const CourseFinder = () => {
             Help us find the best course and college for you
           </h1>
           <div className='flex items-center gap-x-2 justify-center'>
-            {[1, 1, 1, 1, 1, 1, 1]?.map((item, idx) => (
+            {questions?.map((item, idx) => (
               <div
                 className={`h-1 w-8 rounded cursor-pointer ${
                   isActive === idx ? 'bg-blue-500' : 'bg-gray-300'
@@ -88,9 +103,15 @@ const CourseFinder = () => {
               />
             ))}
           </div>
-          <Questions data={data} index={isActive} />
+          <Questions
+            data={data}
+            index={isActive}
+            action={(idx) => setIsActive(idx)}
+            navigation={questions?.length - 1 === isActive}
+          />
         </div>
       </div>
+      <div className='bubble absolute bottom-0 left-0' />
     </div>
   );
 };

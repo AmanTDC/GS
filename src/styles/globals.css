@@ -248,3 +248,14 @@ td {
 .flip-card-back {
   transform: rotateY(180deg);
 }
+
+.bubble {
+  background: linear-gradient(
+    180deg,
+    #007dfc 30.13%,
+    rgba(37, 99, 235, 0) 130.13%
+  );
+  filter: blur(315.4573974609375px);
+  width: 400px;
+  height: 400px;
+}

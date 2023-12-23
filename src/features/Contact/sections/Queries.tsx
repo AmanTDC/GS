@@ -1,8 +1,12 @@
 import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
-import React from 'react';
+import Modal from '@/shared/Modal/Modal';
+import useScrollHidden from '@/utils/hooks/useScrollHidden';
+import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 const Queries = () => {
+  const [isActive, setIsActive] = useState(false);
+  useScrollHidden(isActive);
   return (
     <div className='gap-8 grid grid-cols-12 max-w-[1120px] mx-auto my-14 p-6'>
       <div className='md:col-span-6 col-span-12 md:mx-0 mx-auto'>
@@ -65,6 +69,7 @@ const Queries = () => {
         <Button
           className='!bg-[#1E3A8A] py-3 hover:!bg-[#1E3A8A]/80 flex items-center justify-center gap-x-2 mt-8'
           fullWidth
+          onClick={() => setIsActive(true)}
         >
           Get Free Consultation
           <div className='h-5 w-5 rounded-full bg-white flex items-center justify-center'>
@@ -78,6 +83,26 @@ const Queries = () => {
           </div>
         </Button>
       </div>
+      {isActive && (
+        <Modal
+          onClose={() => setIsActive(false)}
+          className='bg-transparent p-0'
+        >
+          <div
+            className='absolute text-6xl cursor-pointer right-3 top-0 md:text-white'
+            onClick={() => setIsActive(false)}
+          >
+            &times;
+          </div>
+          <iframe
+            src='https://outlook.office365.com/owa/calendar/FreeConsultation@Globalscholar.co.uk/bookings/'
+            width='100%'
+            height='100%'
+            scrolling='yes'
+            className='w-[100vw] md:w-[calc(100vw-200px)] max-w-[1120px] md:h-[calc(100vh-100px)] h-[100vh]'
+          ></iframe>
+        </Modal>
+      )}
     </div>
   );
 };

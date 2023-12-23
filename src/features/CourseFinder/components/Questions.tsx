@@ -1,8 +1,61 @@
 import Button from '@/shared/Button/Button';
+import CountryCard from '@/shared/Cards/CountryCard';
 import Img from '@/shared/Img';
-import React from 'react';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
 
-const Questions = ({ data, index }: { data: any; index: number }) => {
+const Questions = ({
+  data,
+  index,
+  action,
+  navigation,
+}: {
+  data: any;
+  index: number;
+  action: (idx: number) => void;
+  navigation?: boolean;
+}) => {
+  const [selected, setSelected] = useState<any>(-1);
+  const [answers, setAnswers] = useState({
+    country: '',
+    degree: '',
+    eduction: '',
+    areaOfStudy: '',
+  });
+  const router = useRouter();
+  const handleSubmit = () => {
+    console.log({ navigation });
+
+    if (navigation) {
+      router.push('/courseResult');
+    } else {
+      index === 0
+        ? setAnswers({
+            ...answers,
+            country: selected?.name,
+          })
+        : index === 1
+        ? setAnswers({
+            ...answers,
+            degree: selected,
+          })
+        : index === 2
+        ? setAnswers({
+            ...answers,
+            eduction: selected,
+          })
+        : index === 3
+        ? setAnswers({
+            ...answers,
+            areaOfStudy: selected,
+          })
+        : null;
+      action(index + 1);
+      setSelected(-1);
+    }
+  };
+  console.log({ answers });
+
   return (
     <div className='!mt-16 grid md:grid-cols-2 lg:gap-20 md:gap-5 gap-16 md:place-items-start place-items-center'>
       <Img
@@ -23,28 +76,26 @@ const Questions = ({ data, index }: { data: any; index: number }) => {
           } gap-8`}
         >
           {data?.options?.map((item: any, idx: number) => (
-            <div
-              className='border border-gray-200 rounded-3xl p-4 flex gap-x-2'
+            <CountryCard
+              data={item}
+              onclick={() => setSelected(item)}
+              selected={selected}
               key={idx}
-            >
-              {item?.icon && (
-                <Img
-                  src={item?.icon}
-                  height={24}
-                  width={24}
-                  alt='heroImage'
-                  isLocal
-                  className='h-6 w-6'
-                />
-              )}
-              <h4 className='font-semibold'>{item?.name || item}</h4>
-            </div>
+            />
           ))}
         </div>
-        <Button isDisabled className='flex items-center !px-8 ml-auto !mt-16'>
+        <Button
+          isDisabled={selected === -1}
+          className='flex items-center !px-8 ml-auto !mt-16'
+          onClick={handleSubmit}
+        >
           Next
           <Img
-            src='/icons/arrowRight.png'
+            src={
+              selected === -1
+                ? '/icons/arrowRight.png'
+                : '/icons/arrowRightLight.png'
+            }
             height={18}
             width={18}
             alt='heroImage'
