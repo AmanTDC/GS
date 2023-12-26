@@ -21,17 +21,17 @@ const HeroSection = () => {
               placeholder='Enter Your Email'
               className='text-gray-400 sm:text-base text-sm rounded-full font-medium sm:mr-[220px] mr-16 w-full bg-white outline-none sm:h-16 h-10 p-5 pl-6'
             />
-            <div className='flex items-center justify-center cursor-pointer text-white gap-x-3 sm:p-5 absolute bg-[rgba(30,58,138,1)] hover:bg-[rgba(30,58,138,1)]/90 duration-500 sm:h-12 h-8 max-[640px]:w-8 rounded-full sm:right-2 right-1'>
+            <div className='flex items-center justify-center cursor-pointer text-white gap-x-3 sm:p-5 absolute bg-[rgba(30,58,138,1)] hover:bg-[rgba(30,58,138,1)]/90 duration-500 sm:h-12 h-8 p-3 rounded-full sm:right-2 right-1'>
               <Img
                 src='/icons/claimNow.png'
                 alt='send'
                 height={24}
                 width={24}
                 isLocal
-                className='max-[640px]:h-[18px] max-[640px]:w-[18px]'
+                className='max-[640px]:h-[18px] max-[640px]:w-[18px] sm:block hidden'
               />
-              <h4 className='text-sm font-medium sm:block hidden'>
-                Claim 300$ Now
+              <h4 className='text-sm font-medium flex'>
+                Claim 300$ <span className='sm:block hidden pl-1'>Now</span>
               </h4>
             </div>
           </div>
