@@ -8,6 +8,8 @@ import Link from 'next/link';
 import { RxCross2 } from 'react-icons/rx';
 import useScrollHidden from '@/utils/hooks/useScrollHidden';
 import Button from '@/shared/Button/Button';
+import Pagination from '@/shared/Pagination/Pagination';
+import { useRouter } from 'next/router';
 const CourseResult = () => {
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
@@ -128,6 +130,9 @@ const CourseResult = () => {
   ];
   const [isActive, setIsActive] = useState<number>();
   useScrollHidden(isActive === 0);
+  const router = useRouter();
+  const [page, setPage] = useState(Number(router.query.page) || 1);
+  const [totalPages, setTotalPages] = useState(10);
   return (
     <div className='relative bg-[#FAFAFA]'>
       <Navbar />
@@ -172,6 +177,11 @@ const CourseResult = () => {
           {courses?.map((item: any, idx: number) => (
             <CourseCard key={idx} data={item} />
           ))}
+          <Pagination
+            page={page}
+            totalPages={totalPages}
+            active={({ selected }: any) => setPage(selected + 1)}
+          />
         </div>
       </div>
       {isActive === 0 && (

@@ -13,37 +13,37 @@ const Countries = () => {
       name: 'UK',
       icon: '/images/uk.png',
       image: '/images/country1.png',
-      route:'/uk'
+      route: '/uk',
     },
     {
       name: 'Australia',
       icon: '/images/australia.png',
       image: '/images/country2.png',
-      route:'/australia'
+      route: '/australia',
     },
     {
       name: 'Canada',
       icon: '/images/canada.png',
       image: '/images/country3.png',
-      route:'/canada'
+      route: '/canada',
     },
     {
       name: 'USA',
       icon: '/images/us.png',
       image: '/images/country4.png',
-      route:'/usa'
+      route: '/usa',
     },
     {
       name: 'Ireland',
       icon: '/images/ireland.png',
       image: '/images/country5.png',
-      route:'/ireland'
+      route: '/ireland',
     },
     {
       name: 'NewZealand',
       icon: '/images/nz.png',
       image: '/images/country6.png',
-      route:'/nz'
+      route: '/nz',
     },
   ];
   const router = useRouter();
@@ -57,15 +57,16 @@ const Countries = () => {
           Explore & Learn More About Study Destinations
         </div>
       </div>
-      <Slider
+      {/* <Slider
         {...VERIFICATION_SLICK_SETTING}
         nextArrow={<NextArrow />}
         prevArrow={<PrevArrow />}
-      >
+      > */}
+      <div className='flex sm:gap-x-10 gap-x-5 overflow-x-scroll max-w-[1120px]'>
         {countries?.map((item, idx) => (
           <div
             key={idx}
-            className='relative w-[362px] group mb-16 cursor-pointer'
+            className='relative group mb-16 cursor-pointer w-[362px]'
             onClick={() => router.push(item?.route)}
           >
             <Img
@@ -74,7 +75,7 @@ const Countries = () => {
               width={362}
               alt='heroImage'
               isLocal
-              className='max-h-[420px] rounded-2xl'
+              className='max-h-[420px] sm:max-w-[362px] max-w-[280px] h-full rounded-2xl'
             />
             <div className='bg-[linear-gradient(180deg,rgba(30,58,138,0.00)_0%,#1E3A8A_91.32%)] h-0 w-0 rounded-2xl absolute top-1/2 left-1/2 opacity-0 group-hover:opacity-100 group-hover:top-0 group-hover:left-0 group-hover:h-full group-hover:w-full duration-500'>
               <div className='text-white h-full flex justify-center items-center text-[45px] font-semibold'>
@@ -92,7 +93,8 @@ const Countries = () => {
             </div>
           </div>
         ))}
-      </Slider>
+      </div>
+      {/* </Slider> */}
     </div>
   );
 };

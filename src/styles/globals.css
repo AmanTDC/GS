@@ -276,6 +276,7 @@ td {
   height: 400px;
 }
 
+/*filters*/
 .css-1p3m7a8-multiValue {
   @apply !bg-blue-50 px-2 h-[31px] flex items-center !rounded-[10px] !my-2;
 }
@@ -295,4 +296,27 @@ td {
 
 .css-1jqq78o-placeholder {
   @apply text-sm;
+}
+
+/*pagination*/
+.pagination a {
+  @apply px-2 sm:px-1 font-light;
+}
+.pagination .next,
+.pagination .previous,
+.pagination .next a,
+.pagination .previous a,
+.pagination .break {
+  border: 0;
+  padding: 0;
+}
+
+.pagination li {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: 1px solid #303f606e;
+  cursor: pointer;
+  border-radius: 5px;
+  @apply h-6 w-6;
 }
