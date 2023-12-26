@@ -10,7 +10,7 @@ const useNavbar = () => {
       link: '/uk',
     },
     {
-      icon: '/images/us.png',
+      icon: '/images/usa.png',
       name: 'United States',
       link: '/usa',
     },

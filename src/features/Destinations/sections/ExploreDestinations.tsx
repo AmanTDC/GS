@@ -10,7 +10,7 @@ const ExploreDestinations = () => {
   const destinations = [
     {
       image: '/images/slide1.png',
-      icon: '/images/us.png',
+      icon: '/images/usa.png',
       country: 'The United States',
     },
     {
