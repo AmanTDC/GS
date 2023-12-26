@@ -29,7 +29,7 @@ const ExploreServices = () => {
               width={300}
               alt='heroImage'
               isLocal
-              className='p-4 w-[300px] h-[240px] rounded-[30px]'
+              className='p-4 w-[300px] h-[240px] rounded-2xl'
             />
             <h4 className='text-[#fafafa] bottom-6 left-7 font-medium absolute'>
               {item?.name}

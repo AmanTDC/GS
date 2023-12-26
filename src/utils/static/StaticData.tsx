@@ -251,7 +251,7 @@ export const CountryData = [
   },
   {
     country: 'USA',
-    heroImage: '/images/usHero.svg',
+    heroImage: '/images/usHero.png',
     studyIn: {
       description:
         'Embark on a transformative academic journey in the United States, a global education hub that attracts students from around the world. Immerse yourself in diverse cultures, cutting-edge research, and a dynamic learning environment.',

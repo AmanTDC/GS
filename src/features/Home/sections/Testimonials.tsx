@@ -49,7 +49,7 @@ const Testimonials = () => {
               alt='heroImage'
               isLocal
             />
-            <p className='text-xl font-medium'>{item?.description}</p>
+            <p className='text-lg font-medium'>{item?.description}</p>
             <div className='h-[1px] bg-[#3B82F6]'></div>
             <div className='flex items-center gap-x-3 flex-wrap'>
               <Img
@@ -60,8 +60,8 @@ const Testimonials = () => {
                 isLocal
               />
               <div>
-                <div className='font-semibold text-2xl'>{item?.name}</div>
-                <div className='font-semibold text-secondary'>
+                <div className='font-semibold text-xl'>{item?.name}</div>
+                <div className='font-semibold text-sm text-secondary'>
                   {item?.designation}
                 </div>
               </div>

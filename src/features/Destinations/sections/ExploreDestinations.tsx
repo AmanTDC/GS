@@ -47,7 +47,7 @@ const ExploreDestinations = () => {
               width={300}
               alt='heroImage'
               isLocal
-              className='p-1'
+              className='w-[300px] h-[240px] rounded-2xl'
             />
             <div className='flex items-center gap-x-3 bottom-3 left-4 absolute'>
               <Img
