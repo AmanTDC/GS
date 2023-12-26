@@ -15,28 +15,33 @@ const ExploreServices = () => {
   ];
   return (
     <div>
-      <h4 className='md:text-[32px] text-[28px] font-semibold mb-4'>Explore Other Services</h4>
-      <Slider
+      <h4 className='md:text-[32px] text-[28px] font-semibold mb-4'>
+        Explore Other Services
+      </h4>
+      {/* <Slider
         {...VERIFICATION_SLICK_SETTING}
         nextArrow={<NextArrow />}
         prevArrow={<PrevArrow />}
-      >
+      > */}
+      <div className='flex sm:gap-x-10 gap-x-5 overflow-x-scroll max-w-[1120px]'>
         {destinations?.map((item, idx) => (
           <div key={idx} className='relative max-w-[300px]'>
+            <div className='z-10 h-[240px] w-[300px] rounded-2xl bg-[linear-gradient(180deg,rgba(0,0,0,0.00)_59.37%,#000_100%)] absolute' />
             <Img
               src={item?.image}
               height={240}
               width={300}
               alt='heroImage'
               isLocal
-              className='p-4 w-[300px] h-[240px] rounded-2xl'
+              className='max-w-[300px] h-[240px] rounded-2xl'
             />
-            <h4 className='text-[#fafafa] bottom-6 left-7 font-medium absolute'>
+            <h4 className='text-[#fafafa] bottom-4 left-4 z-20 font-medium absolute'>
               {item?.name}
             </h4>
           </div>
         ))}
-      </Slider>
+      </div>
+      {/* </Slider> */}
     </div>
   );
 };
