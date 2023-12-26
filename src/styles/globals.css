@@ -148,6 +148,22 @@ td {
   z-index: 999;
 }
 
+@keyframes filterSidebar {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+#filter {
+  animation: filterSidebar 0.4s linear forwards;
+  z-index: 999;
+}
+
 .navbar.active {
   animation: fadeNav 0.4s linear forwards;
   background-color: white;
@@ -258,4 +274,25 @@ td {
   filter: blur(315.4573974609375px);
   width: 400px;
   height: 400px;
+}
+
+.css-1p3m7a8-multiValue {
+  @apply !bg-blue-50 px-2 h-[31px] flex items-center !rounded-[10px] !my-2;
+}
+.css-wsp0cs-MultiValueGeneric {
+  @apply !text-xs;
+}
+.css-12a83d4-MultiValueRemove:hover {
+  @apply !bg-transparent !text-black;
+}
+.css-13cymwt-control,
+.css-t3ipsp-control {
+  @apply !min-h-[48px];
+}
+.css-t3ipsp-control {
+  @apply !min-h-[48px] !shadow-[0_0_0_1px_hsl(0,0%,80%)] !border-transparent;
+}
+
+.css-1jqq78o-placeholder {
+  @apply text-sm;
 }

@@ -136,7 +136,7 @@ const Navbar = () => {
 
           <GiHamburgerMenu
             size={24}
-            className={`lg:hidden block ${
+            className={`lg:hidden ${
               router.pathname === '/' ? 'hamburger' : ''
             }`}
             onClick={() => setIsActive(0)}
