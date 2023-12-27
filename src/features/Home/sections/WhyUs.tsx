@@ -61,8 +61,8 @@ const WhyUs = () => {
               <div className='text-white font-semibold md:text-[32px] text-[28px]'>
                 Why you should choose the only quality consultation
               </div>
-              <Button className='bg-white group w-full hover:bg-[#1E3A8A]'>
-                <div className='text-[#1E3A8A] group-hover:text-white'>
+              <Button className='bg-white group w-full hover:bg-blue-500'>
+                <div className='text-[#1E3A8A] group-hover:text-white duration-500'>
                   Get Free Consultation
                 </div>
               </Button>

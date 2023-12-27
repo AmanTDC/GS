@@ -111,7 +111,7 @@ const WhatWeOffer = () => {
             No Consulting Fees, Just Dreams Fulfiled!
           </div>
           <Button className='bg-white group hover:bg-blue-500 mt-16'>
-            <div className='text-blue-800 group-hover:text-white'>
+            <div className='text-blue-800 group-hover:text-white duration-500'>
               Get Started
             </div>
           </Button>

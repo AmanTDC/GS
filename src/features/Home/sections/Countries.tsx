@@ -78,7 +78,7 @@ const Countries = () => {
               className='max-h-[420px] sm:max-w-[362px] max-w-[280px] h-full rounded-2xl'
             />
             <div className='bg-[linear-gradient(180deg,rgba(30,58,138,0.00)_0%,#1E3A8A_91.32%)] h-0 w-0 rounded-2xl absolute top-1/2 left-1/2 opacity-0 group-hover:opacity-100 group-hover:top-0 group-hover:left-0 group-hover:h-full group-hover:w-full duration-500'>
-              <div className='text-white h-full flex justify-center items-center text-[45px] font-semibold'>
+              <div className='text-white h-full flex justify-center items-center text-[38px] sm:text-[45px] font-semibold'>
                 {item?.name}
               </div>
             </div>
