@@ -85,7 +85,6 @@ const CourseFinder = () => {
   ];
   const [isActive, setIsActive] = useState(0);
   const [data, setData] = useState<any>();
-
   useEffect(() => {
     isActive === 0
       ? setData(questions[0])

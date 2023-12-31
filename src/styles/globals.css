@@ -198,6 +198,13 @@ td {
   }
 }
 
+#loader {
+  border: 1.5px solid #f3f3f3;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+  @apply border-t-blue-900
+}
+
 #spinner {
   border: 3px solid #f3f3f3;
   border-top: 3px solid #3b82f6;

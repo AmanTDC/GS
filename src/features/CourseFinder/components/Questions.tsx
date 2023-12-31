@@ -28,6 +28,7 @@ const Questions = ({
     handleSubmit,
     selected,
     setSelected,
+    isLoading,
   } = useQuestions(index, action);
 
   return (
@@ -132,8 +133,11 @@ const Questions = ({
                 : true
               : selected === -1
           }
-          className='flex items-center !px-6 ml-auto !mt-16'
+          className={`flex items-center !px-6 ml-auto !mt-16 ${
+            navigation && 'min-w-[170px]'
+          }`}
           onClick={() => (navigation ? handleSubmit() : onSubmit())}
+          isLoading={isLoading}
         >
           {navigation ? 'View Courses' : 'Next'}
           <Img

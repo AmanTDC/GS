@@ -19,7 +19,9 @@ const Banner = ({
   styleImage?: string;
 }) => {
   const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const claimNow = () => {
+    setIsLoading(true);
     emailjs
       .send(
         process.env.NEXT_PUBLIC_SERVICE_ID as string,
@@ -28,12 +30,16 @@ const Banner = ({
         process.env.NEXT_PUBLIC_PUBLIC_KEY
       )
       .then((res) => {
+        setIsLoading(false);
         toast.success('Message Sent !', {
           position: toast.POSITION.TOP_RIGHT,
           className: 'toast-message',
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
+      });
   };
   return (
     <div className='relative'>
@@ -84,16 +90,24 @@ const Banner = ({
               type='submit'
               className='flex items-center cursor-pointer text-white gap-x-3 p-5 absolute bg-[rgba(30,58,138,1)] hover:bg-[rgba(30,58,138,1)]/90 duration-500 h-12 rounded-full right-2'
             >
-              <Img
-                src={data?.btnIcon}
-                alt='send'
-                height={24}
-                width={24}
-                isLocal
-              />
-              <h4 className='text-sm font-medium sm:block hidden'>
-                {data?.btnName}
-              </h4>
+              {isLoading ? (
+                <div className='sm:w-[182px] w-6'>
+                  <div id='loader' className='h-4 w-4 rounded-full mx-auto' />
+                </div>
+              ) : (
+                <>
+                  <Img
+                    src={data?.btnIcon}
+                    alt='send'
+                    height={24}
+                    width={24}
+                    isLocal
+                  />
+                  <h4 className='text-sm font-medium sm:block hidden'>
+                    {data?.btnName}
+                  </h4>
+                </>
+              )}
             </button>
           </form>
         </div>

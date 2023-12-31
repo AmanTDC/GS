@@ -5,7 +5,9 @@ import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 const HeroSection = () => {
   const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const claimNow = () => {
+    setIsLoading(true);
     emailjs
       .send(
         process.env.NEXT_PUBLIC_SERVICE_ID as string,
@@ -14,12 +16,16 @@ const HeroSection = () => {
         process.env.NEXT_PUBLIC_PUBLIC_KEY
       )
       .then((res) => {
+        setIsLoading(false);
         toast.success('Message Sent !', {
           position: toast.POSITION.TOP_RIGHT,
           className: 'toast-message',
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setIsLoading(false);
+      });
   };
   return (
     <div className="bg-[url('/images/homeBg.png')] lg:bg-[length:90%_100vh] bg-[length:200%_90%] xl:h-[900px] lg:h-screen h-fit w-full bg-no-repeat">
@@ -54,17 +60,25 @@ const HeroSection = () => {
               type='submit'
               className='flex items-center justify-center cursor-pointer text-white gap-x-3 sm:p-5 absolute bg-[rgba(30,58,138,1)] hover:bg-[rgba(30,58,138,1)]/90 duration-500 sm:h-12 h-8 p-3 rounded-full sm:right-2 right-1'
             >
-              <Img
-                src='/icons/claimNow.png'
-                alt='send'
-                height={24}
-                width={24}
-                isLocal
-                className='max-[640px]:h-[18px] max-[640px]:w-[18px] sm:block hidden'
-              />
-              <h4 className='text-sm font-medium flex'>
-                Claim 300$ <span className='sm:block hidden pl-1'>Now</span>
-              </h4>
+              {isLoading ? (
+                <div className='sm:w-[149px] w-[78px]'>
+                  <div id='loader' className='h-4 w-4 rounded-full mx-auto' />
+                </div>
+              ) : (
+                <>
+                  <Img
+                    src='/icons/claimNow.png'
+                    alt='send'
+                    height={24}
+                    width={24}
+                    isLocal
+                    className='max-[640px]:h-[18px] max-[640px]:w-[18px] sm:block hidden'
+                  />
+                  <h4 className='text-sm font-medium flex'>
+                    Claim 300$ <span className='sm:block hidden pl-1'>Now</span>
+                  </h4>
+                </>
+              )}
             </button>
           </form>
           <div className='flex max-[450px]flex-col max-[450px]:items-start font-semibold items-center gap-8'>

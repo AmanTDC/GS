@@ -13,6 +13,7 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
     eduction: '',
     areaOfStudy: '',
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
   const onSubmit = () => {
@@ -60,6 +61,7 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
     validationSchema: viewCourses,
 
     onSubmit: async (values) => {
+      setIsLoading(true);
       var templateParams = {
         name: values?.name,
         email: values?.email,
@@ -72,13 +74,17 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
           process.env.NEXT_PUBLIC_PUBLIC_KEY
         )
         .then((res) => {
+          setIsLoading(false);
           toast.success('Message Sent !', {
             position: toast.POSITION.TOP_RIGHT,
             className: 'toast-message',
           });
           router.push('/courseResult');
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          setIsLoading(false);
+        });
     },
   });
   const inputType = (idx: number) =>
@@ -102,6 +108,7 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
     handleSubmit,
     selected,
     setSelected,
+    isLoading,
   };
 };
 
