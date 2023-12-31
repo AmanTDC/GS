@@ -3,6 +3,7 @@ import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
 import Modal from '@/shared/Modal/Modal';
 import useScrollHidden from '@/utils/hooks/useScrollHidden';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 
 const Footer = ({ isBanner }: { isBanner?: boolean }) => {
@@ -23,18 +24,113 @@ const Footer = ({ isBanner }: { isBanner?: boolean }) => {
     btnIcon: '/icons/send.png',
     btnName: 'Get Free Consultation',
   };
+  const footerData = [
+    {
+      title: 'STUDY DESTINATIONS',
+      links: [
+        {
+          name: 'United Kingdom',
+          url: '/uk',
+        },
+        {
+          name: 'United States',
+          url: '/usa',
+        },
+        {
+          name: 'Canada',
+          url: '/canada',
+        },
+        {
+          name: 'Australia',
+          url: '/australia',
+        },
+        {
+          name: 'New Zealand',
+          url: '/nz',
+        },
+        {
+          name: 'Ireland',
+          url: '/ireland',
+        },
+      ],
+    },
+    {
+      title: 'SERVICES',
+      links: [
+        {
+          name: 'Study Abroad Councelling',
+          url: '/services/study-abroad',
+        },
+        {
+          name: 'Visa Assistance Application',
+          url: '/services/visa',
+        },
+        {
+          name: 'University Application Process',
+          url: '/services/application',
+        },
+        {
+          name: 'University Scholarship Guidance',
+          url: '/services/scholarships',
+        },
+        {
+          name: 'Student Accomodation',
+          url: '/services/accomodation',
+        },
+      ],
+    },
+    {
+      title: 'COMPANY',
+      links: [
+        {
+          name: 'About Us',
+          url: '/',
+        },
+        {
+          name: 'Partner With Us',
+          url: '/',
+        },
+        {
+          name: 'Careers',
+          url: '/',
+        },
+        {
+          name: 'Sitemap',
+          url: '/',
+        },
+      ],
+    },
+    {
+      title: 'LEGAL',
+      links: [
+        {
+          name: 'Terms of Service',
+          url: '/',
+        },
+        {
+          name: 'Privacy Policy',
+          url: '/',
+        },
+        {
+          name: 'Cookies Policy',
+          url: '/',
+        },
+      ],
+    },
+  ];
+  const router = useRouter();
   return (
-    <div className='bg-[#03060E] px-5 pt-16 text-white'>
+    <div className='bg-[#03060E] px-5 pt-16 text-[#F9FAFB]'>
       <div className='max-w-[1240px] mx-auto'>
         {isBanner ? (
-          <Banner data={bannerData} className='-mt-[270px]'/>
+          <Banner data={bannerData} className='-mt-[270px]' />
         ) : (
-          <div className='flex md:flex-row flex-col gap-5 justify-between mb-16 -mt-5'>
-            <div className='space-y-3'>
+          <div className='flex md:flex-row flex-col gap-5 justify-between '>
+            <div className='space-y-4'>
               <h4 className='md:text-[32px] text-[28px] text-[#fafafa] font-semibold max-w-[500px]'>
                 Ready to Transform Your Career? Take the First Steps Today
               </h4>
-              <p className='text-lg text-[#F9FAFB] pb-2'>
+              <p className='text-lg text-[#F9FAFB]'>
                 Achieve Boundless Opportunities and fulfil your Dreams Abroad
               </p>
             </div>
@@ -46,6 +142,7 @@ const Footer = ({ isBanner }: { isBanner?: boolean }) => {
             </Button>
           </div>
         )}
+        <div className='h-[1px] bg-[#122353] my-10'></div>
         <div className='gap-x-5 sm:flex justify-between'>
           <div className='grid grid-cols-12 gap-x-5 gap-y-10'>
             <div className='lg:col-span-4 sm:col-span-8 col-span-12'>
@@ -56,11 +153,13 @@ const Footer = ({ isBanner }: { isBanner?: boolean }) => {
                 alt='heroImage'
                 isLocal
               />
-              <p className='text-sm mt-3'>
-                Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis
-                et quasi architecto beatae vitae dicta sunt.
+              <p className='text-sm mt-4'>
+                We're dedicated to empowering your educational journey. Our
+                commitment extends beyond borders, connecting students with
+                opportunities worldwide.<br></br>
+                <br></br> Explore, learn, and thrive with GlobalScholar.
               </p>
-              <div className='space-y-3 mt-5'>
+              <div className='space-y-4 mt-8'>
                 <div className='gap-x-2 flex items-center'>
                   <Img
                     src={'/icons/sms.png'}
@@ -69,62 +168,37 @@ const Footer = ({ isBanner }: { isBanner?: boolean }) => {
                     alt='heroImage'
                     isLocal
                   />
-                  <div>support@aeria.world</div>
+                  <div>info@globalscholar.co.uk</div>
                 </div>
 
                 <div className='gap-x-2 flex items-center'>
                   <Img
-                    src={'/icons/location.png'}
+                    src={'/icons/call.png'}
                     height={24}
                     width={24}
                     alt='heroImage'
                     isLocal
                   />
-                  <div>
-                    G9A, 1, G Block, DLF Phase 1, Sector 26, Gurugram, Haryana
-                    122002
-                  </div>
+                  <div>+919811700671</div>
                 </div>
               </div>
             </div>
-            <div className='list-none space-y-3 lg:col-span-2 sm:col-span-4 col-span-6'>
-              <div className='text-blue-500 text-sm font-semibold mb-5'>
-                STUDY DESTINATIONS
+            {footerData?.map((item: any, idx: number) => (
+              <div className='list-none space-y-3 lg:col-span-2 sm:col-span-4 col-span-6'>
+                <div className='text-blue-500 text-sm font-semibold mb-6'>
+                  STUDY DESTINATIONS
+                </div>
+                {item?.links?.map((item: any, idx: number) => (
+                  <li
+                    key={idx}
+                    onClick={() => router.push(item?.url)}
+                    className='navItems w-fit cursor-pointer'
+                  >
+                    {item?.name}
+                  </li>
+                ))}
               </div>
-              <li>United Kingdom</li>
-              <li>United States</li>
-              <li>Canada</li>
-              <li>Australia</li>
-              <li>New Zealand</li>
-              <li>Ireland</li>
-            </div>
-            <div className='list-none space-y-3 lg:col-span-2 sm:col-span-4 col-span-6'>
-              <div className='text-blue-500 text-sm font-semibold mb-5'>
-                SERVICES
-              </div>
-              <li>Study Abroad Councelling</li>
-              <li>Visa Assistance Application</li>
-              <li>University Application Process</li>
-              <li>University Scholarship Guidance</li>
-              <li>Student Accomodation</li>
-            </div>
-            <div className='list-none space-y-3 lg:col-span-2 sm:col-span-4 col-span-6'>
-              <div className='text-blue-500 text-sm font-semibold mb-5'>
-                COMPANY
-              </div>
-              <li>About Us</li>
-              <li>Partner With Us</li>
-              <li>Careers</li>
-              <li>Sitemap</li>
-            </div>
-            <div className='list-none space-y-3 lg:col-span-2 sm:col-span-4 col-span-6'>
-              <div className='text-blue-500 text-sm font-semibold mb-5'>
-                LEGAL
-              </div>
-              <li>Terms of Service</li>
-              <li>Privacy Policy</li>
-              <li>Cookies Policy</li>
-            </div>
+            ))}
           </div>
         </div>
         <div className='h-[1px] bg-[#122353] mt-10'></div>

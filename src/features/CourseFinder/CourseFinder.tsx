@@ -60,6 +60,30 @@ const CourseFinder = () => {
         'Not Decided',
       ],
     },
+    {
+      title: 'Let’s Get Started',
+      image: '/images/course6.png',
+      inputs: [
+        {
+          label: 'Name',
+          placeholder: 'Enter Your Name',
+          icon: '/icons/Message.png',
+          type: 'text',
+        },
+        {
+          label: 'Email ID',
+          placeholder: 'Enter Your Email ID',
+          icon: '/icons/Message.png',
+          type: 'email',
+        },
+        {
+          label: 'Phone Number',
+          placeholder: 'Enter Your Phone Number',
+          icon: '/icons/Phone.png',
+          type: 'tel',
+        },
+      ],
+    },
   ];
   const [isActive, setIsActive] = useState(0);
   const [data, setData] = useState<any>();
@@ -73,8 +97,12 @@ const CourseFinder = () => {
       ? setData(questions[2])
       : isActive === 3
       ? setData(questions[3])
-      : setData(questions[4]);
+      : isActive === 4
+      ? setData(questions[4])
+      : setData(questions[5]);
   }, [isActive]);
+  console.log({ isActive });
+
   return (
     <div className='relative'>
       <div className='bubble absolute top-0 right-0' />
@@ -96,9 +124,10 @@ const CourseFinder = () => {
             {questions?.map((item, idx) => (
               <div
                 className={`h-1 w-8 rounded cursor-pointer ${
-                  isActive === idx ? 'bg-blue-500' : 'bg-gray-300'
+                  isActive >= idx ? 'bg-blue-500' : 'bg-gray-300'
                 }`}
                 key={idx}
+                // onClick={() => isActive >= idx && setIsActive(idx)}
                 onClick={() => setIsActive(idx)}
               />
             ))}

@@ -3,6 +3,7 @@ import StatsCard from '@/shared/StatsCard';
 import { STATS_SECTION } from '@/utils/constants/slickSliderSettings';
 import React from 'react';
 import Slider from 'react-slick';
+import CountUp from 'react-countup';
 
 const HeroSection = ({
   country,
@@ -14,28 +15,29 @@ const HeroSection = ({
   const statsCard = [
     {
       icon: '/icons/partner.png',
-      title: '280+',
+      start: <CountUp end={280} suffix='+' />,
       subTitle: 'Partner Universities',
       gradient:
         'bg-[linear-gradient(180deg,rgba(254,226,226,0)_0%,#FEE2E2_100%)]',
     },
     {
       icon: '/icons/money.png',
-      title: '£9250 - £63.9K',
+      start: <CountUp end={9250} prefix='£' />,
+      end: <CountUp end={63.9} prefix='£' suffix='K' />,
       subTitle: 'Annual Tuition Fees',
       gradient:
         'bg-[linear-gradient(0deg,#EBF3FE_0.74%,rgba(235,243,254,0)_100.74%)]',
     },
     {
       icon: '/icons/students.png',
-      title: '400k+',
+      start: <CountUp end={400} suffix='K+' />,
       subTitle: 'International Students',
       gradient:
         'bg-[linear-gradient(180deg,rgba(220,_252,_231,_0)_0%,#DCFCE7_100%)]',
     },
     {
       icon: '/icons/visas.png',
-      title: '2 Years',
+      start: <CountUp end={2} suffix=' Years' />,
       subTitle: 'Post Study Work Visas',
       gradient:
         'bg-[linear-gradient(180deg,rgba(254,_249,_195,_0)_0%,#FEF9C3_100%)]',
@@ -87,37 +89,23 @@ const HeroSection = ({
           />
         </div>
         <div className='bg-blue-50 rounded-xl p-5 max-[640px]:space-y-5 sm:grid lg:grid-cols-4 sm:grid-cols-2 max-[640px]:place-items-center shadow-[0px_0px_0px_0px_#00000005,0px_7px_15px_0px_#00000005,0px_27px_27px_0px_#00000005,0px_60px_36px_0px_#00000003,0px_107px_43px_0px_#00000000,0px_167px_47px_0px_#00000000] hidden'>
-          <StatsCard
-            icon='/icons/partner.png'
-            title='280+'
-            subTitle='Partner Universities'
-            className='bg-[linear-gradient(180deg,rgba(254,226,226,0)_0%,#FEE2E2_100%)]'
-          />
-          <StatsCard
-            icon='/icons/money.png'
-            title='£9250 - £63.9K'
-            subTitle='Annual Tuition Fees'
-            className='bg-[linear-gradient(0deg,#EBF3FE_0.74%,rgba(235,243,254,0)_100.74%)]'
-          />
-          <StatsCard
-            icon='/icons/students.png'
-            title='400k+'
-            subTitle='International Students'
-            className='bg-[linear-gradient(180deg,rgba(220,_252,_231,_0)_0%,#DCFCE7_100%)]'
-          />
-          <StatsCard
-            icon='/icons/visas.png'
-            title='2 Years'
-            subTitle='Post Study Work Visas'
-            className='bg-[linear-gradient(180deg,rgba(254,_249,_195,_0)_0%,#FEF9C3_100%)]'
-          />
+          {statsCard?.map((item, idx) => (
+            <StatsCard
+              key={idx}
+              icon={item?.icon}
+              start={item?.start}
+              subTitle={item?.subTitle}
+              className={item?.gradient}
+              end={idx === 1 ? item?.end : null}
+            />
+          ))}
         </div>
         <Slider {...STATS_SECTION} centerMode className='sm:!hidden'>
           {statsCard?.map((item, idx) => (
             <StatsCard
               key={idx}
               icon={item?.icon}
-              title={item?.title}
+              start={item?.start}
               subTitle={item?.subTitle}
               className={item?.gradient}
             />

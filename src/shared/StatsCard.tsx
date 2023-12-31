@@ -3,15 +3,18 @@ import Img from './Img';
 
 const StatsCard = ({
   icon,
-  title,
+  start,
+  end,
   subTitle,
   className,
 }: {
   icon: string;
-  title: string;
+  start: any;
+  end?: any;
   subTitle: string;
   className: string;
 }) => {
+  console.log({ end });
   return (
     <div className='flex items-center gap-x-3 w-max'>
       <div
@@ -27,7 +30,11 @@ const StatsCard = ({
         />
       </div>
       <div className='space-y-1'>
-        <div className='text-black font-bold text-xl'>{title}</div>
+        <div className='text-black font-bold text-xl'>
+          {start}
+          {end && ' - '}
+          {end}
+        </div>
         <div className='text-secondary text-sm'>{subTitle}</div>
       </div>
     </div>

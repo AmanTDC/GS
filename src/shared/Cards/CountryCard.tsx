@@ -18,7 +18,7 @@ const CountryCard = ({
 }) => {
   return (
     <div
-      className={`border-[2px] cursor-pointer ${
+      className={`border-[2px] cursor-pointer z-10 ${
         selected === data
           ? 'border-blue-500 bg-blue-50'
           : 'border-gray-200 bg-white'
