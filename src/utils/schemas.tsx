@@ -10,10 +10,10 @@ export const viewCourses = Yup.object({
     .required('This field is mandatory'),
   name: Yup.string()
     .min(2)
-    .max(25)
+    .max(50)
     .required('This field is mandatory')
     .matches(
-      /^[a-zA-Z]+$/,
+      /^[a-zA-Z ]+$/,
       'Name cannot have special characters and whitespaces'
     )
     .strict(true)

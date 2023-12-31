@@ -1,5 +1,6 @@
 import Img from '@/shared/Img';
 import React from 'react';
+import CountUp from 'react-countup';
 
 const HeroSection = () => {
   return (
@@ -37,12 +38,16 @@ const HeroSection = () => {
           </div>
           <div className='flex max-[450px]flex-col max-[450px]:items-start font-semibold items-center gap-8'>
             <div>
-              <div className='md:text-[32px] text-[24px]'>₹5,00,00</div>
+              <div className='md:text-[32px] text-[24px] min-w-[166px]'>
+                <CountUp end={500000} prefix='₹' />
+              </div>
               <div className='sm:text-xl text-sm'>Scholarships</div>
             </div>
             <div className='w-[1px] h-12 bg-white/50 max-[450px]:hidden' />
             <div>
-              <div className='md:text-[32px] text-[24px]'>5000+</div>
+              <div className='md:text-[32px] text-[24px]'>
+                <CountUp end={5000} suffix='+' />
+              </div>
               <div className='sm:text-xl text-sm'>
                 Learners On-Campus Abroad
               </div>

@@ -189,12 +189,12 @@ const Questions = ({
                 navigation
                   ? values?.email &&
                     values?.phone &&
-                    values.name &&
-                    values.checkbox &&
+                    values?.name &&
+                    values?.checkbox &&
                     !errors?.email &&
                     !errors?.phone &&
                     !errors?.name
-                  : selected === -1
+                  : selected !== -1
               )
                 ? '/icons/arrowRightLight.png'
                 : '/icons/arrowRight.png'

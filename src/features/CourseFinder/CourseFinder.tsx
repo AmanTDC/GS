@@ -127,8 +127,7 @@ const CourseFinder = () => {
                   isActive >= idx ? 'bg-blue-500' : 'bg-gray-300'
                 }`}
                 key={idx}
-                // onClick={() => isActive >= idx && setIsActive(idx)}
-                onClick={() => setIsActive(idx)}
+                onClick={() => isActive >= idx && setIsActive(idx)}
               />
             ))}
           </div>

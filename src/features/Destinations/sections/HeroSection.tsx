@@ -30,7 +30,7 @@ const HeroSection = ({
     },
     {
       icon: '/icons/students.png',
-      start: <CountUp end={400} suffix='K+' />,
+      start: <CountUp end={400} suffix='k+' />,
       subTitle: 'International Students',
       gradient:
         'bg-[linear-gradient(180deg,rgba(220,_252,_231,_0)_0%,#DCFCE7_100%)]',
