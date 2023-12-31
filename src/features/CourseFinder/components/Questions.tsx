@@ -24,7 +24,6 @@ const Questions = ({
     eduction: '',
     areaOfStudy: '',
   });
-  console.log({ navigation });
 
   const router = useRouter();
   const handleSubmit = () => {

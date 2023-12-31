@@ -123,8 +123,8 @@ const CourseFinder = () => {
           <div className='flex items-center gap-x-2 justify-center'>
             {questions?.map((item, idx) => (
               <div
-                className={`h-1 w-8 rounded cursor-pointer ${
-                  isActive >= idx ? 'bg-blue-500' : 'bg-gray-300'
+                className={`h-1 w-8 rounded ${
+                  isActive >= idx ? 'bg-blue-500 cursor-pointer' : 'bg-gray-300 cursor-not-allowed'
                 }`}
                 key={idx}
                 onClick={() => isActive >= idx && setIsActive(idx)}
