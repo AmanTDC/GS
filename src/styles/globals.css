@@ -272,8 +272,7 @@ td {
     rgba(37, 99, 235, 0) 130.13%
   );
   filter: blur(315.4573974609375px);
-  width: 400px;
-  height: 400px;
+  @apply max-w-[400px] w-full h-[400px];
 }
 
 /*filters*/

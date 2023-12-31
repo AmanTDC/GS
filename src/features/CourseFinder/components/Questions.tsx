@@ -83,7 +83,7 @@ const Questions = ({
         width={430}
         alt='heroImage'
         isLocal
-        className='rounded-2xl max-w-[430px] lg:h-[510px]'
+        className='rounded-2xl lg:max-w-[430px] lg:h-[510px]'
       />
       <div className='space-y-8 p-6 pt-0 w-full'>
         <h1 className='text-[28px] font-semibold'>{data?.title}</h1>
@@ -135,7 +135,7 @@ const Questions = ({
               <input
                 type='checkbox'
                 className='h-4 w-4 cursor-pointer'
-                value={values?.checkbox}
+                value=''
                 onChange={(e) => setFieldValue('checkbox', e.target.checked)}
               />
               <p className='text-xs text-gray-600'>
