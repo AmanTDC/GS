@@ -83,7 +83,7 @@ const Questions = ({
         width={430}
         alt='heroImage'
         isLocal
-        className='rounded-2xl lg:w-[430px] lg:h-[510px]'
+        className='rounded-2xl max-w-[430px] lg:h-[510px]'
       />
       <div className='space-y-8 p-6 pt-0 w-full'>
         <h1 className='text-[28px] font-semibold'>{data?.title}</h1>
