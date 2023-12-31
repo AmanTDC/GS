@@ -1,5 +1,7 @@
 import Img from '@/shared/Img';
-import React from 'react';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import emailjs from '@emailjs/browser';
 
 const Banner = ({
   data,
@@ -16,6 +18,23 @@ const Banner = ({
   styleDescription?: string;
   styleImage?: string;
 }) => {
+  const [email, setEmail] = useState('');
+  const claimNow = () => {
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
+        { email },
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
+      )
+      .then((res) => {
+        toast.success('Message Sent !', {
+          position: toast.POSITION.TOP_RIGHT,
+          className: 'toast-message',
+        });
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div className='relative'>
       <Img
@@ -46,12 +65,25 @@ const Banner = ({
           >
             {data?.description}
           </p>
-          <div className='rounded-full w-full bg-white flex items-center relative h-16'>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              claimNow();
+            }}
+            className='rounded-full w-full bg-white flex items-center relative h-16'
+          >
             <input
+              type='email'
               placeholder='Enter Your Email'
+              value={email}
               className='text-gray-400 rounded-full font-medium sm:mr-[220px] mr-16 w-full bg-white outline-none h-16 p-5 pl-6'
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
-            <div className='flex items-center cursor-pointer text-white gap-x-3 p-5 absolute bg-[rgba(30,58,138,1)] hover:bg-[rgba(30,58,138,1)]/90 duration-500 h-12 rounded-full right-2'>
+            <button
+              type='submit'
+              className='flex items-center cursor-pointer text-white gap-x-3 p-5 absolute bg-[rgba(30,58,138,1)] hover:bg-[rgba(30,58,138,1)]/90 duration-500 h-12 rounded-full right-2'
+            >
               <Img
                 src={data?.btnIcon}
                 alt='send'
@@ -62,8 +94,8 @@ const Banner = ({
               <h4 className='text-sm font-medium sm:block hidden'>
                 {data?.btnName}
               </h4>
-            </div>
-          </div>
+            </button>
+          </form>
         </div>
       </div>
       <Img

@@ -1,8 +1,26 @@
 import Img from '@/shared/Img';
-import React from 'react';
+import React, { useState } from 'react';
 import CountUp from 'react-countup';
-
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 const HeroSection = () => {
+  const [email, setEmail] = useState('');
+  const claimNow = () => {
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
+        { email },
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
+      )
+      .then((res) => {
+        toast.success('Message Sent !', {
+          position: toast.POSITION.TOP_RIGHT,
+          className: 'toast-message',
+        });
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div className="bg-[url('/images/homeBg.png')] lg:bg-[length:90%_100vh] bg-[length:200%_90%] xl:h-[900px] lg:h-screen h-fit w-full bg-no-repeat">
       <div className='flex lg:flex-row flex-col lg:space-y-0 space-y-4 sm:pt-28 pt-24 lg:justify-between lg:space-x-10 max-w-[1240px] md:mx-auto px-5'>
@@ -17,12 +35,25 @@ const HeroSection = () => {
             Unlock Boundless Opportunities, Explore World-Class Universities,
             and Achieve Your Dreams Abroad
           </div>
-          <div className='rounded-full w-full bg-white flex items-center relative sm:h-16 h-10 my-8'>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              claimNow();
+            }}
+            className='rounded-full w-full bg-white flex items-center relative sm:h-16 h-10 my-8'
+          >
             <input
+              type='email'
               placeholder='Enter Your Email'
+              value={email}
               className='text-gray-400 sm:text-base text-sm rounded-full font-medium sm:mr-[220px] mr-16 w-full bg-white outline-none sm:h-16 h-10 p-5 pl-6'
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
-            <div className='flex items-center justify-center cursor-pointer text-white gap-x-3 sm:p-5 absolute bg-[rgba(30,58,138,1)] hover:bg-[rgba(30,58,138,1)]/90 duration-500 sm:h-12 h-8 p-3 rounded-full sm:right-2 right-1'>
+            <button
+              type='submit'
+              className='flex items-center justify-center cursor-pointer text-white gap-x-3 sm:p-5 absolute bg-[rgba(30,58,138,1)] hover:bg-[rgba(30,58,138,1)]/90 duration-500 sm:h-12 h-8 p-3 rounded-full sm:right-2 right-1'
+            >
               <Img
                 src='/icons/claimNow.png'
                 alt='send'
@@ -34,8 +65,8 @@ const HeroSection = () => {
               <h4 className='text-sm font-medium flex'>
                 Claim 300$ <span className='sm:block hidden pl-1'>Now</span>
               </h4>
-            </div>
-          </div>
+            </button>
+          </form>
           <div className='flex max-[450px]flex-col max-[450px]:items-start font-semibold items-center gap-8'>
             <div>
               <div className='md:text-[32px] text-[24px] min-w-[166px]'>

@@ -1,10 +1,8 @@
 import Button from '@/shared/Button/Button';
 import CountryCard from '@/shared/Cards/CountryCard';
 import Img from '@/shared/Img';
-import { viewCourses } from '@/utils/schemas';
-import { useFormik } from 'formik';
-import { useRouter } from 'next/router';
-import React, { useState } from 'react';
+import React from 'react';
+import useQuestions from './views/useQuestions';
 
 const Questions = ({
   data,
@@ -17,63 +15,20 @@ const Questions = ({
   action: (idx: number) => void;
   navigation?: boolean;
 }) => {
-  const [selected, setSelected] = useState<any>(-1);
-  const [answers, setAnswers] = useState({
-    country: '',
-    degree: '',
-    eduction: '',
-    areaOfStudy: '',
-  });
-
-  const router = useRouter();
-  const handleSubmit = () => {
-    if (navigation) {
-      router.push('/courseResult');
-    } else {
-      index === 0
-        ? setAnswers({
-            ...answers,
-            country: selected?.name,
-          })
-        : index === 1
-        ? setAnswers({
-            ...answers,
-            degree: selected,
-          })
-        : index === 2
-        ? setAnswers({
-            ...answers,
-            eduction: selected,
-          })
-        : index === 3
-        ? setAnswers({
-            ...answers,
-            areaOfStudy: selected,
-          })
-        : null;
-      action(index + 1);
-      setSelected(-1);
-    }
-  };
-  const initialValues = {
-    name: '',
-    email: '',
-    phone: '',
-    checkbox: false,
-  };
-  const { values, errors, touched, handleBlur, handleChange, setFieldValue } =
-    useFormik({
-      initialValues: initialValues,
-      validationSchema: viewCourses,
-      onSubmit: (values) => {},
-    });
-  const inputType = (idx: number) =>
-    idx === 0 ? values?.name : idx === 1 ? values?.email : values?.phone;
-  const errorType = (idx: number) =>
-    idx === 0 ? errors?.name : idx === 1 ? errors?.email : errors?.phone;
-  const touchedType = (idx: number) =>
-    idx === 0 ? touched?.name : idx === 1 ? touched?.email : touched?.phone;
-  console.log({ touched }, { errors }, { values });
+  const {
+    onSubmit,
+    inputType,
+    errorType,
+    touchedType,
+    values,
+    errors,
+    handleBlur,
+    handleChange,
+    setFieldValue,
+    handleSubmit,
+    selected,
+    setSelected,
+  } = useQuestions(index, action);
 
   return (
     <div className='!mt-16 flex lg:flex-row flex-col lg:items-start items-center md:gap-20 gap-16'>
@@ -135,7 +90,6 @@ const Questions = ({
               <input
                 type='checkbox'
                 className='h-4 w-4 cursor-pointer'
-                value=''
                 onChange={(e) => setFieldValue('checkbox', e.target.checked)}
               />
               <p className='text-xs text-gray-600'>
@@ -179,7 +133,7 @@ const Questions = ({
               : selected === -1
           }
           className='flex items-center !px-6 ml-auto !mt-16'
-          onClick={handleSubmit}
+          onClick={() => (navigation ? handleSubmit() : onSubmit())}
         >
           {navigation ? 'View Courses' : 'Next'}
           <Img

@@ -1,9 +1,7 @@
 import Navbar from '@/components/Navbar/Navbar';
-import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
 import React, { useEffect, useState } from 'react';
 import Questions from './components/Questions';
-import { useRouter } from 'next/router';
 
 const CourseFinder = () => {
   const questions = [
@@ -101,7 +99,6 @@ const CourseFinder = () => {
       ? setData(questions[4])
       : setData(questions[5]);
   }, [isActive]);
-  console.log({ isActive });
 
   return (
     <div className='relative'>
@@ -124,7 +121,9 @@ const CourseFinder = () => {
             {questions?.map((item, idx) => (
               <div
                 className={`h-1 w-8 rounded ${
-                  isActive >= idx ? 'bg-blue-500 cursor-pointer' : 'bg-gray-300 cursor-not-allowed'
+                  isActive >= idx
+                    ? 'bg-blue-500 cursor-pointer'
+                    : 'bg-gray-300 cursor-not-allowed'
                 }`}
                 key={idx}
                 onClick={() => isActive >= idx && setIsActive(idx)}
