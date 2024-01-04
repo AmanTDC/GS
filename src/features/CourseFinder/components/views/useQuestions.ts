@@ -104,6 +104,7 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
     setSelected,
     isLoading,
     router,
+    handleSubmit,
     answers,
   };
 };

@@ -27,8 +27,7 @@ const Questions = ({
     selected,
     setSelected,
     isLoading,
-    router,
-    answers,
+    handleSubmit,
   } = useQuestions(index, action);
 
   return (
@@ -120,31 +119,23 @@ const Questions = ({
           </div>
         )}
         <Button
-          // isDisabled={
-          //   navigation
-          //     ? values?.email &&
-          //       values?.phone &&
-          //       values.name &&
-          //       values.checkbox &&
-          //       !errors?.email &&
-          //       !errors?.phone &&
-          //       !errors?.name
-          //       ? false
-          //       : true
-          //     : selected === -1
-          // }
+          isDisabled={
+            navigation
+              ? values?.email &&
+                values?.phone &&
+                values.name &&
+                values.checkbox &&
+                !errors?.email &&
+                !errors?.phone &&
+                !errors?.name
+                ? false
+                : true
+              : selected === -1
+          }
           className={`flex items-center !px-6 ml-auto !mt-16 ${
             navigation && 'min-w-[170px]'
           }`}
-          // onClick={() => (navigation ? handleSubmit() : onSubmit())}
-          onClick={() =>
-            navigation
-              ? router.push({
-                  pathname: '/courseResult',
-                  query: { data: JSON.stringify(answers) },
-                })
-              : onSubmit()
-          }
+          onClick={() => (navigation ? handleSubmit() : onSubmit())}
           isLoading={isLoading}
         >
           {navigation ? 'View Courses' : 'Next'}
