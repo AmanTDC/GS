@@ -29,10 +29,12 @@ const Questions = ({
     selected,
     setSelected,
     isLoading,
+    router,
+    answers,
   } = useQuestions(index, action);
 
   return (
-    <div className='!mt-16 flex lg:flex-row flex-col lg:items-start items-center md:gap-20 gap-16'>
+    <div className='!mt-16 flex lg:flex-row flex-col lg:items-start items-center md:gap-20 sm:gap-16 gap-10'>
       <Img
         src={data?.image}
         height={510}
@@ -41,7 +43,7 @@ const Questions = ({
         isLocal
         className='rounded-2xl lg:max-w-[430px] lg:h-[510px]'
       />
-      <div className='space-y-8 p-6 pt-0 w-full'>
+      <div className='space-y-8 p-6 sm:pt-0 w-full sm:bg-transparent bg-blue-50  rounded-3xl'>
         <h1 className='text-[28px] font-semibold'>{data?.title}</h1>
         {navigation ? (
           <div className='space-y-4 mt-6'>
@@ -50,7 +52,7 @@ const Questions = ({
                 <h4 className='text-xs font-medium'>
                   {item?.label} <span className='text-red-600'>*</span>
                 </h4>
-                <div className='relative z-10'>
+                <div className='relative'>
                   <input
                     type={item?.type}
                     placeholder={item?.placeholder}
@@ -120,23 +122,31 @@ const Questions = ({
           </div>
         )}
         <Button
-          isDisabled={
-            navigation
-              ? values?.email &&
-                values?.phone &&
-                values.name &&
-                values.checkbox &&
-                !errors?.email &&
-                !errors?.phone &&
-                !errors?.name
-                ? false
-                : true
-              : selected === -1
-          }
+          // isDisabled={
+          //   navigation
+          //     ? values?.email &&
+          //       values?.phone &&
+          //       values.name &&
+          //       values.checkbox &&
+          //       !errors?.email &&
+          //       !errors?.phone &&
+          //       !errors?.name
+          //       ? false
+          //       : true
+          //     : selected === -1
+          // }
           className={`flex items-center !px-6 ml-auto !mt-16 ${
             navigation && 'min-w-[170px]'
           }`}
-          onClick={() => (navigation ? handleSubmit() : onSubmit())}
+          // onClick={() => (navigation ? handleSubmit() : onSubmit())}
+          onClick={() =>
+            navigation
+              ? router.push({
+                  pathname: '/courseResult',
+                  query: { data: JSON.stringify(answers) },
+                })
+              : onSubmit()
+          }
           isLoading={isLoading}
         >
           {navigation ? 'View Courses' : 'Next'}

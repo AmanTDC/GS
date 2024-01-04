@@ -184,7 +184,10 @@ const Footer = ({ isBanner }: { isBanner?: boolean }) => {
               </div>
             </div>
             {footerData?.map((item: any, idx: number) => (
-              <div className='list-none space-y-3 lg:col-span-2 sm:col-span-4 col-span-6'>
+              <div
+                className='list-none space-y-3 lg:col-span-2 sm:col-span-4 col-span-6'
+                key={idx}
+              >
                 <div className='text-blue-500 text-sm font-semibold mb-6'>
                   STUDY DESTINATIONS
                 </div>

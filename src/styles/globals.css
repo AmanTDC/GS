@@ -202,7 +202,7 @@ td {
   border: 1.5px solid #f3f3f3;
   -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
-  @apply border-t-blue-900
+  @apply border-t-blue-900;
 }
 
 #spinner {
@@ -324,5 +324,5 @@ td {
   border: 1px solid #303f606e;
   cursor: pointer;
   border-radius: 5px;
-  @apply h-6 w-6;
+  @apply h-6 min-w-[24px];
 }

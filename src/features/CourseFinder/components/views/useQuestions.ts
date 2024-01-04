@@ -20,7 +20,7 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
     index === 0
       ? setAnswers({
           ...answers,
-          country: selected?.name,
+          country: selected?.value,
         })
       : index === 1
       ? setAnswers({
@@ -79,7 +79,11 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
             position: toast.POSITION.TOP_RIGHT,
             className: 'toast-message',
           });
-          router.push('/courseResult');
+
+          router.push({
+            pathname: '/courseResult',
+            query: { data: JSON.stringify(answers) },
+          });
         })
         .catch((err) => {
           console.log(err);
@@ -109,6 +113,8 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
     selected,
     setSelected,
     isLoading,
+    router,
+    answers,
   };
 };
 

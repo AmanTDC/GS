@@ -9,12 +9,16 @@ const CourseFinder = () => {
       title: 'In which country do you want to study?',
       image: '/images/course1.png',
       options: [
-        { name: 'United Kingdom', icon: '/images/uk.png' },
-        { name: 'United States', icon: '/images/usa.png' },
-        { name: 'Canada', icon: '/images/canada.png' },
-        { name: 'Australia', icon: '/images/australia.png' },
-        { name: 'New Zealad', icon: '/images/nz.png' },
-        { name: 'Ireland', icon: '/images/ireland.png' },
+        { value: 'UK', name: 'United Kingdom', icon: '/images/uk.png' },
+        { value: 'USA', name: 'United States', icon: '/images/usa.png' },
+        { value: 'CANADA', name: 'Canada', icon: '/images/canada.png' },
+        {
+          value: 'AUSTRALIA',
+          name: 'Australia',
+          icon: '/images/australia.png',
+        },
+        { value: 'IRELAND', name: 'New Zealad', icon: '/images/nz.png' },
+        { value: 'NZ', name: 'Ireland', icon: '/images/ireland.png' },
       ],
     },
     {
@@ -101,9 +105,9 @@ const CourseFinder = () => {
 
   return (
     <div className='relative'>
-      <div className='bubble absolute top-0 right-0' />
+      <div className='bubble absolute top-0 right-0 sm:block hidden' />
       <Navbar />
-      <div className='relative pt-32 pb-20 bg-[url("/images/courseBg.png")] bg-[length:100%_467px] bg-no-repeat bg-bottom'>
+      <div className='z-10 relative pt-32 pb-20 bg-[url("/images/courseBg.png")] bg-[length:100%_467px] bg-no-repeat bg-bottom'>
         <div className='space-y-8 max-w-[1120px] mx-auto z-10 px-5'>
           <Img
             src='/images/testimonials.png'
@@ -116,7 +120,7 @@ const CourseFinder = () => {
           <h1 className='text-[28px] font-semibold text-[#1E3A8A] text-center'>
             Help us find the best course and college for you
           </h1>
-          <div className='flex items-center gap-x-2 justify-center'>
+          <div className='items-center gap-x-2 justify-center sm:flex hidden'>
             {questions?.map((item, idx) => (
               <div
                 className={`h-1 w-8 rounded ${
@@ -137,7 +141,7 @@ const CourseFinder = () => {
           />
         </div>
       </div>
-      <div className='bubble absolute bottom-0 left-0' />
+      <div className='bubble absolute bottom-0 left-0 sm:block hidden' />
     </div>
   );
 };

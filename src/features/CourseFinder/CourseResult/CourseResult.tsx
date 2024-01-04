@@ -2,137 +2,33 @@ import Navbar from '@/components/Navbar/Navbar';
 import CourseCard from '@/shared/Cards/CourseCard';
 import Select from 'react-select';
 import { CiSliderHorizontal } from 'react-icons/ci';
-import { useState } from 'react';
 import Img from '@/shared/Img';
 import Link from 'next/link';
 import { RxCross2 } from 'react-icons/rx';
-import useScrollHidden from '@/utils/hooks/useScrollHidden';
 import Button from '@/shared/Button/Button';
 import Pagination from '@/shared/Pagination/Pagination';
-import { useRouter } from 'next/router';
+import useCourseResult from './views/useCourseResult';
+import { useState } from 'react';
+
 const CourseResult = () => {
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-  ];
-  const filters = [
-    {
-      title: 'Country',
-      options: [
-        { value: 'uk', label: 'United Kingdom' },
-        { value: 'usa', label: 'United States' },
-        { value: 'canada', label: 'Canada' },
-        { value: 'australia', label: 'Australia' },
-        { value: 'ireland', label: 'Ireland' },
-        { value: 'nz', label: 'New Zealand' },
-      ],
-    },
-    {
-      title: 'Course Level',
-      options: [
-        { value: '12th', label: '12th' },
-        { value: "bachelor's", label: 'Bachelor’s Degree' },
-        { value: "master's", label: 'Master’s Degree' },
-        { value: 'phd', label: 'PhD' },
-      ],
-    },
-    {
-      title: 'Course Duration',
-      options: [
-        { value: 'one', label: 'Less than 1 Year' },
-        { value: 'two', label: '1 - 2 Years' },
-        { value: 'three', label: '2 - 3 Years' },
-        { value: 'four', label: '3+ Years' },
-      ],
-    },
-    {
-      title: 'Mode of Study',
-      options: [
-        { value: 'fullTime', label: 'Full Time' },
-        { value: 'halfTime', label: 'Half Time' },
-        { value: 'internship', label: 'Internship' },
-      ],
-    },
-    {
-      title: 'Course Type',
-      options: [
-        { value: 'degree', label: 'Degree' },
-        { value: 'diploma', label: 'Diploma' },
-      ],
-    },
-    {
-      title: 'Programs',
-      options: [
-        { value: 'Business & Management', label: 'Business & Management' },
-        { value: 'Computer Science & IT', label: 'Computer Science & IT' },
-        { value: 'Engineering', label: 'Engineering' },
-        { value: 'Social Sciences', label: 'Social Sciences' },
-        { value: 'Architecture', label: 'Architecture' },
-        { value: 'Hospitality & Tourism', label: 'Hospitality & Tourism' },
-        { value: 'Science', label: 'Science' },
-        { value: 'Sports', label: 'Sports' },
-        { value: 'Fine Arts', label: 'Fine Arts' },
-        { value: 'Law', label: 'Law' },
-        { value: 'Medicine', label: 'Medicine' },
-        { value: 'Journalism & Media', label: 'Journalism & Media' },
-        {
-          value: 'Agriculture and Forestry',
-          label: 'Agriculture and Forestry',
-        },
-      ],
-    },
-    {
-      title: 'Intakes',
-      options: [
-        { value: 'Jan - Mar 2024', label: 'Jan - Mar 2024' },
-        { value: 'Apr - Jun 2024', label: 'Apr - Jun 2024' },
-        { value: 'Jul - Sep 2024', label: 'Jul - Sep 2024' },
-        { value: 'Oct - Dec 2024', label: 'Oct - Dec 2024' },
-        { value: 'Jan - Mar 2025', label: 'Jan - Mar 2025' },
-        { value: 'Not Decided', label: 'Not Decided' },
-      ],
-    },
-  ];
-  const courses = [
-    {
-      title: 'Master of Health Information Management',
-      university: 'La Trobe University',
-      countryIcon: '/images/uk.png',
-      country: 'United Kingdom',
-      fee: '$ 25,000',
-      tags: ['Post Graduate', 'Full Time', '2 Years'],
-    },
-    {
-      title: 'Master of Health Information Management',
-      university: 'La Trobe University',
-      countryIcon: '/images/uk.png',
-      country: 'United Kingdom',
-      fee: '$ 25,000',
-      tags: ['Post Graduate', 'Full Time', '2 Years'],
-    },
-    {
-      title: 'Master of Health Information Management',
-      university: 'La Trobe University',
-      countryIcon: '/images/uk.png',
-      country: 'United Kingdom',
-      fee: '$ 25,000',
-      tags: ['Post Graduate', 'Full Time', '2 Years'],
-    },
-    {
-      title: 'Master of Health Information Management',
-      university: 'La Trobe University',
-      countryIcon: '/images/uk.png',
-      country: 'United Kingdom',
-      fee: '$ 25,000',
-      tags: ['Post Graduate', 'Full Time', '2 Years'],
-    },
-  ];
-  const [isActive, setIsActive] = useState<number>();
-  useScrollHidden(isActive === 0);
-  const router = useRouter();
-  const [page, setPage] = useState(Number(router.query.page) || 1);
-  const [totalPages, setTotalPages] = useState(10);
+  const {
+    isActive,
+    setIsActive,
+    page,
+    setPage,
+    totalPages,
+    courses,
+    filters,
+    applyFilters,
+    extractValue,
+    updatedValues,
+  } = useCourseResult();
+  console.log({
+    dddddd: filters[0]?.options?.findIndex(
+      (e) => e?.value === updatedValues?.defaultValues?.country
+    ),
+  });
+
   return (
     <div className='relative bg-[#FAFAFA]'>
       <Navbar />
@@ -150,7 +46,16 @@ const CourseResult = () => {
                   options={item?.options}
                   isMulti
                   className='outline-none cursor-pointer'
-                  defaultValue={[item?.options[0]]}
+                  // defaultValue={[item?.options[0]]}
+                  defaultValue={[
+                    item?.options[
+                      item?.options?.findIndex(
+                        (e) =>
+                          e?.value === updatedValues?.defaultValues?.[item?.key]
+                      )
+                    ],
+                  ]}
+                  onChange={(e: any) => extractValue(e, item?.key)}
                 />
               </div>
             ))}
@@ -159,29 +64,55 @@ const CourseResult = () => {
             <Button className='bg-white !text-black hover:!bg-transparent w-full px-0 font-bold border border-gray-300'>
               Reset
             </Button>
-            <Button className='bg-blue-900 w-full !px-2 hover:!bg-blue-900/80 font-bold'>
+            <Button
+              className='bg-blue-900 w-full !px-2 hover:!bg-blue-900/80 font-bold'
+              onClick={applyFilters}
+            >
               Apply Filters
             </Button>
           </div>
         </div>
-        <div className='col-span-8 space-y-8'>
+        <div className='col-span-8 space-y-8 relative'>
           <div className='flex justify-between items-center'>
-            <h1 className='font-semibold text-[32px]'>113 Course Found</h1>
+            <h1 className='font-semibold text-[32px]'>
+              {courses?.pagiation?.count} Course Found
+            </h1>
             <CiSliderHorizontal
               color='#000'
               size={30}
               onClick={() => setIsActive(0)}
-              className='lg:hidden'
+              className='lg:hidden animate-pulse'
             />
           </div>
-          {courses?.map((item: any, idx: number) => (
-            <CourseCard key={idx} data={item} />
-          ))}
-          <Pagination
-            page={page}
-            totalPages={totalPages}
-            active={({ selected }: any) => setPage(selected + 1)}
-          />
+          <>
+            {isActive === 2 && (
+              <div className='space-y-4 absolute bg-white/70 flex flex-col justify-center w-full h-[calc(100%-80px)] z-20'>
+                <div>
+                  <Img
+                    src='/icons/logoIcon.png'
+                    alt='phone'
+                    width={100}
+                    height={100}
+                    isLocal
+                    className='animate-bounce m-auto duration-700 opacity-40'
+                  />
+                  <div className='text-center font-medium'>Please wait...</div>
+                </div>
+              </div>
+            )}
+            {courses?.courses?.map((item: any, idx: number) => (
+              <CourseCard key={idx} data={item} />
+            ))}
+          </>
+          {courses?.pagiation?.totalPages > 1 && (
+            <div className='absolute w-full'>
+              <Pagination
+                page={page}
+                totalPages={totalPages}
+                active={({ selected }: any) => setPage(selected + 1)}
+              />
+            </div>
+          )}
         </div>
       </div>
       {isActive === 0 && (
@@ -226,6 +157,7 @@ const CourseResult = () => {
                     isMulti
                     className='outline-none cursor-pointer'
                     defaultValue={[item?.options[0]]}
+                    onChange={(e: any) => extractValue(e, item?.key)}
                   />
                 </div>
               ))}
@@ -234,7 +166,10 @@ const CourseResult = () => {
               <Button className='bg-white !text-black hover:!bg-transparent w-full px-0 font-bold border border-gray-300'>
                 Reset
               </Button>
-              <Button className='bg-blue-900 w-full px-0 hover:!bg-blue-900/80 font-bold'>
+              <Button
+                className='bg-blue-900 w-full px-0 hover:!bg-blue-900/80 font-bold'
+                onClick={applyFilters}
+              >
                 Apply Filters
               </Button>
             </div>
