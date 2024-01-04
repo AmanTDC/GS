@@ -11,13 +11,13 @@ const Destinations = () => {
     },
     {
       icon: '/icons/getStarted2.png',
-      title: 'Initial Assesment',
+      title: 'Initial Assessment',
       description:
         'During your first session, we will conduct an initial assessment of your goals and needs.',
     },
     {
       icon: '/icons/getStarted3.png',
-      title: 'Personalised Guidance',
+      title: 'Personalized Guidance',
       description:
         'During your first session, we will conduct an initial assessment of your goals and needs.',
     },
@@ -72,11 +72,8 @@ const Destinations = () => {
                 </div>
               </div>
               <div className='flip-card-back bg-white border border-[#E5E7EB] rounded-[40px] p-5 flex text-center flex-col justify-center items-center'>
-                <div className='font-semibold'>Initial Assesment</div>
-                <p className='line-clamp-[7]'>
-                  During your first session, we will conduct an initial
-                  assessment of your goals and needs.
-                </p>
+                <div className='font-semibold'>{item?.title}</div>
+                <p className='line-clamp-[7]'>{item?.description}</p>
               </div>
             </div>
           </div>

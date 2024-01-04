@@ -19,7 +19,14 @@ const StudyCard = ({
       <div
         className={`${isServices ? 'space-y-4' : 'flex items-center gap-x-3'}`}
       >
-        <Img src={data?.icon} alt='pdf' height={64} width={64} isLocal />
+        <Img
+          src={data?.icon}
+          alt='pdf'
+          height={64}
+          width={70}
+          isLocal
+          className='h-16'
+        />
         <h4 className='text-black font-semibold text-lg'>{data?.title}</h4>
         {isServices && (
           <>

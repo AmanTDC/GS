@@ -3,6 +3,7 @@ import CountryCard from '@/shared/Cards/CountryCard';
 import Img from '@/shared/Img';
 import React from 'react';
 import useQuestions from './views/useQuestions';
+import { errorType, touchedType, inputType } from '@/utils/constants/Functions';
 
 const Questions = ({
   data,
@@ -17,15 +18,12 @@ const Questions = ({
 }) => {
   const {
     onSubmit,
-    inputType,
-    errorType,
-    touchedType,
     values,
     errors,
     handleBlur,
     handleChange,
     setFieldValue,
-    handleSubmit,
+    touched,
     selected,
     setSelected,
     isLoading,
@@ -57,7 +55,7 @@ const Questions = ({
                     type={item?.type}
                     placeholder={item?.placeholder}
                     className={`h-10 rounded-md text-sm pl-10 outline-none w-full border ${
-                      errorType(idx) && touchedType(idx)
+                      errorType(idx, errors) && touchedType(idx, touched)
                         ? 'border-red-600'
                         : 'border-gray-200'
                     }`}
@@ -67,11 +65,11 @@ const Questions = ({
                     onBlur={handleBlur(
                       idx === 0 ? 'name' : idx === 1 ? 'email' : 'phone'
                     )}
-                    value={inputType(idx)}
+                    value={inputType(idx, values)}
                   />
-                  {errorType(idx) && touchedType(idx) ? (
+                  {errorType(idx, errors) && touchedType(idx, touched) ? (
                     <p className='text-red-500 text-[10px] text-right'>
-                      {errorType(idx) || (
+                      {errorType(idx, errors) || (
                         <p className='text-white text-[10px] text-right'>.</p>
                       )}
                     </p>

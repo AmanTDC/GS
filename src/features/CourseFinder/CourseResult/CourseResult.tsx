@@ -8,7 +8,6 @@ import { RxCross2 } from 'react-icons/rx';
 import Button from '@/shared/Button/Button';
 import Pagination from '@/shared/Pagination/Pagination';
 import useCourseResult from './views/useCourseResult';
-import { useState } from 'react';
 
 const CourseResult = () => {
   const {
@@ -23,11 +22,6 @@ const CourseResult = () => {
     extractValue,
     updatedValues,
   } = useCourseResult();
-  console.log({
-    dddddd: filters[0]?.options?.findIndex(
-      (e) => e?.value === updatedValues?.defaultValues?.country
-    ),
-  });
 
   return (
     <div className='relative bg-[#FAFAFA]'>

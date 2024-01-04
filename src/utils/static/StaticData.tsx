@@ -1,3 +1,28 @@
+export const InputFields = {
+  title: 'Let’s Get Started',
+  image: '/images/course6.png',
+  inputs: [
+    {
+      label: 'Name',
+      placeholder: 'Enter Your Name',
+      icon: '/icons/Message.png',
+      type: 'text',
+    },
+    {
+      label: 'Email ID',
+      placeholder: 'Enter Your Email ID',
+      icon: '/icons/Message.png',
+      type: 'email',
+    },
+    {
+      label: 'Phone Number',
+      placeholder: 'Enter Your Phone Number',
+      icon: '/icons/Phone.png',
+      type: 'tel',
+    },
+  ],
+};
+
 export const CountryData = [
   {
     country: 'The United Kingdom',
@@ -1722,7 +1747,8 @@ export const ServicesData = {
           "You can contact us through the contact form on our website or by calling our helpline. We're here to address your queries and guide you through the process.",
       },
       {
-        title: 'Is there an additional cost for using the Accommodation Assistance service?',
+        title:
+          'Is there an additional cost for using the Accommodation Assistance service?',
         description:
           'No, our Accommodation Assistance service is part of our commitment to supporting students, and there are no additional fees for using this service.',
       },

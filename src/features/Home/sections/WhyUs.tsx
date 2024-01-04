@@ -1,6 +1,8 @@
 import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
-import React from 'react';
+import Modal from '@/shared/Modal/Modal';
+import useScrollHidden from '@/utils/hooks/useScrollHidden';
+import React, { useState } from 'react';
 
 const WhyUs = () => {
   const standOut = [
@@ -25,6 +27,8 @@ const WhyUs = () => {
         'There are many is variations of passage of lorem ipsum available but the majority',
     },
   ];
+  const [isActive, setIsActive] = useState(false);
+  useScrollHidden(isActive);
   return (
     <div className='bg-[#F8FBFF] px-5 my-16 py-16'>
       <div className='max-w-[1240px] mx-auto'>
@@ -54,14 +58,17 @@ const WhyUs = () => {
               isLocal
               className='absolute right-0 top-0'
             />
-            <div className='px-10 py-12 space-y-8'>
+            <div className='px-10 py-12 space-y-8 relative z-10'>
               <div className='text-[#B4C0E1] text-sm font-semibold'>
                 BEAT THE OLD WAY
               </div>
               <div className='text-white font-semibold md:text-[32px] text-[28px]'>
                 Why you should choose the only quality consultation
               </div>
-              <Button className='bg-white group w-full hover:bg-blue-500'>
+              <Button
+                className='bg-white group w-full hover:bg-blue-500'
+                onClick={() => setIsActive(true)}
+              >
                 <div className='text-[#1E3A8A] group-hover:text-white duration-500'>
                   Get Free Consultation
                 </div>
@@ -90,6 +97,26 @@ const WhyUs = () => {
           </div>
         </div>
       </div>
+      {isActive && (
+        <Modal
+          onClose={() => setIsActive(false)}
+          className='bg-transparent p-0'
+        >
+          <div
+            className='absolute text-6xl cursor-pointer right-3 top-0 md:text-white'
+            onClick={() => setIsActive(false)}
+          >
+            &times;
+          </div>
+          <iframe
+            src='https://outlook.office365.com/owa/calendar/FreeConsultation@Globalscholar.co.uk/bookings/'
+            width='100%'
+            height='100%'
+            scrolling='yes'
+            className='w-[100vw] md:w-[calc(100vw-200px)] max-w-[1120px] md:h-[calc(100vh-100px)] h-[100vh]'
+          ></iframe>
+        </Modal>
+      )}
     </div>
   );
 };

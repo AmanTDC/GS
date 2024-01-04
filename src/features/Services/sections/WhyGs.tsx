@@ -1,8 +1,21 @@
 import Button from '@/shared/Button/Button';
 import Img from '@/shared/Img';
-import React from 'react';
+import React, { useState } from 'react';
+import useServices from '../views/useServices';
+import { errorType, touchedType, inputType } from '@/utils/constants/Functions';
+import { InputFields } from '@/utils/static/StaticData';
 
 const WhyGs = ({ index }: { index: string }) => {
+  const {
+    values,
+    errors,
+    touched,
+    handleBlur,
+    handleSubmit,
+    setFieldValue,
+    isLoading,
+    handleChange,
+  } = useServices();
   const WhyGs = [
     {
       title: 'Excellence in Education Consulting',
@@ -21,6 +34,7 @@ const WhyGs = ({ index }: { index: string }) => {
     },
   ];
 
+ 
   return (
     <div className='gap-8 grid grid-cols-5' id={index}>
       <div className='space-y-3 md:col-span-3 col-span-5'>
@@ -56,80 +70,70 @@ const WhyGs = ({ index }: { index: string }) => {
           <b>Get Free 30 Min complete assistance</b> with university
           shortlisting, application, scholarship, visa and finance.
         </p>
-        <div className='space-y-4'>
-          <div>
-            <label className='text-gray-600 text-xs font-medium'>
-              Name <span className='text-red-600'>*</span>
-            </label>
-            <div className='relative mt-1'>
-              <input
-                type='text'
-                placeholder='Enter Your Name'
-                className='h-10 rounded-lg pl-9 w-full outline-none border border-gray-200 text-sm'
-              />
-              <Img
-                src={'/icons/Message.png'}
-                height={16}
-                width={16}
-                alt='heroImage'
-                isLocal
-                className='absolute top-3 left-3'
-              />
+
+        <div className='space-y-3 mt-6'>
+          {InputFields?.inputs?.map((item: any, idx: number) => (
+            <div className='space-y-1' key={idx}>
+              <h4 className='text-xs font-medium'>
+                {item?.label} <span className='text-red-600'>*</span>
+              </h4>
+              <div className='relative'>
+                <input
+                  type={item?.type}
+                  placeholder={item?.placeholder}
+                  className={`h-10 rounded-md text-sm pl-10 outline-none w-full border ${
+                    errorType(idx, errors) && touchedType(idx, touched)
+                      ? 'border-red-600'
+                      : 'border-gray-200'
+                  }`}
+                  onChange={handleChange(
+                    idx === 0 ? 'name' : idx === 1 ? 'email' : 'phone'
+                  )}
+                  onBlur={handleBlur(
+                    idx === 0 ? 'name' : idx === 1 ? 'email' : 'phone'
+                  )}
+                  value={inputType(idx, values)}
+                />
+                {errorType(idx, errors) && touchedType(idx, touched) ? (
+                  <p className='text-red-500 text-[10px] text-right'>
+                    {errorType(idx, errors) || (
+                      <p className='text-white text-[10px] text-right'>.</p>
+                    )}
+                  </p>
+                ) : (
+                  <p className='text-white text-[10px] text-right'>.</p>
+                )}
+                <Img
+                  src={item?.icon}
+                  height={16}
+                  width={16}
+                  alt='heroImage'
+                  isLocal
+                  className='absolute top-3 left-4'
+                />
+              </div>
             </div>
-          </div>
-          <div>
-            <label className='text-gray-600 text-xs font-medium'>
-              Email ID <span className='text-red-600'>*</span>
-            </label>
-            <div className='relative mt-1'>
-              <input
-                type='text'
-                placeholder='Enter Your Email ID'
-                className='h-10 rounded-lg pl-9 w-full outline-none border border-gray-200 text-sm'
-              />
-              <Img
-                src={'/icons/Message.png'}
-                height={16}
-                width={16}
-                alt='heroImage'
-                isLocal
-                className='absolute top-3 left-3'
-              />
-            </div>
-          </div>
-          <div>
-            <label className='text-gray-600 text-xs font-medium'>
-              Phone Number <span className='text-red-600'>*</span>
-            </label>
-            <div className='relative mt-1'>
-              <input
-                type='text'
-                placeholder='Enter Your Phone Number'
-                className='h-10 rounded-lg pl-9 w-full outline-none border border-gray-200 text-sm'
-              />
-              <Img
-                src={'/icons/Phone.png'}
-                height={16}
-                width={16}
-                alt='heroImage'
-                isLocal
-                className='absolute top-3 left-3'
-              />
-            </div>
+          ))}
+          <div className='flex items-center gap-x-2'>
+            <input
+              type='checkbox'
+              className='h-4 w-4 cursor-pointer'
+              onChange={(e) => setFieldValue('checkbox', e.target.checked)}
+            />
+            <p className='text-xs text-gray-600'>
+              By clicking you agree to our{' '}
+              <span className='text-[#007DFC]'>Privacy Policy</span> and{' '}
+              <span className='text-[#007DFC]'>Terms & Conditions</span>{' '}
+              <span className='text-red-600'>*</span>
+            </p>
           </div>
         </div>
-        <div className='flex items-center gap-x-2'>
-          <input type='checkbox' className='h-5 w-5' />
-          <p className='text-xs text-gray-600'>
-            By clicking you agree to our{' '}
-            <span className='text-[#007DFC]'>Privacy Policy</span> and{' '}
-            <span className='text-[#007DFC]'>Terms & Conditions</span>{' '}
-            <span className='text-red-600'>*</span>
-          </p>
-        </div>
+
         <Button
           className='bg-blue-900 py-3 hover:!bg-blue-900/80 flex items-center justify-center gap-x-2'
           fullWidth
+          isLoading={isLoading}
+          onClick={handleSubmit}
         >
           Get Free Consultation
           <Img

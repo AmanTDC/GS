@@ -2,10 +2,11 @@ import { NextArrow, PrevArrow } from '@/shared/Button/NavigationButtons';
 import Img from '@/shared/Img';
 import { VERIFICATION_SLICK_SETTING } from '@/utils/constants/slickSliderSettings';
 import React from 'react';
+import { useRouter } from 'next/router';
+import CountryCard from '../components/CountryCard';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useRouter } from 'next/router';
 
 const Countries = () => {
   const countries = [
@@ -57,44 +58,30 @@ const Countries = () => {
           Explore & Learn More About Study Destinations
         </div>
       </div>
-      {/* <Slider
-        {...VERIFICATION_SLICK_SETTING}
-        nextArrow={<NextArrow />}
-        prevArrow={<PrevArrow />}
-      > */}
-      <div className='flex sm:gap-x-10 gap-x-5 overflow-x-scroll max-w-[1120px]'>
+      <div className='sm:gap-x-10 gap-x-5 overflow-x-scroll max-w-[1120px] sm:flex hidden'>
         {countries?.map((item, idx) => (
-          <div
+          <CountryCard
+            data={item}
+            onclick={() => router.push(item?.route)}
             key={idx}
-            className='relative group mb-16 cursor-pointer w-[362px]'
-            onClick={() => router.push(item?.route)}
-          >
-            <Img
-              src={item?.image}
-              height={420}
-              width={362}
-              alt='heroImage'
-              isLocal
-              className='max-h-[420px] sm:max-w-[362px] max-w-[280px] h-full rounded-2xl'
-            />
-            <div className='bg-[linear-gradient(180deg,rgba(30,58,138,0.00)_0%,#1E3A8A_91.32%)] h-0 w-0 rounded-2xl absolute top-1/2 left-1/2 opacity-0 group-hover:opacity-100 group-hover:top-0 group-hover:left-0 group-hover:h-full group-hover:w-full duration-500'>
-              <div className='text-white h-full flex justify-center items-center text-[38px] sm:text-[45px] font-semibold'>
-                {item?.name}
-              </div>
-            </div>
-            <div className='h-[92px] absolute -bottom-10 left-[37%] w-[92px] rounded-full bg-white flex items-center justify-center'>
-              <Img
-                src={item?.icon}
-                height={86}
-                width={86}
-                alt='heroImage'
-                isLocal
-              />
-            </div>
-          </div>
+          />
         ))}
       </div>
-      {/* </Slider> */}
+      <div className='sm:hidden'>
+        <Slider
+          {...VERIFICATION_SLICK_SETTING}
+          nextArrow={<NextArrow />}
+          prevArrow={<PrevArrow />}
+        >
+          {countries?.map((item, idx) => (
+            <CountryCard
+              data={item}
+              onclick={() => router.push(item?.route)}
+              key={idx}
+            />
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

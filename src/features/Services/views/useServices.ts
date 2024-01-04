@@ -1,46 +1,10 @@
 import { viewCourses } from '@/utils/schemas';
 import { useFormik } from 'formik';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
+import { useState } from 'react';
 
-const useQuestions = (index: number, action: (idx: number) => void) => {
-  const [selected, setSelected] = useState<any>(-1);
-  const [answers, setAnswers] = useState({
-    country: '',
-    degree: '',
-    eduction: '',
-    areaOfStudy: '',
-  });
-  const [isLoading, setIsLoading] = useState(false);
-
-  const router = useRouter();
-  const onSubmit = () => {
-    index === 0
-      ? setAnswers({
-          ...answers,
-          country: selected?.value,
-        })
-      : index === 1
-      ? setAnswers({
-          ...answers,
-          degree: selected,
-        })
-      : index === 2
-      ? setAnswers({
-          ...answers,
-          eduction: selected,
-        })
-      : index === 3
-      ? setAnswers({
-          ...answers,
-          areaOfStudy: selected,
-        })
-      : null;
-    action(index + 1);
-    setSelected(-1);
-  };
+const useServices = () => {
   const initialValues = {
     name: '',
     email: '',
@@ -48,19 +12,22 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
     checkbox: false,
   };
 
+  const [isLoading, setIsLoading] = useState(false);
   const {
     values,
     errors,
     touched,
     handleBlur,
-    handleChange,
-    setFieldValue,
     handleSubmit,
+    setFieldValue,
+    handleChange,
   } = useFormik({
     initialValues: initialValues,
     validationSchema: viewCourses,
 
     onSubmit: async (values) => {
+      console.log(values);
+
       setIsLoading(true);
       var templateParams = {
         name: values?.name,
@@ -79,11 +46,6 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
             position: toast.POSITION.TOP_RIGHT,
             className: 'toast-message',
           });
-
-          router.push({
-            pathname: '/courseResult',
-            query: { data: JSON.stringify(answers) },
-          });
         })
         .catch((err) => {
           console.log(err);
@@ -91,21 +53,16 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
         });
     },
   });
-
   return {
-    onSubmit,
     values,
     errors,
     touched,
     handleBlur,
-    handleChange,
+    handleSubmit,
     setFieldValue,
-    selected,
-    setSelected,
+    handleChange,
     isLoading,
-    router,
-    answers,
   };
 };
 
-export default useQuestions;
+export default useServices;
