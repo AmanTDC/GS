@@ -114,14 +114,13 @@ const useCourseResult = () => {
     window.scroll(0, 0);
     getCourses(page, 5, filters)
       .then((res) => {
-        setIsActive(100);
+        setIsActive(-1);
         setCourses(res);
         router.push(
           `/courseResult`,
           {
             query: {
               page: page,
-              data: router?.query?.data,
             },
           },
           {
@@ -137,9 +136,6 @@ const useCourseResult = () => {
       });
   };
   console.log({ updatedValues: updatedValues });
-  useEffect(() => {
-    fetchCourses(updatedValues);
-  }, [page, isActive !== 100]);
 
   useEffect(() => {
     setUpdatedValues({
@@ -154,6 +150,12 @@ const useCourseResult = () => {
       intakes: preSelectedFilters?.intakes && [preSelectedFilters?.intakes],
     });
   }, []);
+
+  useEffect(() => {
+    preSelectedFilters
+      ? updatedValues?.country?.length > 0 && fetchCourses(updatedValues)
+      : fetchCourses();
+  }, [page, updatedValues?.defaultValues]);
 
   const extractValue = (data: any, key: string) => {
     setUpdatedValues({
