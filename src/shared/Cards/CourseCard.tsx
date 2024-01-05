@@ -18,7 +18,7 @@ const CourseCard = ({ data }: { data: any }) => {
         />
         <div className='font-medium'>{data?.university?.schoolName}</div>
         <CountryCard
-          data={{ icon: '/images/uk.png', name: data?.university?.province }}
+          data={{ icon: '/images/uk.png', label: data?.university?.campusCity }}
           className='ml-auto border-none items-center !p-0'
           styleIcon='h-[18px] w-[18px]'
           styleName='!font-medium'

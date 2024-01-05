@@ -10,7 +10,7 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
   const [answers, setAnswers] = useState({
     country: '',
     degree: '',
-    eduction: '',
+    level: '',
     areaOfStudy: '',
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +20,7 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
     index === 0
       ? setAnswers({
           ...answers,
-          country: selected?.value,
+          country: selected,
         })
       : index === 1
       ? setAnswers({
@@ -30,7 +30,7 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
       : index === 2
       ? setAnswers({
           ...answers,
-          eduction: selected,
+          level: selected,
         })
       : index === 3
       ? setAnswers({

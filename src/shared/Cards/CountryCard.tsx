@@ -35,7 +35,7 @@ const CountryCard = ({
           className={`h-6 w-6 ${styleIcon}`}
         />
       )}
-      <h4 className={`font-semibold ${styleName}`}>{data?.name || data}</h4>
+      <h4 className={`font-semibold ${styleName}`}>{data?.label}</h4>
     </div>
   );
 };

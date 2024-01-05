@@ -14,11 +14,11 @@ export const getCourses = async (
         pageSize: pageSize,
         country:
           params?.country?.length > 0
-            ? params?.country?.map((e: any) => e.value)?.join(',')
+            ? params?.country?.map((e: any) => e?.value)?.join(',')
             : null,
         programLevel:
           params?.level?.length > 0
-            ? params?.level?.map((e: any) => e.value)?.join(',')
+            ? params?.level?.map((e: any) => e?.value)?.join(',')
             : null,
       },
     });

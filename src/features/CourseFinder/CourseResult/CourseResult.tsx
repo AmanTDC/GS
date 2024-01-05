@@ -30,29 +30,35 @@ const CourseResult = () => {
         <div className='col-span-4 bg-white p-6 h-fit lg:block hidden rounded-2xl'>
           <div className='text-2xl font-bold'>Filters</div>
           <div className='space-y-4 my-6'>
-            {filters?.map((item, idx) => (
-              <div key={idx}>
-                <div className='text-xs font-medium text-gray-600 mb-1'>
-                  {item?.title}
-                  <span className='text-red-500 pl-1'>*</span>
-                </div>
-                <Select
-                  options={item?.options}
-                  isMulti
-                  className='outline-none cursor-pointer'
-                  // defaultValue={[item?.options[0]]}
-                  defaultValue={[
-                    item?.options[
-                      item?.options?.findIndex(
-                        (e) =>
-                          e?.value === updatedValues?.defaultValues?.[item?.key]
-                      )
-                    ],
-                  ]}
-                  onChange={(e: any) => extractValue(e, item?.key)}
-                />
-              </div>
-            ))}
+            {courses?.courses
+              ? filters?.map((item, idx) => (
+                  <div key={idx}>
+                    <div className='text-xs font-medium text-gray-600 mb-1'>
+                      {item?.title}
+                    </div>
+                    <Select
+                      options={item?.options}
+                      isMulti
+                      className='outline-none cursor-pointer'
+                      defaultValue={[
+                        item?.options[
+                          item?.options?.findIndex(
+                            (e) =>
+                              e?.value ===
+                              updatedValues?.defaultValues?.[item?.key]?.value
+                          )
+                        ],
+                      ]}
+                      onChange={(e: any) => extractValue(e, item?.key)}
+                    />
+                  </div>
+                ))
+              : [1, 1, 1, 1, 1, 1, 1].map((item, idx: number) => (
+                  <div
+                    className='h-[68px] w-full bg-gray-200 animate-pulse rounded-xl'
+                    key={idx}
+                  />
+                ))}
           </div>
           <div className='flex items-center gap-x-6'>
             <Button className='bg-white !text-black hover:!bg-transparent w-full px-0 font-bold border border-gray-300'>
@@ -144,7 +150,6 @@ const CourseResult = () => {
                 <div key={idx}>
                   <div className='text-xs font-medium text-gray-600 mb-1'>
                     {item?.title}
-                    <span className='text-red-500 pl-1'>*</span>
                   </div>
                   <Select
                     options={item?.options}

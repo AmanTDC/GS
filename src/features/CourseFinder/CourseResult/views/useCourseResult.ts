@@ -20,16 +20,11 @@ const useCourseResult = () => {
     intakes: [],
     defaultValues: {},
   });
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-  ];
+
   const filters = [
     {
       title: 'Country',
       key: 'country',
-      // default: defaultValues?.country?.,
       options: [
         { value: 'UK', label: 'United Kingdom' },
         { value: 'USA', label: 'United States' },
@@ -112,14 +107,14 @@ const useCourseResult = () => {
     },
   ];
 
- 
-
+  const preSelectedFilters =
+    router?.query?.data && JSON.parse(router?.query?.data as string);
   const fetchCourses = (filters?: any) => {
     setIsActive(2);
     window.scroll(0, 0);
     getCourses(page, 5, filters)
       .then((res) => {
-        setIsActive(-1);
+        setIsActive(100);
         setCourses(res);
         router.push(
           `/courseResult`,
@@ -141,14 +136,24 @@ const useCourseResult = () => {
         setIsActive(-1);
       });
   };
+  console.log({ updatedValues: updatedValues });
   useEffect(() => {
-    fetchCourses();
+    fetchCourses(updatedValues);
+  }, [page, isActive !== 100]);
+
+  useEffect(() => {
     setUpdatedValues({
       ...updatedValues,
-      defaultValues:
-        router?.query?.data && JSON.parse(router?.query?.data as string),
+      defaultValues: preSelectedFilters,
+      country: preSelectedFilters?.country && [preSelectedFilters?.country],
+      level: preSelectedFilters?.level && [preSelectedFilters?.level],
+      duration: preSelectedFilters?.duration && [preSelectedFilters?.duration],
+      mode: preSelectedFilters?.mode && [preSelectedFilters?.mode],
+      type: preSelectedFilters?.type && [preSelectedFilters?.type],
+      program: preSelectedFilters?.type && [preSelectedFilters?.type],
+      intakes: preSelectedFilters?.intakes && [preSelectedFilters?.intakes],
     });
-  }, [page]);
+  }, []);
 
   const extractValue = (data: any, key: string) => {
     setUpdatedValues({
@@ -167,7 +172,6 @@ const useCourseResult = () => {
     setPage,
     totalPages,
     setTotalPages,
-    options,
     filters,
     courses,
     extractValue,
