@@ -2,7 +2,6 @@ import Img from '@/shared/Img';
 import React, { useState } from 'react';
 import CountUp from 'react-countup';
 import emailjs from '@emailjs/browser';
-import { toast } from 'react-toastify';
 import Modal from '@/shared/Modal/Modal';
 import useScrollHidden from '@/utils/hooks/useScrollHidden';
 import SuccessModal from '@/components/Modal/SuccessModal';

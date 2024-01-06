@@ -2,8 +2,6 @@ import { FC, Fragment, PropsWithChildren, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import { IoIosArrowUp } from 'react-icons/io';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 interface IPageWraps {
   wrapperClass?: string;
   isBanner?: boolean;
@@ -40,7 +38,6 @@ const PageWrapper: FC<PropsWithChildren<IPageWraps>> = ({
         </div>
       )}
       <Footer isBanner={isBanner} />
-      <ToastContainer />
     </div>
   );
 };

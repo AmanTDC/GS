@@ -1,6 +1,5 @@
 import Img from '@/shared/Img';
 import React, { useState } from 'react';
-import { toast } from 'react-toastify';
 import emailjs from '@emailjs/browser';
 import SuccessModal from '@/components/Modal/SuccessModal';
 import useScrollHidden from '@/utils/hooks/useScrollHidden';

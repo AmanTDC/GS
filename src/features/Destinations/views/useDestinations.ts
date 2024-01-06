@@ -1,7 +1,6 @@
 import { viewCourses } from '@/utils/schemas';
 import { useFormik } from 'formik';
 import emailjs from '@emailjs/browser';
-import { toast } from 'react-toastify';
 import { useState } from 'react';
 import useScrollHidden from '@/utils/hooks/useScrollHidden';
 

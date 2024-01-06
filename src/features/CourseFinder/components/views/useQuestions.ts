@@ -3,7 +3,6 @@ import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { toast } from 'react-toastify';
 import useScrollHidden from '@/utils/hooks/useScrollHidden';
 
 const useQuestions = (index: number, action: (idx: number) => void) => {
