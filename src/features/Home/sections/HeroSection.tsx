@@ -3,11 +3,15 @@ import React, { useState } from 'react';
 import CountUp from 'react-countup';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
+import Modal from '@/shared/Modal/Modal';
+import useScrollHidden from '@/utils/hooks/useScrollHidden';
+import SuccessModal from '@/components/Modal/SuccessModal';
 const HeroSection = () => {
   const [email, setEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(-1);
+  useScrollHidden(isLoading === 1);
   const claimNow = () => {
-    setIsLoading(true);
+    setIsLoading(0);
     emailjs
       .send(
         process.env.NEXT_PUBLIC_SERVICE_ID as string,
@@ -16,15 +20,11 @@ const HeroSection = () => {
         process.env.NEXT_PUBLIC_PUBLIC_KEY
       )
       .then((res) => {
-        setIsLoading(false);
-        toast.success('Message Sent !', {
-          position: toast.POSITION.TOP_RIGHT,
-          className: 'toast-message',
-        });
+        setIsLoading(1);
       })
       .catch((err) => {
         console.log(err);
-        setIsLoading(false);
+        setIsLoading(-1);
       });
   };
   return (
@@ -60,7 +60,7 @@ const HeroSection = () => {
               type='submit'
               className='flex items-center justify-center cursor-pointer text-white gap-x-3 sm:p-5 absolute bg-[rgba(30,58,138,1)] hover:bg-[rgba(30,58,138,1)]/90 duration-500 sm:h-12 h-8 p-3 rounded-full sm:right-2 right-1'
             >
-              {isLoading ? (
+              {isLoading === 0 ? (
                 <div className='sm:w-[149px] w-[78px]'>
                   <div id='loader' className='h-4 w-4 rounded-full mx-auto' />
                 </div>
@@ -108,6 +108,15 @@ const HeroSection = () => {
           className='mx-auto sm:px-0 px-5'
         />
       </div>
+
+      {isLoading === 1 && (
+        <SuccessModal
+          title='You’ll be Rewarded 🤑'
+          subTitle='Our counselors will get in touch with you shortly
+        '
+          close={() => setIsLoading(-1)}
+        />
+      )}
     </div>
   );
 };

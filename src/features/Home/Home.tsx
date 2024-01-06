@@ -7,6 +7,7 @@ import WhyUs from './sections/WhyUs';
 import Countries from './sections/Countries';
 import Destinations from './sections/Destinations';
 import Testimonials from './sections/Testimonials';
+import Img from '@/shared/Img';
 
 const Home = () => {
   return (

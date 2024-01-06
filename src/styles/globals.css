@@ -47,10 +47,23 @@ html {
   animation: card 0.4s ease;
 }
 
+.animate-modal {
+  animation: modal 0.3s ease;
+}
+
 @keyframes card {
   from {
     opacity: 0;
     margin-left: -10%;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes modal {
+  from {
+    opacity: 0;
+    margin-bottom: -100%;
   }
   to {
     opacity: 1;

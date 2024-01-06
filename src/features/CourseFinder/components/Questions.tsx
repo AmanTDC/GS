@@ -4,6 +4,7 @@ import Img from '@/shared/Img';
 import React from 'react';
 import useQuestions from './views/useQuestions';
 import { errorType, touchedType, inputType } from '@/utils/constants/Functions';
+import SuccessModal from '@/components/Modal/SuccessModal';
 
 const Questions = ({
   data,
@@ -30,6 +31,7 @@ const Questions = ({
     handleSubmit,
     router,
     answers,
+    setIsLoading,
   } = useQuestions(index, action);
 
   return (
@@ -146,7 +148,7 @@ const Questions = ({
           //       })
           //     : onSubmit()
           // }
-          isLoading={isLoading}
+          isLoading={isLoading === 0}
         >
           {navigation ? 'View Courses' : 'Next'}
           <Img
@@ -172,6 +174,13 @@ const Questions = ({
           />
         </Button>
       </div>
+      {isLoading === 1 && (
+        <SuccessModal
+          title='THANK YOU 🎊'
+          subTitle='Our counselors will get in touch with you shortly'
+          close={() => setIsLoading(-1)}
+        />
+      )}
     </div>
   );
 };

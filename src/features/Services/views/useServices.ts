@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import { useState } from 'react';
+import useScrollHidden from '@/utils/hooks/useScrollHidden';
 
 const useServices = () => {
   const initialValues = {
@@ -12,7 +13,8 @@ const useServices = () => {
     checkbox: false,
   };
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(-1);
+  useScrollHidden(isLoading === 1);
   const {
     values,
     errors,
@@ -26,9 +28,7 @@ const useServices = () => {
     validationSchema: viewCourses,
 
     onSubmit: async (values) => {
-      console.log(values);
-
-      setIsLoading(true);
+      setIsLoading(0);
       var templateParams = {
         name: values?.name,
         email: values?.email,
@@ -40,16 +40,10 @@ const useServices = () => {
           templateParams,
           process.env.NEXT_PUBLIC_PUBLIC_KEY
         )
-        .then((res) => {
-          setIsLoading(false);
-          toast.success('Message Sent !', {
-            position: toast.POSITION.TOP_RIGHT,
-            className: 'toast-message',
-          });
-        })
+        .then(() => setIsLoading(1))
         .catch((err) => {
           console.log(err);
-          setIsLoading(false);
+          setIsLoading(-1);
         });
     },
   });
@@ -62,6 +56,7 @@ const useServices = () => {
     setFieldValue,
     handleChange,
     isLoading,
+    setIsLoading,
   };
 };
 

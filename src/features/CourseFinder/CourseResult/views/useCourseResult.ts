@@ -8,7 +8,7 @@ const useCourseResult = () => {
   const [courses, setCourses] = useState<any>();
   useScrollHidden(isActive === 0);
   const router = useRouter();
-  const [page, setPage] = useState(Number(router.query.page) || 1);
+  const [page, setPage] = useState(Number(router?.query?.page) || 1);
   const [totalPages, setTotalPages] = useState(1);
   const [updatedValues, setUpdatedValues] = useState<any>({
     country: [],
@@ -121,6 +121,7 @@ const useCourseResult = () => {
           {
             query: {
               page: page,
+              // data: router?.query?.data,
             },
           },
           {
@@ -135,7 +136,6 @@ const useCourseResult = () => {
         setIsActive(-1);
       });
   };
-  console.log({ updatedValues: updatedValues });
 
   useEffect(() => {
     setUpdatedValues({
@@ -154,7 +154,7 @@ const useCourseResult = () => {
   useEffect(() => {
     preSelectedFilters
       ? updatedValues?.country?.length > 0 && fetchCourses(updatedValues)
-      : fetchCourses();
+      : fetchCourses(updatedValues);
   }, [page, updatedValues?.defaultValues]);
 
   const extractValue = (data: any, key: string) => {

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import useServices from '../views/useServices';
 import { errorType, touchedType, inputType } from '@/utils/constants/Functions';
 import { InputFields } from '@/utils/static/StaticData';
+import SuccessModal from '@/components/Modal/SuccessModal';
 
 const WhyGs = ({ index }: { index: string }) => {
   const {
@@ -15,6 +16,7 @@ const WhyGs = ({ index }: { index: string }) => {
     setFieldValue,
     isLoading,
     handleChange,
+    setIsLoading,
   } = useServices();
   const WhyGs = [
     {
@@ -34,7 +36,6 @@ const WhyGs = ({ index }: { index: string }) => {
     },
   ];
 
- 
   return (
     <div className='gap-8 grid grid-cols-5' id={index}>
       <div className='space-y-3 md:col-span-3 col-span-5'>
@@ -132,7 +133,7 @@ const WhyGs = ({ index }: { index: string }) => {
         <Button
           className='bg-blue-900 py-3 hover:!bg-blue-900/80 flex items-center justify-center gap-x-2'
           fullWidth
-          isLoading={isLoading}
+          isLoading={isLoading === 0}
           onClick={handleSubmit}
         >
           Get Free Consultation
@@ -145,6 +146,13 @@ const WhyGs = ({ index }: { index: string }) => {
           />
         </Button>
       </div>
+      {isLoading === 1 && (
+        <SuccessModal
+          title='THANK YOU 🎊'
+          subTitle='Our counselors will get in touch with you shortly'
+          close={() => setIsLoading(-1)}
+        />
+      )}
     </div>
   );
 };

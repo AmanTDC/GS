@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
+import useScrollHidden from '@/utils/hooks/useScrollHidden';
 
 const useQuestions = (index: number, action: (idx: number) => void) => {
   const [selected, setSelected] = useState<any>(-1);
@@ -13,8 +14,8 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
     level: '',
     areaOfStudy: '',
   });
-  const [isLoading, setIsLoading] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(-1);
+  useScrollHidden(isLoading === 1);
   const router = useRouter();
   const onSubmit = () => {
     index === 0
@@ -61,7 +62,7 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
     validationSchema: viewCourses,
 
     onSubmit: async (values) => {
-      setIsLoading(true);
+      setIsLoading(0);
       var templateParams = {
         name: values?.name,
         email: values?.email,
@@ -74,11 +75,7 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
           process.env.NEXT_PUBLIC_PUBLIC_KEY
         )
         .then((res) => {
-          setIsLoading(false);
-          toast.success('Message Sent !', {
-            position: toast.POSITION.TOP_RIGHT,
-            className: 'toast-message',
-          });
+          setIsLoading(1);
 
           router.push({
             pathname: '/courseResult',
@@ -87,7 +84,7 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
         })
         .catch((err) => {
           console.log(err);
-          setIsLoading(false);
+          setIsLoading(-1);
         });
     },
   });
@@ -106,6 +103,7 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
     router,
     handleSubmit,
     answers,
+    setIsLoading,
   };
 };
 

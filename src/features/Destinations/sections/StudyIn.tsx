@@ -4,6 +4,7 @@ import { errorType, touchedType, inputType } from '@/utils/constants/Functions';
 import React from 'react';
 import useDestinations from '../views/useDestinations';
 import { InputFields } from '@/utils/static/StaticData';
+import SuccessModal from '@/components/Modal/SuccessModal';
 
 const StudyIn = ({
   data,
@@ -23,6 +24,7 @@ const StudyIn = ({
     setFieldValue,
     isLoading,
     handleChange,
+    setIsLoading,
   } = useDestinations();
   return (
     <div className='gap-8 grid grid-cols-5' id={index}>
@@ -120,7 +122,7 @@ const StudyIn = ({
         <Button
           className='bg-blue-900 py-3 hover:!bg-blue-900/80 flex items-center justify-center gap-x-2'
           fullWidth
-          isLoading={isLoading}
+          isLoading={isLoading === 0}
           onClick={handleSubmit}
         >
           Get Free Consultation
@@ -133,6 +135,13 @@ const StudyIn = ({
           />
         </Button>
       </div>
+      {isLoading === 1 && (
+        <SuccessModal
+          title='THANK YOU 🎊'
+          subTitle='Our counselors will get in touch with you shortly'
+          close={() => setIsLoading(-1)}
+        />
+      )}
     </div>
   );
 };

@@ -2,6 +2,8 @@ import Img from '@/shared/Img';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import emailjs from '@emailjs/browser';
+import SuccessModal from '@/components/Modal/SuccessModal';
+import useScrollHidden from '@/utils/hooks/useScrollHidden';
 
 const Banner = ({
   data,
@@ -19,9 +21,9 @@ const Banner = ({
   styleImage?: string;
 }) => {
   const [email, setEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(-1);
   const claimNow = () => {
-    setIsLoading(true);
+    setIsLoading(0);
     emailjs
       .send(
         process.env.NEXT_PUBLIC_SERVICE_ID as string,
@@ -29,18 +31,13 @@ const Banner = ({
         { email },
         process.env.NEXT_PUBLIC_PUBLIC_KEY
       )
-      .then((res) => {
-        setIsLoading(false);
-        toast.success('Message Sent !', {
-          position: toast.POSITION.TOP_RIGHT,
-          className: 'toast-message',
-        });
-      })
+      .then((res) => setIsLoading(1))
       .catch((err) => {
         console.log(err);
-        setIsLoading(false);
+        setIsLoading(-1);
       });
   };
+  useScrollHidden(isLoading === 1);
   return (
     <div className='relative'>
       <Img
@@ -90,7 +87,7 @@ const Banner = ({
               type='submit'
               className='flex items-center cursor-pointer text-white gap-x-3 p-5 absolute bg-[rgba(30,58,138,1)] hover:bg-[rgba(30,58,138,1)]/90 duration-500 h-12 rounded-full right-2'
             >
-              {isLoading ? (
+              {isLoading === 0 ? (
                 <div className='sm:w-[182px] w-6'>
                   <div id='loader' className='h-4 w-4 rounded-full mx-auto' />
                 </div>
@@ -122,6 +119,14 @@ const Banner = ({
           imageRight ? 'lg:block hidden' : 'hidden'
         } h-[357px] w-[361px] ${styleImage}`}
       />
+      {isLoading === 1 && (
+        <SuccessModal
+          title='You’ll be Rewarded 🤑'
+          subTitle='Our counselors will get in touch with you shortly
+        '
+          close={() => setIsLoading(-1)}
+        />
+      )}
     </div>
   );
 };
