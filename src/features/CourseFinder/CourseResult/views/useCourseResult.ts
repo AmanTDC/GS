@@ -38,10 +38,10 @@ const useCourseResult = () => {
       title: 'Course Level',
       key: 'level',
       options: [
-        { value: '12th', label: '12th' },
-        { value: 'bachelors_degree', label: 'Bachelor’s Degree' },
-        { value: 'masters_degree', label: 'Master’s Degree' },
-        { value: 'phd', label: 'PhD' },
+        { value: 'Certificate', label: '12th' },
+        { value: 'Bachelor', label: 'Bachelor’s Degree' },
+        { value: 'Masters', label: 'Master’s Degree' },
+        { value: 'PhD', label: 'PhD' },
       ],
     },
     {

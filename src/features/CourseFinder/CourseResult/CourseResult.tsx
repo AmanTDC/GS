@@ -25,7 +25,7 @@ const CourseResult = () => {
 
   return (
     <div className='relative bg-[#FAFAFA]'>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className='grid lg:grid-cols-12 py-[152px] max-w-[1120px] mx-auto gap-x-10 px-5'>
         <div className='col-span-4 bg-white p-6 h-fit lg:block hidden rounded-2xl'>
           <div className='text-2xl font-bold'>Filters</div>

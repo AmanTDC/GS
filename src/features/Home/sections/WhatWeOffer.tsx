@@ -5,32 +5,32 @@ import React from 'react';
 const WhatWeOffer = () => {
   const services = [
     {
-      icon: '/icons/offer1.png',
+      icon: '/icons/offer3.png',
       hoverIcon: '/icons/offerLight1.png',
       image: '/images/homeServices0.png',
       name: 'Scholarship Guidance',
     },
     {
       icon: '/icons/offer2.png',
-      hoverIcon: '/icons/offerLight1.png',
+      hoverIcon: '/icons/offerLight2.png',
       image: '/images/homeServices1.png',
       name: 'Visa Application',
     },
     {
-      icon: '/icons/offer1.png',
-      hoverIcon: '/icons/offerLight1.png',
+      icon: '/icons/offer3.png',
+      hoverIcon: '/icons/offerLight3.png',
       image: '/images/homeServices2.png',
       name: 'Study Counselling',
     },
     {
-      icon: '/icons/offer3.png',
-      hoverIcon: '/icons/offerLight1.png',
+      icon: '/icons/offer4.png',
+      hoverIcon: '/icons/offerLight4.png',
       image: '/images/homeServices3.png',
       name: 'University Application',
     },
     {
-      icon: '/icons/offer4.png',
-      hoverIcon: '/icons/offerLight1.png',
+      icon: '/icons/offer5.png',
+      hoverIcon: '/icons/offerLight5.png',
       image: '/images/homeServices4.png',
       name: 'Student Accomodation',
     },
