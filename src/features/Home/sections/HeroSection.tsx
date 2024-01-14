@@ -2,9 +2,8 @@ import Img from '@/shared/Img';
 import React, { useState } from 'react';
 import CountUp from 'react-countup';
 import emailjs from '@emailjs/browser';
-import Modal from '@/shared/Modal/Modal';
 import useScrollHidden from '@/utils/hooks/useScrollHidden';
-import SuccessModal from '@/components/Modal/SuccessModal';
+import RewardModal from '@/components/Modal/RewardModal';
 const HeroSection = () => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(-1);
@@ -109,10 +108,9 @@ const HeroSection = () => {
       </div>
 
       {isLoading === 1 && (
-        <SuccessModal
-          title='You’ll be Rewarded 🤑'
-          subTitle='Our counselors will get in touch with you shortly
-        '
+        <RewardModal
+          title={'Thank You, \n You’ll Be Rewarded Soon 🤑'}
+          subTitle='Our counselors will get in touch with you shortly 👍'
           close={() => setIsLoading(-1)}
         />
       )}

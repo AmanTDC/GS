@@ -34,9 +34,18 @@ export const getCourses = async (
           params?.stream?.length > 0
             ? params?.stream?.map((e: any) => e?.value)?.join(';')
             : null,
-            preferredIntake:
+        preferredIntake:
           params?.intakes?.length > 0
             ? params?.intakes?.map((e: any) => e?.value)?.join(';')
+            : null,
+        q: params?.searchInput?.length > 0 ? params?.searchInput : null,
+        feeGreaterThan:
+          params?.tuitionFee?.length > 0
+            ? `${params?.tuitionFee?.map((e: any) => e?.value)}`?.split('-')[0]
+            : null,
+        feeLesserThan:
+          params?.tuitionFee?.length > 0
+            ? `${params?.tuitionFee?.map((e: any) => e?.value)}`?.split('-')[1]
             : null,
       },
     });

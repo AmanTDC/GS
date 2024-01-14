@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import SuccessModal from '@/components/Modal/SuccessModal';
 import useScrollHidden from '@/utils/hooks/useScrollHidden';
+import RewardModal from '@/components/Modal/RewardModal';
 
 const Banner = ({
   data,
@@ -119,10 +120,9 @@ const Banner = ({
         } h-[357px] w-[361px] ${styleImage}`}
       />
       {isLoading === 1 && (
-        <SuccessModal
-          title='You’ll be Rewarded 🤑'
-          subTitle='Our counselors will get in touch with you shortly
-        '
+        <RewardModal
+          title={'Thank You, \n You’ll Be Rewarded Soon 🤑'}
+          subTitle='Our counselors will get in touch with you shortly 👍'
           close={() => setIsLoading(-1)}
         />
       )}

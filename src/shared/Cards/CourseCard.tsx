@@ -52,6 +52,21 @@ const CourseCard = ({ data }: { data: any }) => {
                 ' months'
           }
         />
+        <Tags
+          icon='/icons/intakes.png'
+          label={data?.intakeMonthsYears?.map((item: string, idx: number) => (
+            <div className='flex items-center gap-x-2 pr-[3px]' key={idx}>
+              {item}
+              <span
+                className={`text-[8px] ${
+                  data?.intakeMonthsYears?.length - 1 === idx && 'hidden'
+                }`}
+              >
+                •
+              </span>
+            </div>
+          ))}
+        />
       </div>
       <div className='text-2xl font-medium'>
         {data?.currency + ' ' + data?.tuitionFee}

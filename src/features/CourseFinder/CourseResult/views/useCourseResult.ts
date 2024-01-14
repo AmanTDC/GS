@@ -16,7 +16,9 @@ const useCourseResult = () => {
     duration: [],
     stream: [],
     intakes: [],
+    tuitionFee: [],
     defaultValues: {},
+    searchInput: '',
   });
 
   const filters = [
@@ -80,12 +82,12 @@ const useCourseResult = () => {
       title: 'Tuition Fee',
       key: 'tuitionFee',
       options: [
-        { value: '0 to 1,000', label: '0 to 1,000' },
-        { value: '1,001 to 5,000', label: '1,001 to 5,000' },
-        { value: '5,001 to 10,000', label: '5,001 to 10,000' },
-        { value: '10,001 to 20,000', label: '10,001 to 20,000' },
-        { value: '20,001 to 35,000', label: '20,001 to 35,000' },
-        { value: '35,001+', label: '35,001+' },
+        { value: '0-1000', label: '0 to 1,000' },
+        { value: '1001-5000', label: '1,001 to 5,000' },
+        { value: '5001-10000', label: '5,001 to 10,000' },
+        { value: '10001-20000', label: '10,001 to 20,000' },
+        { value: '20001-35000', label: '20,001 to 35,000' },
+        { value: '35001', label: '35,001+' },
       ],
     },
     {
@@ -175,6 +177,7 @@ const useCourseResult = () => {
     applyFilters,
     updatedValues,
     setUpdatedValues,
+    fetchCourses,
   };
 };
 

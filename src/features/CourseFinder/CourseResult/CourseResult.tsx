@@ -8,7 +8,7 @@ import { RxCross2 } from 'react-icons/rx';
 import Button from '@/shared/Button/Button';
 import Pagination from '@/shared/Pagination/Pagination';
 import useCourseResult from './views/useCourseResult';
-
+import { FaSearch } from 'react-icons/fa';
 const CourseResult = () => {
   const {
     isActive,
@@ -18,15 +18,39 @@ const CourseResult = () => {
     totalPages,
     courses,
     filters,
-    applyFilters,
     extractValue,
     updatedValues,
+    fetchCourses,
+    setUpdatedValues,
   } = useCourseResult();
 
   return (
     <div className='relative bg-[#FAFAFA]'>
       <Navbar />
+
       <div className='grid lg:grid-cols-12 py-[152px] max-w-[1120px] mx-auto gap-x-10 px-5'>
+        <div className='col-span-12 relative mx-auto max-w-[700px]  w-full'>
+          <input
+            type='text'
+            placeholder='Search...'
+            className='border border-neutral-300 outline-none mb-10 w-full bg-white pl-14 h-14 rounded-full'
+            onChange={(e) =>
+              setUpdatedValues({
+                ...updatedValues,
+                searchInput: e.target.value,
+              })
+            }
+          />
+          <FaSearch className='absolute top-3 left-3 text-blue-900' size={32} />
+          <Button
+            onClick={() => fetchCourses(updatedValues)}
+            isLoading={isActive === 2}
+            className='!rounded-full absolute w-[93px] top-2 right-2'
+          >
+            Search
+          </Button>
+        </div>
+
         <div className='col-span-4 bg-white p-6 h-fit lg:block hidden rounded-2xl'>
           <div className='text-2xl font-bold'>Filters</div>
           <div className='space-y-4 my-6'>
@@ -61,12 +85,14 @@ const CourseResult = () => {
                 ))}
           </div>
           <div className='flex items-center gap-x-6'>
-            <Button className='bg-white !text-black hover:!bg-transparent w-full px-0 font-bold border border-gray-300'>
+            <Button
+              className='bg-white !text-black hover:!bg-transparent w-full px-0 font-bold border border-gray-300'
+            >
               Reset
             </Button>
             <Button
               className='bg-blue-900 w-full !px-2 hover:!bg-blue-900/80 font-bold'
-              onClick={applyFilters}
+              onClick={() => fetchCourses(updatedValues)}
             >
               Apply Filters
             </Button>
@@ -175,7 +201,7 @@ const CourseResult = () => {
               </Button>
               <Button
                 className='bg-blue-900 w-full px-0 hover:!bg-blue-900/80 font-bold'
-                onClick={applyFilters}
+                onClick={() => fetchCourses(updatedValues)}
               >
                 Apply Filters
               </Button>
