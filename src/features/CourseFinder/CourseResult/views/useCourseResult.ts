@@ -14,9 +14,7 @@ const useCourseResult = () => {
     country: [],
     level: [],
     duration: [],
-    mode: [],
-    type: [],
-    program: [],
+    stream: [],
     intakes: [],
     defaultValues: {},
   });
@@ -26,82 +24,79 @@ const useCourseResult = () => {
       title: 'Country',
       key: 'country',
       options: [
-        { value: 'UK', label: 'United Kingdom' },
-        { value: 'USA', label: 'United States' },
-        { value: 'CANADA', label: 'Canada' },
-        { value: 'AUSTRALIA', label: 'Australia' },
-        { value: 'IRELAND', label: 'Ireland' },
-        { value: 'NZ', label: 'New Zealand' },
+        { value: 'GB', label: 'United Kingdom' },
+        { value: 'US', label: 'United States' },
+        { value: 'CA', label: 'Canada' },
+        { value: 'AU', label: 'Australia' },
+        { value: 'IE', label: 'Ireland' },
+        // { value: 'NZ', label: 'New Zealand' },
       ],
     },
+
     {
       title: 'Course Level',
       key: 'level',
       options: [
-        { value: 'Certificate', label: '12th' },
         { value: 'Bachelor', label: 'Bachelor’s Degree' },
+        { value: 'Diploma', label: 'Diploma' },
         { value: 'Masters', label: 'Master’s Degree' },
         { value: 'PhD', label: 'PhD' },
+        { value: 'Post Graduate', label: 'Post Graduate' },
+        { value: 'Non-Credential', label: 'Non-Credential' },
+        { value: 'Certificate', label: 'Certificate' },
       ],
     },
     {
       title: 'Course Duration',
       key: 'duration',
       options: [
-        { value: 'one', label: 'Less than 1 Year' },
-        { value: 'two', label: '1 - 2 Years' },
-        { value: 'three', label: '2 - 3 Years' },
-        { value: 'four', label: '3+ Years' },
+        { value: '0-12', label: 'Less than 1 Year' },
+        { value: '12-24', label: '1 - 2 Years' },
+        { value: '24-36', label: '2 - 3 Years' },
+        { value: '36', label: '3+ Years' },
       ],
     },
     {
-      title: 'Mode of Study',
-      key: 'mode',
+      title: 'Stream',
+      key: 'stream',
       options: [
-        { value: 'fullTime', label: 'Full Time' },
-        { value: 'halfTime', label: 'Half Time' },
-        { value: 'internship', label: 'Internship' },
-      ],
-    },
-    {
-      title: 'Course Type',
-      key: 'type',
-      options: [
-        { value: 'degree', label: 'Degree' },
-        { value: 'diploma', label: 'Diploma' },
-      ],
-    },
-    {
-      title: 'Programs',
-      key: 'program',
-      options: [
-        { value: 'Business & Management', label: 'Business & Management' },
-        { value: 'Computer Science & IT', label: 'Computer Science & IT' },
-        { value: 'Engineering', label: 'Engineering' },
-        { value: 'Social Sciences', label: 'Social Sciences' },
-        { value: 'Architecture', label: 'Architecture' },
-        { value: 'Hospitality & Tourism', label: 'Hospitality & Tourism' },
-        { value: 'Science', label: 'Science' },
-        { value: 'Sports', label: 'Sports' },
-        { value: 'Fine Arts', label: 'Fine Arts' },
-        { value: 'Law', label: 'Law' },
-        { value: 'Medicine', label: 'Medicine' },
-        { value: 'Journalism & Media', label: 'Journalism & Media' },
+        { value: 'Sciences', label: 'Sciences' },
         {
-          value: 'Agriculture and Forestry',
-          label: 'Agriculture and Forestry',
+          value: 'Business Management and Economics',
+          label: 'Business Management and Economics',
         },
+        { value: 'Arts', label: 'Arts' },
+        {
+          value: 'Engineering and Technology',
+          label: 'Engineering and Technology',
+        },
+        { value: 'Social Sciences', label: 'Social Sciences' },
+        { value: 'English', label: 'English' },
+        { value: 'Medical', label: 'Medical' },
+      ],
+    },
+
+    {
+      title: 'Tuition Fee',
+      key: 'tuitionFee',
+      options: [
+        { value: '0 to 1,000', label: '0 to 1,000' },
+        { value: '1,001 to 5,000', label: '1,001 to 5,000' },
+        { value: '5,001 to 10,000', label: '5,001 to 10,000' },
+        { value: '10,001 to 20,000', label: '10,001 to 20,000' },
+        { value: '20,001 to 35,000', label: '20,001 to 35,000' },
+        { value: '35,001+', label: '35,001+' },
       ],
     },
     {
       title: 'Intakes',
       key: 'intakes',
       options: [
-        { value: 'Jan - Mar 2024', label: 'Jan - Mar 2024' },
-        { value: 'Apr - Jun 2024', label: 'Apr - Jun 2024' },
-        { value: 'Jul - Sep 2024', label: 'Jul - Sep 2024' },
-        { value: 'Oct - Dec 2024', label: 'Oct - Dec 2024' },
-        { value: 'Jan - Mar 2025', label: 'Jan - Mar 2025' },
+        { value: 'Jan 2024;Feb 2024;Mar 2024', label: 'Jan - Mar 2024' },
+        { value: 'Apr 2024;May 2024;Jun 2024', label: 'Apr - Jun 2024' },
+        { value: 'Jul 2024;Aug 2024;Sep 2024', label: 'Jul - Sep 2024' },
+        { value: 'Oct 2024;Nov 2024;Dec 2024', label: 'Oct - Dec 2024' },
+        { value: 'Jan 2025;Feb 2025;Mar 2025', label: 'Jan - Mar 2025' },
         { value: 'Not Decided', label: 'Not Decided' },
       ],
     },
@@ -109,6 +104,8 @@ const useCourseResult = () => {
 
   const preSelectedFilters =
     router?.query?.data && JSON.parse(router?.query?.data as string);
+  console.log({ preSelectedFilters });
+
   const fetchCourses = (filters?: any) => {
     setIsActive(2);
     window.scroll(0, 0);
@@ -144,13 +141,10 @@ const useCourseResult = () => {
       country: preSelectedFilters?.country && [preSelectedFilters?.country],
       level: preSelectedFilters?.level && [preSelectedFilters?.level],
       duration: preSelectedFilters?.duration && [preSelectedFilters?.duration],
-      mode: preSelectedFilters?.mode && [preSelectedFilters?.mode],
-      type: preSelectedFilters?.type && [preSelectedFilters?.type],
-      program: preSelectedFilters?.type && [preSelectedFilters?.type],
+      stream: preSelectedFilters?.type && [preSelectedFilters?.type],
       intakes: preSelectedFilters?.intakes && [preSelectedFilters?.intakes],
     });
   }, []);
-
   useEffect(() => {
     preSelectedFilters
       ? updatedValues?.country?.length > 0 && fetchCourses(updatedValues)
@@ -167,6 +161,7 @@ const useCourseResult = () => {
   const applyFilters = () => {
     fetchCourses(updatedValues);
   };
+
   return {
     isActive,
     setIsActive,

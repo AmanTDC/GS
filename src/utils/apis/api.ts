@@ -5,7 +5,9 @@ export const getCourses = async (
   pageSize: number,
   params: any
 ) => {
-  console.log({ params });
+  console.log({
+    params: `${params?.duration?.map((e: any) => e?.value)}`?.split('-'),
+  });
 
   try {
     const res = await axios.get(`courses`, {
@@ -19,6 +21,22 @@ export const getCourses = async (
         programLevel:
           params?.level?.length > 0
             ? params?.level?.map((e: any) => e?.value)?.join(';')
+            : null,
+        durationGreaterThanMonths:
+          params?.duration?.length > 0
+            ? `${params?.duration?.map((e: any) => e?.value)}`?.split('-')[0]
+            : null,
+        durationLessThanMonths:
+          params?.duration?.length > 0
+            ? `${params?.duration?.map((e: any) => e?.value)}`?.split('-')[1]
+            : null,
+        disciplineGroups:
+          params?.stream?.length > 0
+            ? params?.stream?.map((e: any) => e?.value)?.join(';')
+            : null,
+            preferredIntake:
+          params?.intakes?.length > 0
+            ? params?.intakes?.map((e: any) => e?.value)?.join(';')
             : null,
       },
     });

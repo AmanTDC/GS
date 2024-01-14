@@ -25,7 +25,7 @@ const CourseResult = () => {
 
   return (
     <div className='relative bg-[#FAFAFA]'>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className='grid lg:grid-cols-12 py-[152px] max-w-[1120px] mx-auto gap-x-10 px-5'>
         <div className='col-span-4 bg-white p-6 h-fit lg:block hidden rounded-2xl'>
           <div className='text-2xl font-bold'>Filters</div>
@@ -155,7 +155,15 @@ const CourseResult = () => {
                     options={item?.options}
                     isMulti
                     className='outline-none cursor-pointer'
-                    defaultValue={[item?.options[0]]}
+                    defaultValue={[
+                      item?.options[
+                        item?.options?.findIndex(
+                          (e) =>
+                            e?.value ===
+                            updatedValues?.defaultValues?.[item?.key]?.value
+                        )
+                      ],
+                    ]}
                     onChange={(e: any) => extractValue(e, item?.key)}
                   />
                 </div>

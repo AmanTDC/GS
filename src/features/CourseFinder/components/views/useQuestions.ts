@@ -11,7 +11,8 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
     country: '',
     degree: '',
     level: '',
-    areaOfStudy: '',
+    stream: '',
+    intakes: '',
   });
   const [isLoading, setIsLoading] = useState(-1);
   useScrollHidden(isLoading === 1);
@@ -35,7 +36,12 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
       : index === 3
       ? setAnswers({
           ...answers,
-          areaOfStudy: selected,
+          stream: selected,
+        })
+      : index === 4
+      ? setAnswers({
+          ...answers,
+          intakes: selected,
         })
       : null;
     action(index + 1);
