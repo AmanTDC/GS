@@ -18,7 +18,7 @@ const RewardModal = ({
 }) => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(-1);
-  useScrollHidden(isLoading === 0);
+
   const claimNow = () => {
     setIsLoading(0);
     emailjs
@@ -38,9 +38,9 @@ const RewardModal = ({
   };
   return (
     <Modal onClose={close} className='!bg-transparent animate-modal !p-5'>
-      <div className='bg-[#1E3A8A] max-h-[880px] max-w-[1000px] overflow-hidden w-fit flex justify-center rounded-[37px] md:p-12 p-5 relative sm:w[586px]'>
+      <div className='bg-[#1E3A8A] max-h-[calc(100vh-40px)] max-w-[1000px] overflow-hidden w-fit flex justify-center rounded-[37px] md:p-12 p-5 relative sm:w[586px]'>
         <div
-          className='bg-[#D8E6FD] cursor-pointer h-8 w-8 md:h-12 md:w-12 rounded-full justify-center items-center md:top-5 top-4 flex absolute md:right-7 right-4'
+          className='bg-[#D8E6FD] z-20 cursor-pointer h-8 w-8 md:h-12 md:w-12 rounded-full justify-center items-center md:top-5 top-4 flex absolute md:right-7 right-4'
           onClick={close}
         >
           <span className='md:text-4xl text-2xl text-[#1E3A8A] leading-[0] md:mb-3 mb-2'>
@@ -68,11 +68,11 @@ const RewardModal = ({
             <div className='relative'>
               <Img
                 src={image || '/icons/man.png'}
-                height={378}
+                height={358}
                 width={364}
                 alt='heroImage'
                 isLocal
-                className='relative z-10 sm:h-[398px] sm:min-w-[384px]'
+                className='relative z-10 h-[300px] w-[320px] sm:h-[358px] sm:w-[364px]'
               />
               <Img
                 src='/icons/shadow.png'
@@ -97,7 +97,9 @@ const RewardModal = ({
               {title}
             </div>
           </div>
-          <p className={`md:text-[26px] max-w-[719px] mx-auto sm:text-2xl ${styleSubTitle}`}>
+          <p
+            className={`md:text-[26px] max-w-[719px] mx-auto sm:text-2xl ${styleSubTitle}`}
+          >
             {subTitle}
           </p>
           <form

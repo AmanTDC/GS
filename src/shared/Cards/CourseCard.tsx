@@ -39,7 +39,7 @@ const CourseCard = ({ data }: { data: any }) => {
         />
       </div>
 
-      <div className='gap-4 flex'>
+      <div className='gap-4 flex flex-wrap'>
         <Tags icon='/icons/award.png' label={data?.programLevel} />
         <Tags
           icon='/icons/calendarTick.png'

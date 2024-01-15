@@ -28,8 +28,8 @@ const CourseResult = () => {
     <div className='relative bg-[#FAFAFA]'>
       <Navbar />
 
-      <div className='grid lg:grid-cols-12 py-[152px] max-w-[1120px] mx-auto gap-x-10 px-5'>
-        <div className='col-span-12 relative mx-auto max-w-[700px]  w-full'>
+      <div className=' py-[152px] max-w-[1120px] mx-auto px-5'>
+        <div className='relative w-full max-w-[700px] mx-auto'>
           <input
             type='text'
             placeholder='Search...'
@@ -50,95 +50,96 @@ const CourseResult = () => {
             Search
           </Button>
         </div>
-
-        <div className='col-span-4 bg-white p-6 h-fit lg:block hidden rounded-2xl'>
-          <div className='text-2xl font-bold'>Filters</div>
-          <div className='space-y-4 my-6'>
-            {courses?.courses
-              ? filters?.map((item, idx) => (
-                  <div key={idx}>
-                    <div className='text-xs font-medium text-gray-600 mb-1'>
-                      {item?.title}
+        <div className='grid lg:grid-cols-12 gap-x-10'>
+          <div className='col-span-4 bg-white p-6 h-fit lg:block hidden rounded-2xl'>
+            <div className='text-2xl font-bold'>Filters</div>
+            <div className='space-y-4 my-6'>
+              {courses?.courses
+                ? filters?.map((item, idx) => (
+                    <div key={idx}>
+                      <div className='text-xs font-medium text-gray-600 mb-1'>
+                        {item?.title}
+                      </div>
+                      <Select
+                        options={item?.options}
+                        isMulti
+                        className='outline-none cursor-pointer'
+                        defaultValue={[
+                          item?.options[
+                            item?.options?.findIndex(
+                              (e) =>
+                                e?.value ===
+                                updatedValues?.defaultValues?.[item?.key]?.value
+                            )
+                          ],
+                        ]}
+                        onChange={(e: any) => extractValue(e, item?.key)}
+                      />
                     </div>
-                    <Select
-                      options={item?.options}
-                      isMulti
-                      className='outline-none cursor-pointer'
-                      defaultValue={[
-                        item?.options[
-                          item?.options?.findIndex(
-                            (e) =>
-                              e?.value ===
-                              updatedValues?.defaultValues?.[item?.key]?.value
-                          )
-                        ],
-                      ]}
-                      onChange={(e: any) => extractValue(e, item?.key)}
+                  ))
+                : [1, 1, 1, 1, 1, 1, 1].map((item, idx: number) => (
+                    <div
+                      className='h-[68px] w-full bg-gray-200 animate-pulse rounded-xl'
+                      key={idx}
                     />
-                  </div>
-                ))
-              : [1, 1, 1, 1, 1, 1, 1].map((item, idx: number) => (
-                  <div
-                    className='h-[68px] w-full bg-gray-200 animate-pulse rounded-xl'
-                    key={idx}
-                  />
-                ))}
+                  ))}
+            </div>
+            <div className='flex items-center gap-x-6'>
+              <Button className='bg-white !text-black hover:!bg-transparent w-full px-0 font-bold border border-gray-300'>
+                Reset
+              </Button>
+              <Button
+                className='bg-blue-900 w-full !px-2 hover:!bg-blue-900/80 font-bold'
+                onClick={() => fetchCourses(updatedValues)}
+              >
+                Apply Filters
+              </Button>
+            </div>
           </div>
-          <div className='flex items-center gap-x-6'>
-            <Button
-              className='bg-white !text-black hover:!bg-transparent w-full px-0 font-bold border border-gray-300'
-            >
-              Reset
-            </Button>
-            <Button
-              className='bg-blue-900 w-full !px-2 hover:!bg-blue-900/80 font-bold'
-              onClick={() => fetchCourses(updatedValues)}
-            >
-              Apply Filters
-            </Button>
-          </div>
-        </div>
-        <div className='col-span-8 space-y-8 relative'>
-          <div className='flex justify-between items-center'>
-            <h1 className='font-semibold text-[32px]'>
-              {courses?.pagiation?.count} Course Found
-            </h1>
-            <CiSliderHorizontal
-              color='#000'
-              size={30}
-              onClick={() => setIsActive(0)}
-              className='lg:hidden animate-pulse'
-            />
-          </div>
-          <>
-            {isActive === 2 && (
-              <div className='space-y-4 absolute bg-white/70 flex flex-col justify-center w-full h-[calc(100%-80px)] z-20'>
-                <div>
-                  <Img
-                    src='/icons/logoIcon.png'
-                    alt='phone'
-                    width={100}
-                    height={100}
-                    isLocal
-                    className='animate-bounce m-auto duration-700 opacity-40'
-                  />
-                  <div className='text-center font-medium'>Please wait...</div>
-                </div>
-              </div>
-            )}
-            {courses?.courses?.map((item: any, idx: number) => (
-              <CourseCard key={idx} data={item} />
-            ))}
-          </>
-          {courses?.pagiation?.totalPages > 1 && (
-            <div className='absolute w-full'>
-              <Pagination
-                page={page}
-                totalPages={totalPages}
-                active={({ selected }: any) => setPage(selected + 1)}
+          <div className='col-span-8 space-y-8 relative'>
+            <div className='flex justify-between items-center'>
+              <h1 className='font-semibold text-[32px]'>
+                {courses?.pagiation?.count} Course Found
+              </h1>
+              <CiSliderHorizontal
+                color='#000'
+                size={30}
+                onClick={() => setIsActive(0)}
+                className='lg:hidden animate-pulse'
               />
             </div>
-          )}
+            <>
+              {isActive === 2 && (
+                <div className='space-y-4 absolute bg-white/70 flex flex-col justify-center w-full h-[calc(100%-80px)] z-20'>
+                  <div>
+                    <Img
+                      src='/icons/logoIcon.png'
+                      alt='phone'
+                      width={100}
+                      height={100}
+                      isLocal
+                      className='animate-bounce m-auto duration-700 opacity-40'
+                    />
+                    <div className='text-center font-medium'>
+                      Please wait...
+                    </div>
+                  </div>
+                </div>
+              )}
+              {courses?.courses?.map((item: any, idx: number) => (
+                <CourseCard key={idx} data={item} />
+              ))}
+            </>
+            {courses?.pagiation?.totalPages > 1 && (
+              <div className='absolute w-full'>
+                <Pagination
+                  page={page}
+                  totalPages={totalPages}
+                  active={({ selected }: any) => setPage(selected + 1)}
+                />
+              </div>
+            )}
+          </div>
         </div>
       </div>
       {isActive === 0 && (
