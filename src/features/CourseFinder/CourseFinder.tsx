@@ -72,7 +72,7 @@ const CourseFinder = () => {
         { value: 'Jul 2024;Aug 2024;Sep 2024', label: 'Jul - Sep 2024' },
         { value: 'Oct 2024;Nov 2024;Dec 2024', label: 'Oct - Dec 2024' },
         { value: 'Jan 2025;Feb 2025;Mar 2025', label: 'Jan - Mar 2025' },
-        { value: 'Not Decided', label: 'Not Decided' },
+        { value: '', label: 'Not Decided' },
       ],
     },
     {

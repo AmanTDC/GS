@@ -39,7 +39,7 @@ const useDestinations = () => {
           templateParams,
           process.env.NEXT_PUBLIC_PUBLIC_KEY
         )
-        .then(() => setIsLoading(1))
+        .then(() =>{})
         .catch((err) => {
           console.log(err);
           setIsLoading(-1);

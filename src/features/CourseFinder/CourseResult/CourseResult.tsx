@@ -29,7 +29,13 @@ const CourseResult = () => {
       <Navbar />
 
       <div className=' py-[152px] max-w-[1120px] mx-auto px-5'>
-        <div className='relative w-full max-w-[700px] mx-auto'>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            fetchCourses(updatedValues);
+          }}
+          className='relative w-full max-w-[700px] mx-auto'
+        >
           <input
             type='text'
             placeholder='Search...'
@@ -43,13 +49,13 @@ const CourseResult = () => {
           />
           <FaSearch className='absolute top-3 left-3 text-blue-900' size={32} />
           <Button
-            onClick={() => fetchCourses(updatedValues)}
+            type='submit'
             isLoading={isActive === 2}
             className='!rounded-full absolute w-[93px] top-2 right-2'
           >
             Search
           </Button>
-        </div>
+        </form>
         <div className='grid lg:grid-cols-12 gap-x-10'>
           <div className='col-span-4 bg-white p-6 h-fit lg:block hidden rounded-2xl'>
             <div className='text-2xl font-bold'>Filters</div>

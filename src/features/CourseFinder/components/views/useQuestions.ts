@@ -80,7 +80,7 @@ const useQuestions = (index: number, action: (idx: number) => void) => {
           process.env.NEXT_PUBLIC_PUBLIC_KEY
         )
         .then((res) => {
-          setIsLoading(1);
+          // setIsLoading(1);
 
           router.push({
             pathname: '/courseResult',

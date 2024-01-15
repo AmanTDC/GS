@@ -13,9 +13,9 @@ import useScrollHidden from '@/utils/hooks/useScrollHidden';
 
 const Home = () => {
   const [isActive, setIsActive] = useState(-1);
-  useEffect(() => {
-    setIsActive(0);
-  }, []);
+  // useEffect(() => {
+  //   setIsActive(0);
+  // }, []);
   useScrollHidden(isActive === 0);
   return (
     <div className='mb-[400px]'>

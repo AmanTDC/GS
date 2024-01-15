@@ -31,7 +31,7 @@ const Banner = ({
         { email },
         process.env.NEXT_PUBLIC_PUBLIC_KEY
       )
-      .then((res) => setIsLoading(1))
+      .then((res) => {})
       .catch((err) => {
         console.log(err);
         setIsLoading(-1);
