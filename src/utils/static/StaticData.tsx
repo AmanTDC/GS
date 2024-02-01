@@ -1760,3 +1760,249 @@ export const ServicesData = {
     ],
   },
 };
+
+export const PrivacyPolicy = [
+  {
+    title: 'Introduction',
+    description: [
+      'At Global Scholar, we are dedicated to protecting the privacy of our users. This policy is crafted to ensure the secure handling of your personal data in compliance with relevant regulations and legislation, such as the UK General Data Protection Regulations 2018 (the "Data Protection Regulations").',
+      'This policy applies when we act as a data controller for the personal data of our website visitors and service users. In such cases, we determine the purposes and methods of processing your personal data.',
+      'By using our website, you agree to the terms of this policy.',
+      'This privacy document outlines the data we may collect, how we use it, and provides options to limit information publication and manage direct marketing communications.',
+      'In this policy, "we," "us," and "our" refer to Edvoy Educational Services Limited. Additional details about us can be found in section 9 of this Privacy Policy.',
+      'We reserve the right to update and make changes to this Privacy Policy periodically. Please check regularly to stay informed about any changes, which will be effective from the date of posting.',
+    ],
+  },
+  {
+    title: 'How we use your personal data',
+    description: [
+      {
+        text: 'In this section, we specify:',
+        list: [
+          '(a) General categories of personal data we may process.',
+          '(b) Purposes for processing personal data.',
+          '(c) Legal basis for processing in each case.',
+        ],
+      },
+      {
+        text: 'We may obtain personal data from you:',
+        list: [
+          '(a) During registration on our website or mobile app.',
+          '(b) Through conversations with our counselors or experts.',
+          '(c) Via phone, email, WhatsApp, or text messages.',
+        ],
+      },
+      'We may process usage data about your website and service interactions, including IP address, geographical location, browser details, and navigation patterns. The legal basis for this processing is either your consent or, where consent is not required, our legitimate interests in monitoring and improving our website and services.',
+      'Account data, including personal details, qualifications, passport information, and photographs, may be processed for the purpose of providing services, maintaining website security, and communicating with you. Legal basis for this processing is either your consent or our legitimate interests.',
+      'Transaction data related to purchases of goods and services will be processed for the purpose of supplying goods/services and maintaining transaction records. The legal basis is the performance of a contract and our legitimate interests.',
+      'Administrative processing of personal data for the exercise or defense of legal claims is based on our legitimate interests.',
+      'If you provide personal data of others, ensure you have the authority and comply with obligations under Data Protection Regulations.',
+    ],
+  },
+  {
+    title: 'Data Types and Details of Data Collected',
+    table: [
+      {
+        type: 'Personal Identity data',
+        details:
+          'Name, Passport, Nationality, Date of Birth, Gender, Country & City of Residence, Student signature',
+      },
+      {
+        type: 'Contact data',
+        details: 'Email Address, Mobile Number',
+      },
+      {
+        type: 'Academic Qualifications',
+        details:
+          'Educational certificates, Date of Birth, Gender, Country & City of Residence, Student signature',
+      },
+      {
+        type: 'Work Experience (Profile data)',
+        details:
+          'Experience Certificate, Employer Details, Job Title, Country, City, Total Experience, Job Description',
+      },
+      {
+        type: 'Letter of Recommendation (Personal Reference data)',
+        details: 'Referee Details',
+      },
+      {
+        type: 'Other Documents',
+        details: 'Personal Statement, CV (Curriculum Vitae)',
+      },
+      {
+        type: 'Technical data',
+        details: 'IP address, login data, browser details, device information',
+      },
+      {
+        type: 'Usage data',
+        details: 'Information on website, product, and service usage',
+      },
+    ],
+  },
+  {
+    title: 'Providing your personal data to others',
+    description: [
+      'We may disclose your personal data to our group companies, insurers, professional advisers, credit reference agencies, payment services providers, and IT service providers. Such disclosures are necessary for the purposes outlined in this policy.',
+      'In case of business sale, your data may be passed to the purchaser, ensuring post-sale contact.',
+      ' We may disclose personal data to comply with legal obligations or protect legal interests.',
+    ],
+  },
+  {
+    title: 'International transfers of your personal data',
+    description: [
+      'This section outlines circumstances in which personal data may be transferred outside the European Economic Area (EEA).',
+      'Your data may be transferred to our subsidiary companies or hosted by Amazon Web Services (AWS) outside the EU. GDPR protections will be ensured in these cases.',
+      'Other transfers outside the EEA will only occur if adequate safeguards are in place.',
+    ],
+  },
+  {
+    title: 'Retaining and deleting personal data',
+    description: [
+      'This section sets out our data retention policies, ensuring compliance with legal obligations.',
+      'Personal data will not be retained beyond the necessary duration, typically not exceeding 6 years post-business relationship termination.',
+    ],
+  },
+  {
+    title: 'Amendments',
+    description: [
+      'We may update this policy periodically. Please check for changes, which will be effective upon posting.',
+      "We may notify you of changes via email or our website's private messaging system.",
+    ],
+  },
+  {
+    title: 'Your rights',
+    description: [
+      'This section summarizes your rights under data protection law.',
+      'Key rights include access, rectification, erasure, processing restriction, objection, data portability, complaint to a supervisory authority, and withdrawal of consent.',
+      'You have the right to access your personal data and additional information.',
+      'Inaccurate personal data can be rectified, and incomplete data can be completed.',
+      'The right to erasure applies in specific circumstances, subject to exclusions.',
+      'Processing restrictions apply in certain situations, allowing us to store data for specific purposes.',
+      'You can object to processing based on specific grounds.',
+      'Objecting to processing for direct marketing purposes is allowed.',
+      'Objection to processing for research purposes is possible in certain situations.',
+      'The right to data portability applies in specific cases.',
+      'If processing is based on consent or contractual necessity, you can receive your data in a machine-readable format.',
+      'If you believe our processing infringes data protection laws, you have the right to complain to a supervisory authority.',
+      'Withdrawal of consent does not affect prior lawfulness of processing.',
+      'You can request access to your personal information with appropriate identity evidence.',
+    ],
+  },
+  {
+    title: 'Your rights',
+    description: [
+      'Global Scholar is owned and operated by Edvoy Educational Services Limited.',
+      'Registered office: 9 Portland Street, Manchester M1 3BE, England.',
+      {
+        text: 'Contact us:',
+        list: [
+          '(a) By post: 9 Portland Street, Manchester M1 3BE, England',
+          '(b) By email: info@globalscholar.co.uk',
+        ],
+      },
+    ],
+  },
+];
+
+export const TermsCondition = [
+  {
+    title: 'Introduction',
+    description: [
+      'Welcome to the Global Scholars Ltd website at www.globalscholar.co.uk (the “Website”). By accessing and using this Website, you agree to comply with and be bound by the following terms and conditions of use (“Terms”). If you do not agree with any part of these Terms, please refrain from using our Website.',
+      'The Website is owned and operated by Global Scholars Ltd, a company registered in England with company number 12152939, and its registered office address at 9 Portland Street, Manchester M1 3BE, England (“Global Scholars,” “we,” or “us”).',
+      'The term “you” refers to the user or viewer of our Website, and “your” will be construed accordingly.',
+    ],
+  },
+  {
+    title: 'Use of this Website',
+    description: [
+      'To make use of any products or services from our Website, you must be over 16 years of age. Unless otherwise specified, Global Scholars Ltd owns the intellectual property rights in the Website and its content. All intellectual property rights are reserved, subject to the license detailed below.',
+      'You may view, download, and print Website pages, but you must not use the Website in a way that causes damage or impairs its availability. Unlawful, fraudulent, or harmful activities are strictly prohibited.',
+      'Access to certain areas of the Website may be restricted at our discretion. If provided with a user ID and password, you must keep them confidential. We may disable your account without notice if we believe you are misusing the Website.',
+    ],
+  },
+  {
+    title:
+      'Products and Services Offered through the Website and Your Right to Cancel',
+    description: [
+      'We may offer products and services on the Website, subject to updates or changes. Details and costs are available on the Website.',
+      'You warrant that all information provided to us is true and accurate. We reserve the right to terminate your membership if information is found to be inaccurate.',
+      'If you order products or services from our Website as a consumer, you may cancel under the Consumer Contracts Regulations 2013, provided you notify us within 14 days of placing your order.',
+      'To cancel, email info@globalscholar.co.uk with your request and specify the products or services you wish to cancel.',
+    ],
+  },
+  {
+    title: 'Copyright and License',
+    description: [
+      'Material on this Website is owned or licensed by Global Scholars Ltd and is protected by copyright. You must retain all copyright notices on any material.',
+    ],
+  },
+  {
+    title: 'User Content',
+    description: [
+      'The Website may feature comment or discussion forums for User Content. By submitting User Content, you grant us a worldwide, non-exclusive license to use, copy, and display the content.',
+      'You are solely responsible for your User Content and must ensure it complies with these Terms.',
+      'We do not endorse User Content and disclaim liability for its accuracy or content. Users may be exposed to objectionable content, and we are not responsible for such exposure.',
+    ],
+  },
+  {
+    title: 'No Warranties',
+    description: [
+      'The Website is provided “as is,” without warranties. We do not guarantee constant availability or accuracy of information. We disclaim liability for advertisements on the Website.',
+    ],
+  },
+  {
+    title: 'Limitations and Exclusions of Liability',
+    description: [
+      'Our liability is limited to specific circumstances outlined in these Terms. We are not liable for any indirect or special loss or damage. These limitations are reasonable, and if deemed unreasonable, refrain from using the Website.',
+    ],
+  },
+  {
+    title: 'Indemnity',
+    description: [
+      'You are fully responsible for any losses resulting from breaching these Terms. You agree to indemnify us against any losses, damages, costs, liabilities, and expenses arising from such breaches.',
+    ],
+  },
+  {
+    title: 'Other Websites',
+    description: [
+      'Links to other websites are provided for convenience only. We are not responsible for the content or reliability of linked websites.',
+    ],
+  },
+  {
+    title: 'Waiver',
+    description: [
+      'Failure to enforce any Terms does not constitute a waiver, and rights can be enforced at any time.',
+    ],
+  },
+  {
+    title: 'Severance',
+    description: [
+      'If any provision is found invalid or unenforceable, it does not affect the validity of other provisions.',
+    ],
+  },
+  {
+    title: 'Variation',
+    description: [
+      'We may revise these Terms, and the revised terms apply from the publication date. Please check regularly for updates.',
+    ],
+  },
+  {
+    title: 'Exclusion of Third-Party Rights',
+    description: [
+      'These Terms benefit you and us and are not enforceable by third parties.',
+    ],
+  },
+  {
+    title: 'Entire Agreement',
+    description: [
+      'These Terms constitute the entire agreement between you and us, superseding previous agreements.',
+    ],
+  },
+  {
+    title: 'Jurisdiction and Governing Law',
+    description: [
+      'These Terms are governed by English law, and any dispute shall be subject to the exclusive jurisdiction of English courts.',
+    ],
+  },
+];

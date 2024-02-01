@@ -105,11 +105,11 @@ const Footer = ({ isBanner }: { isBanner?: boolean }) => {
       links: [
         {
           name: 'Terms of Service',
-          url: '/',
+          url: '/terms-condition',
         },
         {
           name: 'Privacy Policy',
-          url: '/',
+          url: '/privacy-policy',
         },
         {
           name: 'Cookies Policy',
@@ -189,15 +189,15 @@ const Footer = ({ isBanner }: { isBanner?: boolean }) => {
                 key={idx}
               >
                 <div className='text-blue-500 text-sm font-semibold mb-6'>
-                  STUDY DESTINATIONS
+                  {item?.title}
                 </div>
-                {item?.links?.map((item: any, idx: number) => (
+                {item?.links?.map((item1: any, idx: number) => (
                   <li
                     key={idx}
-                    onClick={() => router.push(item?.url)}
+                    onClick={() => router.push(item1?.url)}
                     className='navItems w-fit cursor-pointer'
                   >
-                    {item?.name}
+                    {item1?.name}
                   </li>
                 ))}
               </div>

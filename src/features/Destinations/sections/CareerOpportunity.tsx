@@ -3,7 +3,9 @@ import React from 'react';
 const CareerOpportunity = ({ data, index }: { data: any; index: string }) => {
   return (
     <div id={index} className='space-y-3 my-16'>
-      <h4 className='md:text-[32px] text-[28px] font-semibold'>{data?.title}</h4>
+      <h4 className='md:text-[32px] text-[28px] font-semibold'>
+        {data?.title}
+      </h4>
       <p className='text-secondary pb-3'>{data?.description}</p>
 
       <div className='overflow-x-scroll'>
@@ -21,7 +23,7 @@ const CareerOpportunity = ({ data, index }: { data: any; index: string }) => {
                 <td>{item?.col1}</td>
                 <td>{item?.col2}</td>
                 <td>{item?.col3}</td>
-                <td>{item?.col4}</td>
+                {item?.col4 && <td>{item?.col4}</td>}
               </tr>
             ))}
           </tbody>
