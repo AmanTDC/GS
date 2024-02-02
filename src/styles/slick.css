@@ -79,3 +79,7 @@
   opacity: 0.75;
   @apply bg-gray-500;
 }
+
+.slick-slider .slick-track {
+  @apply gap-x-10 flex;
+}

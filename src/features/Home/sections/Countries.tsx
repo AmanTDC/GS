@@ -58,7 +58,7 @@ const Countries = () => {
           Explore & Learn More About Study Destinations
         </div>
       </div>
-      <div className='sm:gap-x-10 gap-x-5 overflow-x-scroll max-w-[1120px] sm:flex hidden'>
+      <div className='sm:gap-x-10 gap-x-5 overflow-x-scroll max-w-[1120px] sm:hidden flex'>
         {countries?.map((item, idx) => (
           <CountryCard
             data={item}
@@ -67,7 +67,7 @@ const Countries = () => {
           />
         ))}
       </div>
-      <div className='sm:hidden'>
+      <div className='sm:block hidden'>
         <Slider
           {...VERIFICATION_SLICK_SETTING}
           nextArrow={<NextArrow />}

@@ -13,9 +13,7 @@ import useScrollHidden from '@/utils/hooks/useScrollHidden';
 
 const Home = () => {
   const [isActive, setIsActive] = useState(-1);
-  // useEffect(() => {
-  //   setIsActive(0);
-  // }, []);
+
   useScrollHidden(isActive === 0);
   return (
     <div className='mb-[400px]'>
@@ -32,7 +30,7 @@ const Home = () => {
         <Testimonials />
       </div>
 
-      {isActive===0 && (
+      {isActive === 0 && (
         <RewardModal
           title={'Get $300 straight to your account!'}
           subTitle='Get started with us for your Study Abroad Journey and get assured  money to kick-start your career'
