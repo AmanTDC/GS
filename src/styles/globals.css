@@ -39,9 +39,6 @@ html {
   transform-origin: 0% 50%;
 }
 
-.animate-accordion {
-  animation: accordion 0.3s ease;
-}
 
 .animate-card {
   animation: card 0.4s ease;
@@ -70,6 +67,9 @@ html {
   }
 }
 
+.animate-accordion {
+  animation: accordion 0.3s ease;
+}
 @keyframes accordion {
   from {
     opacity: 0;

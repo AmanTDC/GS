@@ -25,7 +25,7 @@ const CourseFinder = () => {
       title: 'Which degree do you want to pursue?',
       image: '/images/course2.png',
       options: [
-        { value: 'Bachelors', label: 'Bachelor’s Degree' },
+        { value: 'Bachelor', label: 'Bachelor’s Degree' },
         { value: 'Masters', label: 'Master’s Degree' },
         { value: 'PhD', label: 'PhD' },
         {
@@ -39,7 +39,7 @@ const CourseFinder = () => {
       image: '/images/course3.png',
       options: [
         { value: 'Certificate', label: '12th' },
-        { value: 'Bachelors', label: 'Bachelor’s Degree' },
+        { value: 'Bachelor', label: 'Bachelor’s Degree' },
         { value: 'Masters', label: 'Master’s Degree' },
         { value: 'PhD', label: 'PhD' },
       ],
